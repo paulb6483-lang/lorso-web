@@ -3,358 +3,2005 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>L’Orso | Catering & Repostería</title>
-<meta name="description" content="L’Orso. Repostería, panadería, catering y mesas de postres para eventos, restaurantes y cafeterías.">
+
+<title>L'Orso | Cocina artesanal</title>
+
+<meta name="description"
+content="L'Orso Catering. Repostería, panadería, catering y mesas de postres. Cocina artesanal hecha con carácter.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================================================
+   L'ORSO — IDENTIDAD VISUAL
+========================================================= */
+
 :root{
-  --negro-profundo:#0F1210;
-  --negro:#1F1F1B;
-  --beige:#C8B197;
-  --crema:#EAE2D4;
-  --blanco:#F7F4ED;
+  --negro:#111210;
+  --negro-suave:#1b1b18;
+  --crema:#eee6d8;
+  --crema-clara:#f7f2e9;
+  --beige:#c8a47c;
+  --dorado:#a97945;
+  --gris:#6e6a62;
+  --blanco:#ffffff;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"Montserrat",sans-serif;font-weight:300;background:var(--crema);color:var(--negro-profundo)}
-a{color:inherit;text-decoration:none}
-button,input,select,textarea{font-family:"Montserrat",sans-serif}
-button{cursor:pointer}
-.container{width:min(1120px,calc(100% - 40px));margin:auto}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"Montserrat",sans-serif;
+  background:var(--crema);
+  color:var(--negro);
+  font-weight:300;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+textarea,
+select{
+  font-family:inherit;
+}
+
+.container{
+  width:min(1180px,calc(100% - 40px));
+  margin:auto;
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.btn{
+  display:inline-block;
+  padding:16px 25px;
+  border:1px solid var(--negro);
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  transition:.25s ease;
+}
+
+.btn-dark{
+  background:var(--negro);
+  color:var(--crema);
+}
+
+.btn-light{
+  background:transparent;
+  color:var(--negro);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  opacity:.85;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(234,226,212,.96);
-  border-bottom:1px solid var(--beige);
-  backdrop-filter:blur(8px)
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(238,230,216,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(167,130,90,.35);
 }
-.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.logo{font-size:25px;font-weight:500;letter-spacing:4px;white-space:nowrap}
-.logo small{display:block;font-size:7px;letter-spacing:4px;text-align:center;margin-top:2px;font-weight:400}
-.nav-links{display:flex;gap:22px;align-items:center;font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase}
-.nav-links a:hover{opacity:.55}
-.nav-button,.button-primary{
-  background:var(--negro-profundo);color:var(--crema);
-  border:1px solid var(--negro-profundo);border-radius:2px;
-  padding:14px 20px;font-size:11px;font-weight:400;
-  letter-spacing:2px;text-transform:uppercase
+
+.nav{
+  min-height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
 }
-.button-secondary{
-  background:transparent;color:var(--negro-profundo);
-  border:1px solid var(--negro-profundo);border-radius:2px;
-  padding:14px 20px;font-size:11px;font-weight:400;
-  letter-spacing:2px;text-transform:uppercase
+
+.logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:36px;
+  font-weight:600;
+  letter-spacing:2px;
+  line-height:.75;
 }
+
+.logo small{
+  display:block;
+  font-family:"Montserrat",sans-serif;
+  font-size:7px;
+  font-weight:400;
+  letter-spacing:4px;
+  text-align:center;
+  margin-top:9px;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+.nav-links a{
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.nav-links a:hover{
+  color:var(--dorado);
+}
+
+.nav-cta{
+  padding:13px 18px;
+  background:var(--negro);
+  color:var(--crema);
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
-  min-height:620px;display:grid;grid-template-columns:1.05fr .95fr;
-  align-items:center;gap:65px;padding:70px 0
+  min-height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:var(--negro);
+  color:var(--crema);
 }
-.eyebrow{font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:3px;margin-bottom:18px}
-h1,h2,h3{font-weight:400;letter-spacing:3px}
-h1{font-size:clamp(48px,6.5vw,82px);line-height:.98;margin-bottom:28px}
-.hero-text{max-width:540px;font-size:17px;line-height:1.8;letter-spacing:1.5px;color:var(--negro)}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+
 .hero-image{
-  min-height:500px;
+  min-height:700px;
+
   background:
-    linear-gradient(0deg,rgba(15,18,16,.5),transparent 65%),
-    url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=85") center/cover;
-  display:flex;align-items:flex-end;padding:28px;color:var(--crema)
+    linear-gradient(
+      90deg,
+      rgba(17,18,16,.1),
+      rgba(17,18,16,.15)
+    ),
+    url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1400&q=90")
+    center/cover;
 }
-.hero-image span{font-size:11px;letter-spacing:3px;font-weight:400}
 
-section{padding:85px 0;border-top:1px solid var(--beige)}
-.section-header{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:38px}
-h2{font-size:clamp(34px,5vw,56px);line-height:1}
-.section-description{max-width:460px;font-size:13px;line-height:1.9;letter-spacing:1.5px;color:var(--negro)}
-
-.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.category{
-  min-height:300px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;
-  color:var(--crema);background-size:cover;background-position:center
+.hero-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:80px;
+  background:
+    linear-gradient(
+      rgba(17,18,16,.97),
+      rgba(17,18,16,.97)
+    );
 }
-.category:nth-child(1){background-image:linear-gradient(0deg,rgba(15,18,16,.78),transparent),url("https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80")}
-.category:nth-child(2){background-image:linear-gradient(0deg,rgba(15,18,16,.78),transparent),url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80")}
-.category:nth-child(3){background-image:linear-gradient(0deg,rgba(15,18,16,.78),transparent),url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80")}
-.category h3{font-size:27px;margin-bottom:10px}
-.category p{font-size:11px;line-height:1.7;letter-spacing:1.3px}
 
-.catalog-section{background:var(--crema)}
-.catalog-block{margin-top:65px}
-.catalog-block:first-of-type{margin-top:0}
-.catalog-title{display:flex;align-items:baseline;gap:16px;margin-bottom:25px}
-.catalog-title h3{font-size:30px}
-.catalog-title span{font-size:10px;letter-spacing:2px;text-transform:uppercase}
-
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.product{background:var(--blanco);border:1px solid rgba(200,177,151,.75)}
-.product-image{height:235px;background-size:cover;background-position:center}
-.product-info{padding:19px}
-.product-info h4{font-size:19px;font-weight:400;letter-spacing:2px;margin-bottom:9px}
-.product-info p{font-size:11px;line-height:1.7;letter-spacing:1.2px;color:var(--negro)}
-.price{display:block;margin-top:13px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase}
-
-.special{
-  display:grid;grid-template-columns:1fr 1fr;gap:18px
+.eyebrow{
+  font-size:10px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--beige);
+  margin-bottom:25px;
 }
-.special-card{padding:32px;background:var(--beige)}
-.special-card h4{font-size:25px;font-weight:400;letter-spacing:2px;margin-bottom:14px}
-.special-card p{font-size:12px;line-height:1.8;letter-spacing:1.3px;color:var(--negro)}
-.special-list{margin-top:18px;display:grid;gap:10px}
-.special-list div{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid rgba(31,31,27,.25);padding-bottom:9px;font-size:12px;letter-spacing:1.2px}
 
-.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.service{padding:45px;background:var(--beige)}
-.service h3{font-size:31px;margin-bottom:16px}
-.service p{font-size:13px;line-height:1.9;letter-spacing:1.3px;color:var(--negro)}
-.service-link{display:inline-block;margin-top:23px;border-bottom:1px solid var(--negro);padding-bottom:4px;font-size:10px;letter-spacing:2px;text-transform:uppercase}
-
-.quote-section{background:var(--beige)}
-.quote-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:65px}
-.quote-intro p{margin-top:18px;font-size:13px;line-height:1.9;letter-spacing:1.5px;color:var(--negro)}
-.quote-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.form-group{display:flex;flex-direction:column;gap:7px}
-.form-group.full{grid-column:1/-1}
-.form-group label{font-size:10px;font-weight:400;text-transform:uppercase;letter-spacing:2px}
-.form-group input,.form-group select,.form-group textarea{
-  width:100%;padding:14px;border:1px solid var(--negro);background:var(--crema);
-  color:var(--negro-profundo);font-size:13px;font-weight:300;letter-spacing:1px;border-radius:2px;outline:none
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(65px,8vw,110px);
+  font-weight:500;
+  line-height:.82;
+  letter-spacing:-2px;
+  margin-bottom:35px;
 }
-.form-group textarea{min-height:125px;resize:vertical}
-.submit{background:var(--negro-profundo);color:var(--crema);border:0;padding:15px 24px;font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase}
 
-.social-grid{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
-.social{min-width:180px;padding:20px;border:1px solid var(--beige);background:var(--beige)}
-.social strong{display:block;font-size:16px;font-weight:400;letter-spacing:2px;margin-bottom:5px}
-.social span{font-size:10px;letter-spacing:1.5px}
-
-footer{border-top:1px solid var(--beige);padding:45px 0}
-.footer-content{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-.footer-text{font-size:10px;letter-spacing:2px;color:var(--negro);margin-top:9px}
-
-@media(max-width:800px){
-  .nav-links{display:none}
-  .hero{grid-template-columns:1fr;gap:38px;padding:55px 0}
-  .hero-image{min-height:380px}
-  .categories,.products,.service-grid,.quote-layout,.special{grid-template-columns:1fr}
-  .section-header{display:block}
-  .section-description{margin-top:15px}
-  .quote-form{grid-template-columns:1fr}
-  .form-group.full{grid-column:auto}
-  section{padding:65px 0}
+.hero h1 span{
+  color:var(--beige);
+  font-style:italic;
 }
-@media(max-width:480px){
-  .container{width:min(100% - 28px,1120px)}
-  .nav-button{padding:10px 12px;font-size:9px}
-  h1{font-size:48px}
-  .hero-text{font-size:15px}
-  .product-image{height:245px}
-  .service{padding:30px}
+
+.hero-description{
+  max-width:500px;
+  font-size:14px;
+  line-height:2;
+  letter-spacing:1px;
+  color:#ddd4c6;
 }
+
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  margin-top:35px;
+  flex-wrap:wrap;
+}
+
+.hero .btn{
+  border-color:var(--crema);
+}
+
+.hero .btn-dark{
+  background:var(--crema);
+  color:var(--negro);
+}
+
+.hero .btn-light{
+  color:var(--crema);
+}
+
+
+/* =========================================================
+   FRASE
+========================================================= */
+
+.manifesto{
+  padding:100px 20px;
+  text-align:center;
+  background:var(--crema-clara);
+}
+
+.manifesto-line{
+  width:70px;
+  height:1px;
+  background:var(--beige);
+  margin:0 auto 30px;
+}
+
+.manifesto h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(42px,6vw,75px);
+  font-weight:400;
+  line-height:1;
+}
+
+.manifesto h2 em{
+  color:var(--dorado);
+}
+
+.manifesto p{
+  max-width:620px;
+  margin:30px auto 0;
+  font-size:13px;
+  line-height:2;
+  letter-spacing:1px;
+}
+
+
+/* =========================================================
+   SOBRE L'ORSO
+========================================================= */
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:650px;
+}
+
+.about-image{
+  background:
+    linear-gradient(
+      rgba(17,18,16,.15),
+      rgba(17,18,16,.15)
+    ),
+    url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=90")
+    center/cover;
+}
+
+.about-content{
+  padding:90px;
+  background:var(--crema);
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+}
+
+.about-content h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:65px;
+  line-height:.9;
+  font-weight:400;
+  margin-bottom:30px;
+}
+
+.about-content h2 em{
+  color:var(--dorado);
+}
+
+.about-content p{
+  max-width:500px;
+  font-size:13px;
+  line-height:2;
+  margin-bottom:18px;
+}
+
+.values{
+  margin-top:30px;
+  display:grid;
+  gap:22px;
+}
+
+.value{
+  display:grid;
+  grid-template-columns:45px 1fr;
+  gap:15px;
+  align-items:start;
+}
+
+.value-icon{
+  font-size:25px;
+  color:var(--dorado);
+}
+
+.value strong{
+  display:block;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+
+.value span{
+  font-size:11px;
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+.section{
+  padding:100px 0;
+  border-top:1px solid rgba(167,130,90,.35);
+}
+
+.section-dark{
+  background:var(--negro);
+  color:var(--crema);
+}
+
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:40px;
+  margin-bottom:55px;
+}
+
+.section-title small{
+  display:block;
+  font-size:9px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--dorado);
+  margin-bottom:15px;
+}
+
+.section-title h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:65px;
+  font-weight:400;
+  line-height:.85;
+}
+
+.section-description{
+  max-width:430px;
+  font-size:12px;
+  line-height:1.9;
+  letter-spacing:1px;
+}
+
+
+/* =========================================================
+   PRODUCTOS
+========================================================= */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.product{
+  background:var(--crema-clara);
+  color:var(--negro);
+}
+
+.product-image{
+  height:300px;
+  background-position:center;
+  background-size:cover;
+}
+
+.product-info{
+  padding:22px;
+}
+
+.product-info h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:30px;
+  font-weight:500;
+  margin-bottom:8px;
+}
+
+.product-info p{
+  font-size:10px;
+  line-height:1.7;
+  letter-spacing:1px;
+  color:var(--gris);
+}
+
+.price{
+  display:block;
+  margin-top:18px;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:3px;
+}
+
+
+/* =========================================================
+   PRODUCTOS DESTACADOS
+========================================================= */
+
+.featured{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.featured-card{
+  min-height:470px;
+  padding:45px;
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  color:var(--crema);
+  background-size:cover;
+  background-position:center;
+}
+
+.featured-card:nth-child(1){
+  background-image:
+    linear-gradient(0deg,rgba(17,18,16,.9),transparent 70%),
+    url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1100&q=90");
+}
+
+.featured-card:nth-child(2){
+  background-image:
+    linear-gradient(0deg,rgba(17,18,16,.9),transparent 70%),
+    url("https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1100&q=90");
+}
+
+.featured-card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:50px;
+  font-weight:400;
+}
+
+.featured-card p{
+  font-size:11px;
+  line-height:1.8;
+  max-width:430px;
+  margin-top:10px;
+}
+
+
+/* =========================================================
+   ESPECIALES
+========================================================= */
+
+.special-box{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:0;
+  background:var(--negro);
+  color:var(--crema);
+}
+
+.special-intro{
+  padding:60px;
+  border-right:1px solid rgba(200,164,124,.35);
+}
+
+.special-intro h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:60px;
+  font-weight:400;
+  line-height:.9;
+}
+
+.special-intro p{
+  margin-top:25px;
+  font-size:12px;
+  line-height:1.9;
+}
+
+.special-list{
+  padding:45px 55px;
+}
+
+.special-item{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:17px 0;
+  border-bottom:1px solid rgba(200,164,124,.25);
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+.special-item span:last-child{
+  color:var(--beige);
+  white-space:nowrap;
+}
+
+
+/* =========================================================
+   SERVICIOS
+========================================================= */
+
+.services{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.service-card{
+  min-height:430px;
+  padding:45px;
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  background-size:cover;
+  background-position:center;
+  color:var(--crema);
+}
+
+.service-card:nth-child(1){
+  background-image:
+    linear-gradient(0deg,rgba(17,18,16,.9),rgba(17,18,16,.1)),
+    url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=90");
+}
+
+.service-card:nth-child(2){
+  background-image:
+    linear-gradient(0deg,rgba(17,18,16,.9),rgba(17,18,16,.1)),
+    url("https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1200&q=90");
+}
+
+.service-card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:52px;
+  font-weight:400;
+}
+
+.service-card p{
+  max-width:480px;
+  margin-top:10px;
+  font-size:11px;
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   PANADERÍA
+========================================================= */
+
+.bakery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.bakery-card{
+  background:var(--crema-clara);
+}
+
+.bakery-card .product-image{
+  height:270px;
+}
+
+.bakery-card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:30px;
+  font-weight:500;
+}
+
+
+/* =========================================================
+   COTIZACIÓN
+========================================================= */
+
+.quote{
+  background:var(--beige);
+}
+
+.quote-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:80px;
+}
+
+.quote-text h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:70px;
+  font-weight:400;
+  line-height:.85;
+}
+
+.quote-text p{
+  margin-top:25px;
+  font-size:12px;
+  line-height:2;
+}
+
+.form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.form-group.full{
+  grid-column:1/-1;
+}
+
+.form-group label{
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  padding:15px;
+  border:1px solid var(--negro);
+  background:var(--crema);
+  color:var(--negro);
+  outline:none;
+  font-size:12px;
+}
+
+.form-group textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.form button{
+  grid-column:1/-1;
+  border:0;
+  background:var(--negro);
+  color:var(--crema);
+  padding:17px;
+  cursor:pointer;
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  background:var(--negro);
+  color:var(--crema);
+  padding:70px 0 35px;
+}
+
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  flex-wrap:wrap;
+  padding-bottom:50px;
+  border-bottom:1px solid rgba(200,164,124,.3);
+}
+
+.footer-logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:60px;
+}
+
+.footer-logo small{
+  display:block;
+  font-family:"Montserrat",sans-serif;
+  font-size:8px;
+  letter-spacing:5px;
+  text-align:center;
+  margin-top:-5px;
+}
+
+.footer-links{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.footer-bottom{
+  padding-top:30px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:9px;
+  letter-spacing:1.5px;
+  color:#aaa297;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-image{
+    min-height:450px;
+    order:2;
+  }
+
+  .hero-content{
+    padding:70px 35px;
+    order:1;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .about-image{
+    min-height:450px;
+  }
+
+  .about-content{
+    padding:70px 35px;
+  }
+
+  .products{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .featured,
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .special-box{
+    grid-template-columns:1fr;
+  }
+
+  .special-intro{
+    border-right:0;
+    border-bottom:1px solid rgba(200,164,124,.35);
+  }
+
+  .bakery-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .quote-grid{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+}
+
+
+@media(max-width:600px){
+
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  .nav{
+    min-height:72px;
+  }
+
+  .logo{
+    font-size:29px;
+  }
+
+  .nav-cta{
+    padding:11px 13px;
+    font-size:8px;
+  }
+
+  .hero-content{
+    padding:65px 22px;
+  }
+
+  .hero h1{
+    font-size:70px;
+  }
+
+  .hero-image{
+    min-height:390px;
+  }
+
+  .manifesto{
+    padding:75px 20px;
+  }
+
+  .section{
+    padding:75px 0;
+  }
+
+  .section-header{
+    display:block;
+  }
+
+  .section-title h2{
+    font-size:54px;
+  }
+
+  .section-description{
+    margin-top:20px;
+  }
+
+  .products,
+  .bakery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .product-image{
+    height:290px;
+  }
+
+  .featured-card,
+  .service-card{
+    min-height:390px;
+    padding:30px;
+  }
+
+  .featured-card h3,
+  .service-card h3{
+    font-size:43px;
+  }
+
+  .about-content h2,
+  .special-intro h2,
+  .quote-text h2{
+    font-size:55px;
+  }
+
+  .special-list{
+    padding:30px 25px;
+  }
+
+  .special-item{
+    font-size:10px;
+  }
+
+  .form{
+    grid-template-columns:1fr;
+  }
+
+  .form-group.full{
+    grid-column:auto;
+  }
+
+  .form button{
+    grid-column:auto;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+  }
+}
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
+
   <div class="container nav">
-    <a href="#" class="logo">L’ORSO<small>CATERING</small></a>
+
+    <a href="#" class="logo">
+      L'ORSO
+      <small>CATERING</small>
+    </a>
+
     <nav class="nav-links">
+
       <a href="#reposteria">Repostería</a>
       <a href="#panaderia">Panadería</a>
       <a href="#catering">Catering</a>
       <a href="#mesas">Mesas de postres</a>
       <a href="#cotizar">Cotizar</a>
+
     </nav>
-    <a href="#cotizar" class="nav-button">Solicitar cotización</a>
+
+    <a href="#cotizar" class="nav-cta">
+      Solicitar cotización
+    </a>
+
   </div>
+
 </header>
 
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <main>
-<div class="container">
-<section class="hero" style="border-top:none">
-  <div>
-    <div class="eyebrow">Panadería · Repostería · Catering</div>
-    <h1>Cocina hecha para compartir.</h1>
-    <p class="hero-text">L’Orso desarrolla productos de repostería y panadería, además de propuestas gastronómicas para restaurantes, cafeterías, celebraciones y eventos.</p>
+
+<section class="hero">
+
+  <div class="hero-image"></div>
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      Cocina artesanal · Hecha con carácter
+    </div>
+
+    <h1>
+      L'Orso<br>
+      <span>Catering</span>
+    </h1>
+
+    <p class="hero-description">
+      Repostería, panadería y propuestas gastronómicas
+      desarrolladas con cuidado artesanal para restaurantes,
+      cafeterías, celebraciones y eventos.
+    </p>
+
     <div class="hero-buttons">
-      <a href="#reposteria" class="button-primary">Ver catálogo</a>
-      <a href="#cotizar" class="button-secondary">Cotizar un evento</a>
+
+      <a href="#reposteria" class="btn btn-dark">
+        Ver catálogo
+      </a>
+
+      <a href="#cotizar" class="btn btn-light">
+        Cotizar un evento
+      </a>
+
     </div>
+
   </div>
-  <div class="hero-image"><span>L’ORSO CATERING</span></div>
+
 </section>
-</div>
 
-<section id="reposteria" class="catalog-section">
-<div class="container">
-  <div class="section-header">
-    <div><div class="eyebrow">Catálogo</div><h2>Repostería</h2></div>
-    <p class="section-description">Postres elaborados para venta individual, cafeterías, restaurantes, celebraciones y pedidos especiales.</p>
-  </div>
 
-  <div class="catalog-block">
-    <div class="catalog-title"><h3>Cheesecakes</h3><span>Presentación individual</span></div>
-    <div class="products">
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Frutos rojos</h4><p>Cheesecake cremoso con acabado de frutos rojos.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Zarzamora</h4><p>Cheesecake clásico con zarzamora.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Blueberry</h4><p>Cheesecake con blueberry y acabado fresco.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Fresa</h4><p>Cheesecake con fresa y notas frescas.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Chocolate</h4><p>Cheesecake de chocolate, intenso y cremoso.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Oreo</h4><p>Base de galleta y cheesecake con Oreo.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Guayaba</h4><p>Cheesecake con perfil frutal de guayaba.</p><span class="price">$$$</span></div></article>
+<!-- =====================================================
+     MANIFIESTO
+===================================================== -->
+
+<section class="manifesto">
+
+  <div class="manifesto-line"></div>
+
+  <h2>
+    Cocina artesanal,<br>
+    <em>hecha con carácter.</em>
+  </h2>
+
+  <p>
+    En L'Orso creemos en productos honestos,
+    ingredientes seleccionados y preparaciones
+    hechas con dedicación. Cada creación está
+    pensada para compartir y dejar huella.
+  </p>
+
+</section>
+
+
+<!-- =====================================================
+     SOBRE L'ORSO
+===================================================== -->
+
+<section class="about">
+
+  <div class="about-image"></div>
+
+  <div class="about-content">
+
+    <div class="eyebrow">
+      Sobre L'Orso
     </div>
-  </div>
 
-  <div class="catalog-block">
-    <div class="catalog-title"><h3>Tartaletas</h3><span>Masa artesanal · Presentación individual</span></div>
-    <div class="products">
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Frutas y crema pastelera</h4><p>Tartaleta de frutas frescas sobre crema pastelera.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Frutos rojos</h4><p>Tartaleta con frutos rojos y acabado fresco.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Fresas</h4><p>Tartaleta con fresas y crema.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1575377427642-087cf684f04d?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Chocolate</h4><p>Tartaleta de chocolate con textura cremosa.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Chocolate & Blueberry</h4><p>Chocolate y blueberry en una combinación equilibrada.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Guayaba</h4><p>Tartaleta de guayaba con perfil frutal.</p><span class="price">$$$</span></div></article>
-      <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1562007908-859b4ba9a1a0?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Limón</h4><p>Tartaleta de limón con acabado ligero y fresco.</p><span class="price">$$$</span></div></article>
-    </div>
-  </div>
+    <h2>
+      Fuertes en calidad,<br>
+      <em>nobles en el servicio.</em>
+    </h2>
 
-  <div class="catalog-block">
-    <div class="catalog-title"><h3>Postres especiales</h3><span>Selección L’Orso</span></div>
-    <div class="special">
-      <div class="special-card">
-        <h4>Pastelería</h4>
-        <p>Creaciones disponibles en formato individual y piezas completas, según producto.</p>
-        <div class="special-list">
-          <div><span>Red Velvet · Individual</span><strong>$$$</strong></div>
-          <div><span>Red Velvet · Tamaño grande</span><strong>$$$</strong></div>
-          <div><span>Pastel Ópera · Individual</span><strong>$$$</strong></div>
-          <div><span>Carlota de limón · Individual</span><strong>$$$</strong></div>
+    <p>
+      L'Orso nace de una forma sencilla de entender
+      la gastronomía: buenos ingredientes, técnica,
+      cuidado y pasión por lo que hacemos.
+    </p>
+
+    <p>
+      Desarrollamos productos de repostería y panadería
+      para restaurantes y cafeterías, además de propuestas
+      de catering y mesas de postres para momentos especiales.
+    </p>
+
+    <div class="values">
+
+      <div class="value">
+
+        <div class="value-icon">✦</div>
+
+        <div>
+          <strong>Ingredientes seleccionados</strong>
+          <span>
+            Elegimos materias primas que permitan
+            obtener sabor y calidad constante.
+          </span>
         </div>
+
       </div>
-      <div class="special-card">
-        <h4>Creaciones sobre pedido</h4>
-        <p>Pasteles y postres de mayor formato elaborados bajo pedido para celebraciones y ocasiones especiales.</p>
-        <div class="special-list">
-          <div><span>Cheesecake completo</span><strong>$$$</strong></div>
-          <div><span>Tiramisú de gran formato</span><strong>$$$</strong></div>
-          <div><span>Carlota de limón de gran formato</span><strong>$$$</strong></div>
-          <div><span>Pasteles personalizados</span><strong>$$$</strong></div>
-          <div><span>Postres especiales para eventos</span><strong>$$$</strong></div>
+
+
+      <div class="value">
+
+        <div class="value-icon">♡</div>
+
+        <div>
+          <strong>Hecho con dedicación</strong>
+          <span>
+            Cada preparación se trabaja cuidando
+            textura, presentación y detalle.
+          </span>
         </div>
+
       </div>
+
+
+      <div class="value">
+
+        <div class="value-icon">❧</div>
+
+        <div>
+          <strong>Sabor que deja huella</strong>
+          <span>
+            Buscamos crear productos que se recuerden
+            después del último bocado.
+          </span>
+        </div>
+
+      </div>
+
     </div>
+
   </div>
-</div>
+
 </section>
 
-<section id="panaderia">
+
+<!-- =====================================================
+     REPOSTERÍA
+===================================================== -->
+
+<section id="reposteria" class="section">
+
 <div class="container">
+
   <div class="section-header">
-    <div><div class="eyebrow">Producción</div><h2>Panadería</h2></div>
-    <p class="section-description">Piezas elaboradas para restaurantes, cafeterías, servicio gastronómico y venta por volumen.</p>
-  </div>
-  <div class="products">
-    <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Brioche · Bollo de hamburguesa</h4><p>Brioche suave, enriquecido y de miga tierna, pensado para hamburguesas y servicio profesional.</p><span class="price">$$$</span></div></article>
-    <article class="product"><div class="product-image" style="background-image:url('https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=900&q=80')"></div><div class="product-info"><h4>Rol de canela</h4><p>Rol artesanal de canela con acabado glaseado.</p><span class="price">$$$</span></div></article>
-  </div>
-</div>
-</section>
 
-<section id="catering">
-<div class="container">
-  <div class="section-header">
-    <div><div class="eyebrow">Experiencias gastronómicas</div><h2>Catering</h2></div>
-    <p class="section-description">Propuestas gastronómicas diseñadas para celebraciones privadas, eventos corporativos y reuniones especiales.</p>
-  </div>
-  <div class="service-grid">
-    <article class="service"><h3>Eventos sociales</h3><p>Menús y servicio gastronómico para celebraciones, reuniones familiares, bodas, cumpleaños y ocasiones especiales.</p><a href="#cotizar" class="service-link">Cotizar evento →</a></article>
-    <article class="service"><h3>Eventos corporativos</h3><p>Opciones de alimentos y servicio para juntas, presentaciones, celebraciones de empresa y experiencias corporativas.</p><a href="#cotizar" class="service-link">Solicitar propuesta →</a></article>
-  </div>
-</div>
-</section>
+    <div class="section-title">
 
-<section id="mesas">
-<div class="container">
-  <div class="section-header">
-    <div><div class="eyebrow">Montaje & repostería</div><h2>Mesas de postres</h2></div>
-    <p class="section-description">Diseño de mesas de postres con variedad de piezas, montaje, presentación y servicio para tus invitados.</p>
-  </div>
-  <div class="service-grid">
-    <article class="service"><h3>Diseño de mesa</h3><p>Selección de postres, composición visual, bases, decoración y montaje de acuerdo con el estilo de cada celebración.</p><a href="#cotizar" class="service-link">Diseñar mi mesa →</a></article>
-    <article class="service"><h3>Servicio para eventos</h3><p>Podemos integrar producción de postres, montaje y atención durante el evento para ofrecer una experiencia completa.</p><a href="#cotizar" class="service-link">Cotizar mesa →</a></article>
-  </div>
-</div>
-</section>
+      <small>Catálogo · Dulce</small>
 
-<section id="cotizar" class="quote-section">
-<div class="container">
-  <div class="quote-layout">
-    <div class="quote-intro">
-      <div class="eyebrow">Hablemos de tu proyecto</div>
-      <h2>Solicita una cotización.</h2>
-      <p>Cuéntanos qué necesitas y prepararemos una propuesta de acuerdo con tu evento, número de invitados y servicio requerido.</p>
+      <h2>Repostería</h2>
+
     </div>
-    <form class="quote-form" id="quoteForm">
-      <div class="form-group"><label>Nombre</label><input id="nombre" required placeholder="Tu nombre"></div>
-      <div class="form-group"><label>WhatsApp</label><input id="telefono" type="tel" required placeholder="55 0000 0000"></div>
-      <div class="form-group"><label>Fecha del evento</label><input id="fecha" type="date" required></div>
-      <div class="form-group"><label>Número de personas</label><input id="personas" type="number" min="1" placeholder="100"></div>
-      <div class="form-group"><label>Servicio</label><select id="servicio"><option>Catering</option><option>Mesa de postres</option><option>Repostería</option><option>Panadería</option><option>Evento corporativo</option><option>Otro</option></select></div>
-      <div class="form-group"><label>Ubicación</label><input id="ubicacion" placeholder="Ciudad / zona"></div>
-      <div class="form-group full"><label>Cuéntanos qué necesitas</label><textarea id="mensaje" placeholder="Productos, montaje, horario, cantidades, etc."></textarea></div>
-      <div class="form-group full"><button type="submit" class="submit">Solicitar cotización por WhatsApp</button></div>
+
+    <p class="section-description">
+      Una selección de postres elaborados para venta
+      individual, cafeterías, restaurantes, celebraciones
+      y pedidos especiales.
+    </p>
+
+  </div>
+
+
+  <!-- CHEESECAKES -->
+
+  <div class="catalog-block">
+
+    <div class="section-title" style="margin-bottom:30px;">
+      <small>Presentación individual</small>
+      <h2 style="font-size:48px;">
+        Cheesecakes
+      </h2>
+    </div>
+
+
+    <div class="products">
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Frutos rojos</h3>
+          <p>Cheesecake cremoso con frutos rojos.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Zarzamora</h3>
+          <p>Cheesecake clásico acompañado de zarzamora.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Blueberry</h3>
+          <p>Cheesecake con blueberry y acabado fresco.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Fresa</h3>
+          <p>Cheesecake con fresa y notas frescas.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Chocolate</h3>
+          <p>Cheesecake de chocolate, intenso y cremoso.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Oreo</h3>
+          <p>Cheesecake con base y trozos de galleta Oreo.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Guayaba</h3>
+          <p>Cheesecake con perfil frutal de guayaba.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- TARTALETAS -->
+
+  <div class="catalog-block" style="margin-top:90px;">
+
+    <div class="section-title" style="margin-bottom:30px;">
+
+      <small>Masa artesanal · Presentación individual</small>
+
+      <h2 style="font-size:48px;">
+        Tartaletas
+      </h2>
+
+    </div>
+
+
+    <div class="products">
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Frutas y crema pastelera</h3>
+          <p>Masa artesanal, crema pastelera y frutas frescas.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1464195244916-405fa0a82545?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Frutos rojos</h3>
+          <p>Tartaleta con frutos rojos seleccionados.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Fresas</h3>
+          <p>Crema y fresas sobre masa artesanal.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Chocolate</h3>
+          <p>Chocolate intenso sobre base de tartaleta.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1562007908-17c67e878c88?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Chocolate & Blueberry</h3>
+          <p>Chocolate y blueberry en una combinación equilibrada.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Guayaba</h3>
+          <p>Preparación frutal con guayaba.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=90');">
+        </div>
+
+        <div class="product-info">
+          <h3>Limón</h3>
+          <p>Perfil cítrico, fresco y equilibrado.</p>
+          <span class="price">$$$</span>
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- PASTELES -->
+
+  <div class="catalog-block" style="margin-top:90px;">
+
+    <div class="section-title" style="margin-bottom:30px;">
+
+      <small>Especialidades</small>
+
+      <h2 style="font-size:48px;">
+        Pastelería
+      </h2>
+
+    </div>
+
+
+    <div class="featured">
+
+
+      <article class="featured-card">
+
+        <h3>Red Velvet</h3>
+
+        <p>
+          Disponible en presentación individual
+          y tamaño grande para celebraciones.
+        </p>
+
+        <span class="price">Individual · $$$</span>
+        <span class="price">Grande · $$$</span>
+
+      </article>
+
+
+      <article class="featured-card">
+
+        <h3>Pastel Ópera</h3>
+
+        <p>
+          Capas de chocolate, café y crema
+          en nuestra interpretación del clásico francés.
+        </p>
+
+        <span class="price">Individual · $$$</span>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- CARLOTA -->
+
+  <div class="catalog-block" style="margin-top:22px;">
+
+    <div class="products">
+
+      <article class="product">
+
+        <div class="product-image"
+        style="background-image:url('https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=1000&q=90');">
+        </div>
+
+        <div class="product-info">
+
+          <h3>Carlota de limón</h3>
+
+          <p>
+            Postre fresco de limón, cremoso y ligero.
+          </p>
+
+          <span class="price">$$$</span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+
+  <!-- ESPECIALES -->
+
+  <div class="catalog-block" style="margin-top:90px;">
+
+    <div class="special-box">
+
+      <div class="special-intro">
+
+        <div class="eyebrow">
+          Sobre pedido
+        </div>
+
+        <h2>
+          Postres<br>
+          especiales
+        </h2>
+
+        <p>
+          Creamos piezas especiales para celebraciones,
+          reuniones y ocasiones que requieren algo más
+          que un postre convencional.
+        </p>
+
+      </div>
+
+
+      <div class="special-list">
+
+        <div class="special-item">
+          <span>Cheesecake tamaño grande</span>
+          <span>$$$</span>
+        </div>
+
+        <div class="special-item">
+          <span>Tiramisú artesanal</span>
+          <span>$$$</span>
+        </div>
+
+        <div class="special-item">
+          <span>Carlota de limón tamaño grande</span>
+          <span>$$$</span>
+        </div>
+
+        <div class="special-item">
+          <span>Pasteles para celebración</span>
+          <span>$$$</span>
+        </div>
+
+        <div class="special-item">
+          <span>Postres personalizados</span>
+          <span>$$$</span>
+        </div>
+
+        <div class="special-item">
+          <span>Pedidos especiales para eventos</span>
+          <span>Consultar</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PANADERÍA
+===================================================== -->
+
+<section id="panaderia" class="section section-dark">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-title">
+
+      <small>Catálogo · Panadería</small>
+
+      <h2>Panadería</h2>
+
+    </div>
+
+    <p class="section-description">
+      Panadería artesanal desarrollada para restaurantes,
+      cafeterías y servicio gastronómico.
+    </p>
+
+  </div>
+
+
+  <div class="bakery-grid">
+
+
+    <article class="bakery-card">
+
+      <div class="product-image"
+      style="background-image:url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1000&q=90');">
+      </div>
+
+      <div class="product-info">
+
+        <h3>Brioche</h3>
+
+        <p>
+          Brioche artesanal de miga suave,
+          ideal para servicio gastronómico.
+        </p>
+
+        <span class="price">$$$</span>
+
+      </div>
+
+    </article>
+
+
+    <article class="bakery-card">
+
+      <div class="product-image"
+      style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=90');">
+      </div>
+
+      <div class="product-info">
+
+        <h3>Bollo de hamburguesa</h3>
+
+        <p>
+          Brioche diseñado para hamburguesas
+          y servicio profesional.
+        </p>
+
+        <span class="price">$$$</span>
+
+      </div>
+
+    </article>
+
+
+    <article class="bakery-card">
+
+      <div class="product-image"
+      style="background-image:url('https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=1000&q=90');">
+      </div>
+
+      <div class="product-info">
+
+        <h3>Roles de canela</h3>
+
+        <p>
+          Rol suave y aromático con acabado dulce.
+        </p>
+
+        <span class="price">$$$</span>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CATERING
+===================================================== -->
+
+<section id="catering" class="section">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-title">
+
+      <small>Experiencias gastronómicas</small>
+
+      <h2>Catering</h2>
+
+    </div>
+
+    <p class="section-description">
+      Propuestas gastronómicas para celebraciones,
+      reuniones, eventos privados y experiencias especiales.
+    </p>
+
+  </div>
+
+
+  <div class="services">
+
+    <article class="service-card">
+
+      <h3>Catering para eventos</h3>
+
+      <p>
+        Diseñamos propuestas gastronómicas de acuerdo
+        con el tipo de evento, número de invitados
+        y estilo de servicio.
+      </p>
+
+    </article>
+
+
+    <article class="service-card">
+
+      <h3>Experiencias L'Orso</h3>
+
+      <p>
+        Menús personalizados, estaciones gastronómicas,
+        servicio de alimentos y propuestas hechas
+        específicamente para cada ocasión.
+      </p>
+
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MESAS DE POSTRES
+===================================================== -->
+
+<section id="mesas" class="section section-dark">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-title">
+
+      <small>Eventos · Celebraciones</small>
+
+      <h2>Mesas de postres</h2>
+
+    </div>
+
+    <p class="section-description">
+      Montajes de postres diseñados para acompañar
+      celebraciones y crear una experiencia visual
+      y gastronómica completa.
+    </p>
+
+  </div>
+
+
+  <div class="featured">
+
+    <article class="featured-card">
+
+      <h3>Diseño personalizado</h3>
+
+      <p>
+        Selección de postres, montaje, decoración,
+        bases y presentación de acuerdo con el concepto
+        de cada evento.
+      </p>
+
+    </article>
+
+
+    <article class="featured-card">
+
+      <h3>Para celebrar</h3>
+
+      <p>
+        Cumpleaños, bodas, eventos corporativos,
+        bautizos, reuniones y celebraciones privadas.
+      </p>
+
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     COTIZACIÓN
+===================================================== -->
+
+<section id="cotizar" class="section quote">
+
+<div class="container">
+
+  <div class="quote-grid">
+
+
+    <div class="quote-text">
+
+      <div class="eyebrow">
+        Hablemos de tu evento
+      </div>
+
+      <h2>
+        Cuéntanos<br>
+        qué tienes<br>
+        en mente.
+      </h2>
+
+      <p>
+        Déjanos los datos básicos de tu evento
+        y nos pondremos en contacto contigo para
+        desarrollar una propuesta.
+      </p>
+
+    </div>
+
+
+    <form class="form" id="quoteForm">
+
+
+      <div class="form-group">
+
+        <label>Nombre</label>
+
+        <input
+          type="text"
+          id="nombre"
+          placeholder="Tu nombre"
+          required
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Teléfono</label>
+
+        <input
+          type="tel"
+          id="telefono"
+          placeholder="Tu teléfono"
+          required
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Tipo de servicio</label>
+
+        <select id="servicio">
+
+          <option>Catering</option>
+          <option>Mesa de postres</option>
+          <option>Repostería</option>
+          <option>Panadería</option>
+          <option>Pedido especial</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Número de personas</label>
+
+        <input
+          type="number"
+          id="personas"
+          placeholder="Ej. 50"
+        >
+
+      </div>
+
+
+      <div class="form-group full">
+
+        <label>Cuéntanos sobre tu evento</label>
+
+        <textarea
+          id="mensaje"
+          placeholder="Fecha, lugar, tipo de evento, productos que te interesan..."
+        ></textarea>
+
+      </div>
+
+
+      <button type="submit">
+        Solicitar cotización por WhatsApp
+      </button>
+
+
     </form>
+
   </div>
+
 </div>
+
 </section>
 
-<section>
-<div class="container">
-  <div class="eyebrow">L’Orso en redes</div>
-  <h2>Conoce nuestro trabajo.</h2>
-  <div class="social-grid">
-    <a class="social" href="https://www.instagram.com/lorso_catering/" target="_blank"><strong>Instagram</strong><span>@lorso_catering</span></a>
-    <a class="social" href="#"><strong>Facebook</strong><span>L’Orso Catering</span></a>
-    <a class="social" href="#cotizar"><strong>WhatsApp</strong><span>Atención directa</span></a>
-  </div>
-</div>
-</section>
+
 </main>
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-<div class="container footer-content">
-  <div><div class="logo">L’ORSO<small>CATERING</small></div><div class="footer-text">Panadería · Repostería · Catering</div></div>
-  <div class="footer-text">© 2026 L’Orso Catering</div>
+
+<div class="container">
+
+  <div class="footer-top">
+
+    <div>
+
+      <div class="footer-logo">
+        L'ORSO
+        <small>CATERING</small>
+      </div>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="#reposteria">Repostería</a>
+
+      <a href="#panaderia">Panadería</a>
+
+      <a href="#catering">Catering</a>
+
+      <a href="#mesas">Mesas de postres</a>
+
+      <a href="#cotizar">Contacto</a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 L'Orso Catering
+    </span>
+
+    <span>
+      Cocina artesanal · Hecha con carácter
+    </span>
+
+  </div>
+
 </div>
+
 </footer>
 
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
+
 <script>
-const form=document.getElementById("quoteForm");
-form.addEventListener("submit",function(event){
-  event.preventDefault();
-  const nombre=document.getElementById("nombre").value;
-  const telefono=document.getElementById("telefono").value;
-  const fecha=document.getElementById("fecha").value;
-  const personas=document.getElementById("personas").value;
-  const servicio=document.getElementById("servicio").value;
-  const ubicacion=document.getElementById("ubicacion").value;
-  const mensaje=document.getElementById("mensaje").value;
-  const texto="Hola, quiero solicitar una cotización con L’Orso.%0A%0A"+
-    "Nombre: "+encodeURIComponent(nombre)+"%0A"+
-    "WhatsApp: "+encodeURIComponent(telefono)+"%0A"+
-    "Fecha: "+encodeURIComponent(fecha)+"%0A"+
-    "Personas: "+encodeURIComponent(personas)+"%0A"+
-    "Servicio: "+encodeURIComponent(servicio)+"%0A"+
-    "Ubicación: "+encodeURIComponent(ubicacion)+"%0A%0A"+
-    "Detalles:%0A"+encodeURIComponent(mensaje);
-  const numero="5215644751647";
-  window.open("https://wa.me/"+numero+"?text="+texto,"_blank");
+
+document
+  .getElementById("quoteForm")
+  .addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const nombre =
+      document.getElementById("nombre").value;
+
+    const telefono =
+      document.getElementById("telefono").value;
+
+    const servicio =
+      document.getElementById("servicio").value;
+
+    const personas =
+      document.getElementById("personas").value;
+
+    const mensaje =
+      document.getElementById("mensaje").value;
+
+
+    const texto =
+      "Hola, L'Orso. Me gustaría solicitar una cotización.%0A%0A" +
+      "Nombre: " + nombre + "%0A" +
+      "Teléfono: " + telefono + "%0A" +
+      "Servicio: " + servicio + "%0A" +
+      "Personas: " + personas + "%0A" +
+      "Detalles: " + mensaje;
+
+
+    const numero = "5215644751647";
+
+
+    window.open(
+      "https://wa.me/" + numero + "?text=" + texto,
+      "_blank"
+    );
+
 });
+
 </script>
+
+
 </body>
 </html>
