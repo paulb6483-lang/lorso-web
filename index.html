@@ -187,7 +187,7 @@ header{
       rgba(17,18,16,.1),
       rgba(17,18,16,.15)
     ),
-    url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=90")
+    url("imagenes/hero-lorso.jpg")
     center/cover;
 }
 
@@ -558,6 +558,20 @@ header{
 .special-item span:last-child{
   color:var(--beige);
   white-space:nowrap;
+}
+
+.special-consult{
+  border:0;
+  padding:0;
+  background:transparent;
+  color:var(--beige);
+  cursor:pointer;
+  font:inherit;
+  letter-spacing:inherit;
+}
+
+.special-consult:hover{
+  color:var(--crema);
 }
 
 
@@ -985,7 +999,7 @@ footer{
   <div class="hero-content">
 
     <div class="eyebrow">
-      Cocina artesanal · Hecha con carácter
+      Cocina artesanal · Hecho con carácter
     </div>
 
     <h1>
@@ -1300,7 +1314,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Frutas y crema pastelera</h3>
+          <h3>Tarta de frutas y crema pastelera</h3>
           <p>Masa artesanal, crema pastelera y frutas frescas.</p>
           <span class="price">$$$</span>
         </div>
@@ -1360,7 +1374,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Chocolate & Blueberry</h3>
+          <h3>Chocolate con blueberry</h3>
           <p>Chocolate y blueberry en una combinación equilibrada.</p>
           <span class="price">$$$</span>
         </div>
@@ -1515,35 +1529,28 @@ footer{
       <div class="special-list">
 
         <div class="special-item">
-          <span>Cheesecake tamaño grande</span>
-          <span>$$$</span>
+          <span>Cheesecake grande</span>
+          <button type="button" class="special-consult" data-product="Cheesecake grande">Consultar</button>
         </div>
 
         <div class="special-item">
-          <span>Tiramisú artesanal</span>
-          <span>$$$</span>
+          <span>Tiramisú grande</span>
+          <button type="button" class="special-consult" data-product="Tiramisú grande">Consultar</button>
         </div>
 
         <div class="special-item">
-          <span>Carlota de limón tamaño grande</span>
-          <span>$$$</span>
+          <span>Carlota grande</span>
+          <button type="button" class="special-consult" data-product="Carlota grande">Consultar</button>
         </div>
 
         <div class="special-item">
-          <span>Pasteles para celebración</span>
-          <span>$$$</span>
+          <span>Pasteles especiales sobre pedido</span>
+          <button type="button" class="special-consult" data-product="Pasteles especiales sobre pedido">Consultar</button>
         </div>
 
         <div class="special-item">
-          <span>Postres personalizados</span>
-          <span>$$$</span>
-        </div>
-
-        <div class="special-item">
-          <a href="#cotizar" style="display:flex;justify-content:space-between;width:100%;gap:20px;text-decoration:none;color:inherit;">
-            <span>Pedidos especiales para eventos</span>
-            <span style="color:var(--beige);white-space:nowrap;">Consultar</span>
-          </a>
+          <span>Postres personalizados para eventos</span>
+          <button type="button" class="special-consult" data-product="Postres personalizados para eventos">Consultar</button>
         </div>
 
       </div>
@@ -1594,12 +1601,11 @@ footer{
 
       <div class="product-info">
 
-        <h3>Bollo de hamburguesa</h3>
+        <h3>Pan brioche · Bollo de hamburguesa</h3>
 
         <p>
-          Pan brioche artesanal desarrollado
-          específicamente para hamburguesas
-          y servicio gastronómico.
+          Pan brioche suave y ligeramente dulce,
+          desarrollado para hamburguesas y servicio gastronómico.
         </p>
 
         <span class="price">$$$</span>
@@ -1979,6 +1985,23 @@ document
     );
 
 });
+
+document
+  .querySelectorAll(".special-consult")
+  .forEach(function(button){
+    button.addEventListener("click", function(){
+      const producto = button.dataset.product;
+      const numero = "5215644751647";
+      const texto = encodeURIComponent(
+        "Hola, L'Orso. Me interesa consultar sobre: " + producto
+      );
+
+      window.open(
+        "https://wa.me/" + numero + "?text=" + texto,
+        "_blank"
+      );
+    });
+  });
 
 </script>
 
