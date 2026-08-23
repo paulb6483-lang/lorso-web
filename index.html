@@ -14,6 +14,7 @@ content="L'Orso Catering. Repostería, panadería, catering y mesas de postres. 
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+
 <style>
 
 /* =========================================================
@@ -21,14 +22,16 @@ content="L'Orso Catering. Repostería, panadería, catering y mesas de postres. 
 ========================================================= */
 
 :root{
-  --negro:#111210;
-  --negro-suave:#1b1b18;
-  --crema:#eee6d8;
-  --crema-clara:#f7f2e9;
-  --beige:#c8a47c;
-  --dorado:#a97945;
-  --gris:#6e6a62;
+  --negro:#151311;
+  --negro-suave:#1e1a16;
+  --crema:#efe6d8;
+  --crema-fuerte:#e5d6c0;
+  --crema-clara:#f8f3ed;
+  --beige:#c7a57a;
+  --dorado:#ab7d4d;
+  --gris:#655f5a;
   --blanco:#ffffff;
+  --linea:rgba(167, 128, 92, 0.36);
 }
 
 *{
@@ -43,7 +46,7 @@ html{
 
 body{
   font-family:"Montserrat",sans-serif;
-  background:var(--crema);
+  background:linear-gradient(180deg, #f6f1ea 0%, #f0e9df 100%);
   color:var(--negro);
   font-weight:300;
 }
@@ -51,6 +54,10 @@ body{
 img{
   max-width:100%;
   display:block;
+}
+
+img, a, button, input, textarea, select{
+  transition:all .25s ease;
 }
 
 a{
@@ -77,12 +84,11 @@ select{
 
 .btn{
   display:inline-block;
-  padding:16px 25px;
+  padding:16px 26px;
   border:1px solid var(--negro);
   font-size:10px;
   letter-spacing:3px;
   text-transform:uppercase;
-  transition:.25s ease;
 }
 
 .btn-dark{
@@ -97,7 +103,7 @@ select{
 
 .btn:hover{
   transform:translateY(-2px);
-  opacity:.85;
+  opacity:.92;
 }
 
 
@@ -111,14 +117,14 @@ header{
   left:0;
   width:100%;
   z-index:1000;
-  background:rgba(17,18,16,.72);
+  background:rgba(17,15,12,.72);
   backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(200,164,124,.28);
+  border-bottom:1px solid rgba(199,165,122,.25);
   color:var(--crema);
 }
 
 .nav{
-  min-height:82px;
+  min-height:84px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -126,31 +132,18 @@ header{
 }
 
 .logo{
-  font-family:"Cormorant Garamond",serif;
-  font-size:36px;
-  font-weight:600;
-  letter-spacing:2px;
-  line-height:.75;
+  display:flex;
+  align-items:center;
+  font-size:31px;
 }
 
 .logo img{
-  filter:invert(1) sepia(.18) saturate(.7) hue-rotate(350deg) brightness(1.02) contrast(.92);
-  mix-blend-mode:screen;
-}
-
-.logo small{
-  display:block;
-  font-family:"Montserrat",sans-serif;
-  font-size:7px;
-  font-weight:400;
-  letter-spacing:4px;
-  text-align:center;
-  margin-top:9px;
+  filter:brightness(1.02) contrast(1.05);
 }
 
 .nav-links{
   display:flex;
-  gap:25px;
+  gap:24px;
   align-items:center;
 }
 
@@ -158,15 +151,17 @@ header{
   font-size:9px;
   letter-spacing:2px;
   text-transform:uppercase;
+  color:rgba(255,255,255,.85);
 }
 
 .nav-links a:hover{
-  color:var(--dorado);
+  color:var(--beige);
 }
 
 .nav-cta{
   padding:13px 18px;
-  background:var(--negro);
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.28);
   color:var(--crema);
   font-size:9px;
   letter-spacing:2px;
@@ -194,13 +189,13 @@ header{
   inset:0;
   z-index:1;
   pointer-events:none;
-  opacity:.18;
+  opacity:.16;
   background-image:repeating-linear-gradient(
     115deg,
     rgba(238,230,216,.08) 0,
     rgba(238,230,216,.08) 1px,
     transparent 1px,
-    transparent 5px
+    transparent 6px
   );
   mix-blend-mode:soft-light;
 }
@@ -210,23 +205,12 @@ header{
   inset:0;
   z-index:0;
   background:
-    linear-gradient(
-      90deg,
-      rgba(17,18,16,.98) 0%,
-      rgba(17,18,16,.88) 28%,
-      rgba(17,18,16,.48) 57%,
-      rgba(17,18,16,.12) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(17,18,16,.42),
-      transparent 45%,
-      rgba(17,18,16,.18)
-    ),
+    linear-gradient(90deg, rgba(17,15,12,.96) 0%, rgba(17,15,12,.82) 20%, rgba(17,15,12,.52) 52%, rgba(17,15,12,.18) 100%),
+    linear-gradient(0deg, rgba(17,15,12,.26), transparent 35%, rgba(17,15,12,.18)),
     url("imagenes/imagenlorso2.jpeg");
   background-position:center;
   background-size:cover;
-  filter:brightness(.9) contrast(1.04) saturate(1.08);
+  filter:contrast(1.06) saturate(1.1) brightness(.85);
 }
 
 .hero-content{
@@ -241,47 +225,23 @@ header{
   padding:150px 0 90px;
 }
 
-.hero-content::after{
-  content:"";
-  position:absolute;
-  right:0;
-  bottom:45px;
-  width:140px;
-  height:140px;
-  background:url("imagenes/lorso_sello_circular.png") center/contain no-repeat;
-  filter:invert(1) sepia(.18) saturate(.7) hue-rotate(350deg) brightness(1.02) contrast(.92);
-  mix-blend-mode:screen;
-  opacity:.86;
-}
-
-.hero-seal-cover{
-  position:absolute;
-  right:34px;
-  bottom:87px;
-  z-index:3;
-  width:72px;
-  height:56px;
-  border-radius:50%;
-  background:rgba(17,18,16,.96);
-  pointer-events:none;
-}
-
 .eyebrow{
   font-size:10px;
   letter-spacing:5px;
   text-transform:uppercase;
   color:var(--beige);
-  margin-bottom:25px;
+  margin-bottom:20px;
+  font-weight:500;
 }
 
 .hero h1{
   font-family:"Cormorant Garamond",serif;
-  max-width:650px;
-  font-size:clamp(65px,8vw,110px);
+  max-width:660px;
+  font-size:clamp(72px,8vw,120px);
   font-weight:500;
-  line-height:.86;
+  line-height:.82;
   letter-spacing:-2px;
-  margin-bottom:35px;
+  margin-bottom:28px;
 }
 
 .hero h1 span{
@@ -290,22 +250,22 @@ header{
 }
 
 .hero-description{
-  max-width:500px;
+  max-width:520px;
   font-size:14px;
-  line-height:2;
-  letter-spacing:1px;
-  color:#ddd4c6;
+  line-height:1.8;
+  letter-spacing:.7px;
+  color:#e8dfd2;
 }
 
 .hero-buttons{
   display:flex;
   gap:12px;
-  margin-top:35px;
+  margin-top:34px;
   flex-wrap:wrap;
 }
 
 .hero .btn{
-  border-color:var(--crema);
+  border-color:rgba(255,255,255,.4);
 }
 
 .hero .btn-dark{
@@ -323,13 +283,13 @@ header{
 ========================================================= */
 
 .manifesto{
-  padding:100px 20px;
+  padding:110px 20px 100px;
   text-align:center;
-  background:var(--crema-clara);
+  background:linear-gradient(180deg, #f9f5f0 0%, #f3eee7 100%);
 }
 
 .manifesto-line{
-  width:70px;
+  width:72px;
   height:1px;
   background:var(--beige);
   margin:0 auto 30px;
@@ -337,7 +297,7 @@ header{
 
 .manifesto h2{
   font-family:"Cormorant Garamond",serif;
-  font-size:clamp(42px,6vw,75px);
+  font-size:clamp(42px,6vw,76px);
   font-weight:400;
   line-height:1;
 }
@@ -347,8 +307,8 @@ header{
 }
 
 .manifesto p{
-  max-width:620px;
-  margin:30px auto 0;
+  max-width:640px;
+  margin:28px auto 0;
   font-size:13px;
   line-height:2;
   letter-spacing:1px;
@@ -363,21 +323,18 @@ header{
   display:grid;
   grid-template-columns:1fr 1fr;
   min-height:650px;
+  background:#f8f2ea;
 }
 
 .about-image{
+  min-height:100%;
   background:
-    linear-gradient(
-      rgba(17,18,16,.15),
-      rgba(17,18,16,.15)
-    ),
-    url("imagenes/imagenlorso1.jpeg")
-    center/cover;
+    linear-gradient(rgba(17,15,12,.18), rgba(17,15,12,.18)),
+    url("imagenes/imagenlorso1.jpeg") center/cover no-repeat;
 }
 
 .about-content{
-  padding:90px;
-  background:var(--crema);
+  padding:90px 90px 90px 70px;
   display:flex;
   justify-content:center;
   flex-direction:column;
@@ -385,7 +342,7 @@ header{
 
 .about-content h2{
   font-family:"Cormorant Garamond",serif;
-  font-size:65px;
+  font-size:64px;
   line-height:.9;
   font-weight:400;
   margin-bottom:30px;
@@ -403,21 +360,22 @@ header{
 }
 
 .values{
-  margin-top:30px;
+  margin-top:32px;
   display:grid;
   gap:22px;
 }
 
 .value{
   display:grid;
-  grid-template-columns:45px 1fr;
-  gap:15px;
+  grid-template-columns:42px 1fr;
+  gap:14px;
   align-items:start;
 }
 
 .value-icon{
-  font-size:25px;
+  font-size:22px;
   color:var(--dorado);
+  line-height:1.2;
 }
 
 .value strong{
@@ -440,7 +398,7 @@ header{
 
 .section{
   padding:100px 0;
-  border-top:1px solid rgba(167,130,90,.35);
+  border-top:1px solid var(--linea);
 }
 
 .section-dark{
@@ -453,7 +411,7 @@ header{
   justify-content:space-between;
   align-items:end;
   gap:40px;
-  margin-bottom:55px;
+  margin-bottom:48px;
 }
 
 .section-title small{
@@ -462,21 +420,21 @@ header{
   letter-spacing:4px;
   text-transform:uppercase;
   color:var(--dorado);
-  margin-bottom:15px;
+  margin-bottom:16px;
 }
 
 .section-title h2{
   font-family:"Cormorant Garamond",serif;
-  font-size:65px;
+  font-size:68px;
   font-weight:400;
-  line-height:.85;
+  line-height:.9;
 }
 
 .section-description{
   max-width:430px;
   font-size:12px;
-  line-height:1.9;
-  letter-spacing:1px;
+  line-height:1.8;
+  letter-spacing:.8px;
 }
 
 
@@ -493,6 +451,7 @@ header{
 .product{
   background:var(--crema-clara);
   color:var(--negro);
+  border:1px solid rgba(17,15,12,.05);
 }
 
 .product-image{
@@ -502,7 +461,7 @@ header{
 }
 
 .product-info{
-  padding:22px;
+  padding:24px 22px 20px;
 }
 
 .product-info h3{
@@ -529,8 +488,8 @@ header{
 
 .editorial-catalog{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(280px,.78fr);
-  gap:55px;
+  grid-template-columns:minmax(0,1fr) minmax(290px,.82fr);
+  gap:60px;
   align-items:stretch;
 }
 
@@ -549,8 +508,8 @@ header{
 }
 
 .editorial-description{
-  max-width:500px;
-  margin-bottom:28px;
+  max-width:510px;
+  margin-bottom:30px;
   font-size:11px;
   line-height:1.8;
   letter-spacing:1px;
@@ -569,7 +528,7 @@ header{
   padding:12px 0;
   border-bottom:1px solid rgba(200,164,124,.45);
   font-family:"Cormorant Garamond",serif;
-  font-size:22px;
+  font-size:24px;
 }
 
 .flavor-price{
@@ -585,31 +544,30 @@ header{
   align-content:center;
 }
 
-.editorial-gallery--cheesecakes{
-  grid-template-columns:repeat(2,1fr);
+.editorial-gallery--double .editorial-photo{
+  height:255px;
 }
 
 .editorial-photo{
   width:100%;
-  height:340px;
+  height:360px;
   display:block;
   object-fit:cover;
-}
-
-.editorial-gallery--double .editorial-photo{
-  height:250px;
+  background:#ddd;
 }
 
 .cheesecake-catalog{
   grid-template-columns:minmax(0,.82fr) minmax(0,1fr);
-  gap:70px;
-  padding:55px 55px 55px 0;
-  background:var(--negro);
+  gap:64px;
+  padding:52px 52px 52px 0;
+  background:linear-gradient(135deg,#171512 0%, #211d1a 100%);
   color:var(--crema);
+  border:1px solid rgba(200,164,124,.18);
+  box-shadow:0 18px 45px rgba(17,18,16,.04);
 }
 
 .cheesecake-copy{
-  padding-left:55px;
+  padding-left:54px;
 }
 
 .cheesecake-copy .section-title h2{
@@ -634,7 +592,7 @@ header{
 }
 
 .cheesecake-order-note{
-  margin-top:25px;
+  margin-top:26px;
   color:var(--beige);
   font-size:10px;
   letter-spacing:2px;
@@ -642,14 +600,14 @@ header{
 }
 
 .cheesecake-cta{
-  margin-top:25px;
+  margin-top:26px;
   border-color:var(--crema);
   color:var(--crema);
 }
 
 .cheesecake-gallery{
-  grid-template-columns:minmax(0,1.12fr) minmax(125px,.7fr);
-  grid-template-rows:1fr 1fr;
+  grid-template-columns:1.35fr .8fr;
+  grid-template-rows:repeat(3, minmax(150px, 1fr));
   gap:16px;
   align-content:stretch;
 }
@@ -658,20 +616,26 @@ header{
   height:100%;
   min-height:0;
   border-radius:2px;
+  box-shadow:0 18px 35px rgba(0,0,0,.12);
 }
 
 .cheesecake-gallery .cheesecake-main-photo{
-  grid-row:1 / 3;
-  height:520px;
+  grid-row:1 / span 3;
+  min-height:540px;
 }
 
 .cheesecake-gallery .cheesecake-detail-photo,
-.cheesecake-gallery .cheesecake-volume-photo{
-  height:252px;
+.cheesecake-gallery .cheesecake-volume-photo,
+.cheesecake-gallery .cheesecake-third-photo{
+  height:170px;
 }
 
 .cheesecake-gallery .cheesecake-volume-photo{
-  transform:translate(-14px,14px);
+  transform:translateY(-10px);
+}
+
+.cheesecake-gallery .cheesecake-third-photo{
+  transform:translateY(-20px);
 }
 
 
@@ -698,13 +662,13 @@ header{
 
 .featured-card:nth-child(1){
   background-image:
-    linear-gradient(0deg,rgba(17,18,16,.9),transparent 70%),
+    linear-gradient(0deg,rgba(17,18,16,.86),transparent 72%),
     url("imagenes/imagenlorso3.jpeg");
 }
 
 .featured-card:nth-child(2){
   background-image:
-    linear-gradient(0deg,rgba(17,18,16,.9),transparent 70%),
+    linear-gradient(0deg,rgba(17,18,16,.86),transparent 72%),
     url("imagenes/imagenlorso4.jpg");
 }
 
@@ -845,6 +809,7 @@ header{
 
 .bakery-card{
   background:var(--crema-clara);
+  border:1px solid rgba(17,15,12,.05);
 }
 
 .bakery-card .product-image{
@@ -1087,20 +1052,6 @@ footer{
     padding:150px 35px 90px;
   }
 
-  .hero-content::after{
-    right:35px;
-    bottom:30px;
-    width:115px;
-    height:115px;
-  }
-
-  .hero-seal-cover{
-    right:62px;
-    bottom:65px;
-    width:60px;
-    height:46px;
-  }
-
   .about{
     grid-template-columns:1fr;
   }
@@ -1204,20 +1155,6 @@ footer{
     background-position:62% center;
   }
 
-  .hero-content::after{
-    right:0;
-    bottom:28px;
-    width:92px;
-    height:92px;
-  }
-
-  .hero-seal-cover{
-    right:22px;
-    bottom:55px;
-    width:48px;
-    height:38px;
-  }
-
   .manifesto{
     padding:75px 20px;
   }
@@ -1267,11 +1204,13 @@ footer{
   }
 
   .cheesecake-gallery .cheesecake-detail-photo,
-  .cheesecake-gallery .cheesecake-volume-photo{
+  .cheesecake-gallery .cheesecake-volume-photo,
+  .cheesecake-gallery .cheesecake-third-photo{
     height:220px;
   }
 
-  .cheesecake-gallery .cheesecake-volume-photo{
+  .cheesecake-gallery .cheesecake-volume-photo,
+  .cheesecake-gallery .cheesecake-third-photo{
     transform:none;
   }
 
@@ -1330,6 +1269,7 @@ footer{
 }
 
 </style>
+
 </head>
 
 
@@ -1352,8 +1292,8 @@ footer{
 
       <a href="#reposteria">Repostería</a>
       <a href="#panaderia">Panadería</a>
-      <a href="#catering">Catering</a>
-      <a href="#mesas">Mesas de postres</a>
+      <a href="#catering-eventos">Catering</a>
+      <a href="#mesas-postres">Mesas de postres</a>
       <a href="#cotizar">Cotizar</a>
 
     </nav>
@@ -1379,10 +1319,8 @@ footer{
 
   <div class="hero-content">
 
-    <span class="hero-seal-cover" aria-hidden="true"></span>
-
     <div class="eyebrow">
-      Cocina artesanal · Hecho con carácter
+      Cocina artesanal · Dedicación en cada pieza
     </div>
 
     <h1>
@@ -1392,8 +1330,8 @@ footer{
 
     <p class="hero-description">
       Repostería, panadería y propuestas gastronómicas
-      desarrolladas con cuidado artesanal para restaurantes,
-      cafeterías, celebraciones y eventos.
+      pensadas para restaurantes, cafeterías,
+      celebraciones y eventos con presencia.
     </p>
 
     <div class="hero-buttons">
@@ -1539,9 +1477,9 @@ footer{
     </div>
 
     <p class="section-description">
-      Una selección de postres elaborados para venta
-      individual, cafeterías, restaurantes, celebraciones
-      y pedidos especiales.
+      Una selección de postres pensados para venta
+      individual, cafeterías, restaurantes y celebraciones
+      con una presencia más cuidada.
     </p>
 
   </div>
@@ -1559,29 +1497,36 @@ footer{
           <h2>Cheesecakes individuales</h2>
         </div>
 
-        <p class="editorial-description">Cheesecakes elaborados artesanalmente, disponibles en diferentes sabores.</p>
+        <p class="editorial-description">Cheesecakes artesanales para disfrutar por pieza o combinar en presentaciones más amplias.</p>
 
         <div class="flavor-list">
           <div class="flavor-item"><span>Frutos rojos</span><span class="flavor-price">$25</span></div>
           <div class="flavor-item"><span>Zarzamora</span><span class="flavor-price">$25</span></div>
           <div class="flavor-item"><span>Fresa</span><span class="flavor-price">$25</span></div>
+          <div class="flavor-item"><span>Blueberry</span><span class="flavor-price">$25</span></div>
           <div class="flavor-item"><span>Chocolate</span><span class="flavor-price">$25</span></div>
-          <div class="flavor-item"><span>Maracuyá</span><span class="flavor-price">$25</span></div>
-          <div class="flavor-item"><span>Lotus</span><span class="flavor-price">$25</span></div>
+          <div class="flavor-item"><span>Guayaba</span><span class="flavor-price">$25</span></div>
+          <div class="flavor-item"><span>Oreo</span><span class="flavor-price">$25</span></div>
         </div>
 
-        <p class="cheesecake-order-note">Pedido mínimo: 10 piezas</p>
+        <p class="cheesecake-order-note">Disponible por pieza o en presentaciones para combinar diferentes sabores.</p>
+        <p class="cheesecake-order-note">Los precios no incluyen envío. El envío se cotiza por separado.</p>
         <a class="btn btn-light cheesecake-cta" href="#cotizar">Cotizar pedido</a>
       </div>
 
       <div class="editorial-gallery cheesecake-gallery">
         <img class="editorial-photo cheesecake-main-photo" src="imagenes/cheescake5.jpeg" alt="Cheesecake individual de frutos rojos de L'Orso">
-        <img class="editorial-photo cheesecake-detail-photo" src="imagenes/cheescake1.jpeg" alt="Selección de cheesecakes individuales de L'Orso">
-        <img class="editorial-photo cheesecake-volume-photo" src="imagenes/cheescake3.jpeg" alt="Charola de cheesecakes artesanales de L'Orso">
+        <img class="editorial-photo cheesecake-detail-photo" src="imagenes/cheescake1.jpeg" alt="Cheesecake individual de L'Orso en detalle">
+        <img class="editorial-photo cheesecake-volume-photo" src="imagenes/cheescake6.jpeg" alt="Variedad de cheesecakes artesanales de L'Orso">
+        <img class="editorial-photo cheesecake-third-photo" src="imagenes/cheescake3.jpeg" alt="Cheesecakes de distintos sabores de L'Orso">
       </div>
 
     </div>
 
+  </div>
+
+  <div class="catalog-block" style="margin-top:30px;">
+    <p class="editorial-description" style="max-width:760px; margin:0; color:var(--gris);">Los postres se venden por pieza, pero también es posible combinar diferentes productos para formar presentaciones o cajas.</p>
   </div>
 
 
@@ -1681,7 +1626,7 @@ footer{
       <article class="product">
 
         <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=1000&q=90');">
+        style="background-image:url('imagenes/cheescake8.jpeg');">
         </div>
 
         <div class="product-info">
@@ -1797,7 +1742,6 @@ footer{
 
   <div class="bakery-grid">
 
-
     <article class="bakery-card">
 
       <div class="product-info">
@@ -1815,6 +1759,22 @@ footer{
 
     </article>
 
+    <article class="bakery-card">
+
+      <div class="product-info">
+
+        <h3>Rol de canela</h3>
+
+        <p>
+          Masa suave, aroma a canela y un acabado dorado que funciona
+          perfecto para brunch, reuniones o servicio de cafetería.
+        </p>
+
+        <span class="price">$$$</span>
+
+      </div>
+
+    </article>
 
   </div>
 
@@ -1824,10 +1784,10 @@ footer{
 
 
 <!-- =====================================================
-     CATERING
+     CATERING PARA EVENTOS
 ===================================================== -->
 
-<section id="catering" class="section">
+<section id="catering-eventos" class="section">
 
 <div class="container">
 
@@ -1837,44 +1797,78 @@ footer{
 
       <small>Experiencias gastronómicas</small>
 
-      <h2>Catering</h2>
+      <h2>Catering para eventos</h2>
 
     </div>
 
     <p class="section-description">
-      Propuestas gastronómicas para celebraciones,
-      reuniones, eventos privados y experiencias especiales.
+      Propuestas gastronómicas desarrolladas para celebraciones, reuniones y eventos especiales.
     </p>
 
   </div>
 
+  <div class="editorial-catalog">
 
-  <div class="services">
-
-    <article class="service-card">
-
-      <h3>Catering para eventos</h3>
-
-      <p>
-        Diseñamos propuestas gastronómicas de acuerdo
-        con el tipo de evento, número de invitados
-        y estilo de servicio.
+    <div class="editorial-copy">
+      <p class="editorial-description">
+        Diseñamos menús y servicios para reuniones íntimas, celebraciones familiares, eventos corporativos y grandes reuniones, siempre con una propuesta hecha a medida.
       </p>
-
-    </article>
-
-
-    <article class="service-card">
-
-      <h3>Experiencias L'Orso</h3>
-
-      <p>
-        Menús personalizados, estaciones gastronómicas,
-        servicio de alimentos y propuestas hechas
-        específicamente para cada ocasión.
+      <p class="editorial-description">
+        Espacio preparado para fotografías reales de eventos, montaje, platillos y servicio de catering.
       </p>
+    </div>
 
-    </article>
+    <div class="editorial-gallery editorial-gallery--double">
+      <img class="editorial-photo" src="imagenes/imagenlorso5.jpeg" alt="Catering de L'Orso para evento">
+      <img class="editorial-photo" src="imagenes/imagenlorso2.jpeg" alt="Servicio gastronómico de L'Orso">
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCIAS L'ORSO
+===================================================== -->
+
+<section id="experiencias-lorso" class="section section-dark">
+
+<div class="container">
+
+  <div class="section-header">
+
+    <div class="section-title">
+
+      <small>Experiencias</small>
+
+      <h2>Experiencias L'Orso</h2>
+
+    </div>
+
+    <p class="section-description">
+      Experiencias gastronómicas diseñadas para convertir cada evento en una experiencia alrededor de la cocina.
+    </p>
+
+  </div>
+
+  <div class="editorial-catalog">
+
+    <div class="editorial-copy">
+      <p class="editorial-description" style="color:#d7cfc2;">
+        Menús personalizados, estaciones gastronómicas, servicio de alimentos y propuestas hechas específicamente para cada ocasión.
+      </p>
+      <p class="editorial-description" style="color:#d7cfc2;">
+        El espacio está preparado para integrar fotografías reales de eventos, montajes y platillos de la marca.
+      </p>
+    </div>
+
+    <div class="editorial-gallery editorial-gallery--double">
+      <img class="editorial-photo" src="imagenes/imagenlorso3.jpeg" alt="Experiencia gastronómica de L'Orso">
+      <img class="editorial-photo" src="imagenes/imagenlorso4.jpg" alt="Montaje de experiencia L'Orso">
+    </div>
 
   </div>
 
@@ -1887,7 +1881,7 @@ footer{
      MESAS DE POSTRES
 ===================================================== -->
 
-<section id="mesas" class="section section-dark">
+<section id="mesas-postres" class="section">
 
 <div class="container">
 
@@ -1902,39 +1896,34 @@ footer{
     </div>
 
     <p class="section-description">
-      Montajes de postres diseñados para acompañar
-      celebraciones y crear una experiencia visual
-      y gastronómica completa.
+      Selección de piezas de repostería diseñada para celebraciones, eventos y experiencias personalizadas.
     </p>
 
   </div>
 
+  <div class="editorial-catalog">
 
-  <div class="featured">
-
-    <article class="featured-card">
-
-      <h3>Diseño personalizado</h3>
-
-      <p>
-        Selección de postres, montaje, decoración,
-        bases y presentación de acuerdo con el concepto
-        de cada evento.
+    <div class="editorial-copy">
+      <p class="editorial-description">
+        Las mesas de postres se integran con combinaciones de piezas y formatos de acuerdo con el evento, la cantidad de invitados y la estética deseada.
+      </p>
+      <p class="editorial-description">
+        Este bloque está preparado para incorporar fotografías reales de mesas de postres y montaje.
       </p>
 
-    </article>
+      <div class="flavor-list">
+        <div class="flavor-item"><span>Cheesecakes</span><span class="flavor-price">Variedad</span></div>
+        <div class="flavor-item"><span>Tartaletas</span><span class="flavor-price">Individuales</span></div>
+        <div class="flavor-item"><span>Pasteles</span><span class="flavor-price">Especiales</span></div>
+        <div class="flavor-item"><span>Panadería</span><span class="flavor-price">Servicio</span></div>
+        <div class="flavor-item"><span>Postres especiales</span><span class="flavor-price">Evento</span></div>
+      </div>
+    </div>
 
-
-    <article class="featured-card">
-
-      <h3>Para celebrar</h3>
-
-      <p>
-        Cumpleaños, bodas, eventos corporativos,
-        bautizos, reuniones y celebraciones privadas.
-      </p>
-
-    </article>
+    <div class="editorial-gallery editorial-gallery--double">
+      <img class="editorial-photo" src="imagenes/imagenlorso3.jpeg" alt="Mesa de postres de L'Orso">
+      <img class="editorial-photo" src="imagenes/imagenlorso4.jpg" alt="Montaje de postres de L'Orso">
+    </div>
 
   </div>
 
@@ -2131,8 +2120,7 @@ footer{
     <div>
 
       <div class="footer-logo">
-        <img src="imagenes/lorso_lo.png" alt="L'Orso" width="75">
-        <img src="imagenes/lorso_sello_circular.png" alt="L'Orso Cocina Artesanal" width="75">
+        <img src="imagenes/lorso_lo.png" alt="L'Orso" width="90">
       </div>
 
     </div>
@@ -2144,9 +2132,9 @@ footer{
 
       <a href="#panaderia">Panadería</a>
 
-      <a href="#catering">Catering</a>
+      <a href="#catering-eventos">Catering</a>
 
-      <a href="#mesas">Mesas de postres</a>
+      <a href="#mesas-postres">Mesas de postres</a>
 
       <a href="#contacto">Contacto</a>
 
