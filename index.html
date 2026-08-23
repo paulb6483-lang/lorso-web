@@ -437,6 +437,23 @@ header{
   letter-spacing:.8px;
 }
 
+.catalog-note{
+  margin:14px 0 24px;
+  color:var(--gris);
+  font-size:10px;
+  line-height:1.7;
+  letter-spacing:1px;
+}
+
+.section-dark .catalog-note{
+  color:#d7cfc2;
+}
+
+.section-dark .btn-light{
+  border-color:var(--crema);
+  color:var(--crema);
+}
+
 
 /* =========================================================
    PRODUCTOS
@@ -777,12 +794,6 @@ header{
     url("imagenes/imagenlorso5.jpeg");
 }
 
-.service-card:nth-child(2){
-  background-image:
-    linear-gradient(0deg,rgba(17,18,16,.9),rgba(17,18,16,.1)),
-    url("https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1200&q=90");
-}
-
 .service-card h3{
   font-family:"Cormorant Garamond",serif;
   font-size:52px;
@@ -810,6 +821,11 @@ header{
 .bakery-card{
   background:var(--crema-clara);
   border:1px solid rgba(17,15,12,.05);
+}
+
+.bakery-card .product-image{
+  background-position:center;
+  background-size:cover;
 }
 
 .bakery-card .product-image{
@@ -1293,6 +1309,7 @@ footer{
       <a href="#reposteria">Repostería</a>
       <a href="#panaderia">Panadería</a>
       <a href="#catering-eventos">Catering</a>
+      <a href="#experiencias-lorso">Experiencias</a>
       <a href="#mesas-postres">Mesas de postres</a>
       <a href="#cotizar">Cotizar</a>
 
@@ -1484,6 +1501,8 @@ footer{
 
   </div>
 
+  <p class="catalog-note">Precios no incluyen servicio de envío. El envío se cotiza por separado.</p>
+
 
   <!-- CHEESECAKES -->
 
@@ -1543,6 +1562,8 @@ footer{
         </div>
 
         <p class="editorial-description">Tartaletas individuales elaboradas artesanalmente con diferentes combinaciones de frutas, cremas y chocolate.</p>
+
+        <p class="catalog-note">Disponibles por pieza y en selecciones para compartir.</p>
 
         <div class="flavor-list">
           <div class="flavor-item"><span>Frutas y crema pastelera</span><span class="flavor-price">$$$</span></div>
@@ -1607,6 +1628,8 @@ footer{
           en nuestra interpretación del clásico francés.
         </p>
 
+        <p class="catalog-note">Disponible por pieza y en selecciones para compartir. Precios no incluyen servicio de envío.</p>
+
         <span class="price">Grande · $$$</span>
 
       </article>
@@ -1636,6 +1659,8 @@ footer{
           <p>
             Postre fresco de limón, cremoso y ligero.
           </p>
+
+          <p class="catalog-note">Disponible por pieza y en selecciones para compartir. Precios no incluyen servicio de envío.</p>
 
           <span class="price">INDIVIDUAL · $$$</span>
 
@@ -1744,6 +1769,8 @@ footer{
 
     <article class="bakery-card">
 
+      <div class="product-image" style="background-image:url('imagenes/imagenlorso2.jpeg');"></div>
+
       <div class="product-info">
 
         <h3>Bollo de hamburguesa</h3>
@@ -1760,6 +1787,8 @@ footer{
     </article>
 
     <article class="bakery-card">
+
+      <div class="product-image" style="background-image:url('imagenes/imagenlorso5.jpeg');"></div>
 
       <div class="product-info">
 
@@ -1814,8 +1843,9 @@ footer{
         Diseñamos menús y servicios para reuniones íntimas, celebraciones familiares, eventos corporativos y grandes reuniones, siempre con una propuesta hecha a medida.
       </p>
       <p class="editorial-description">
-        Espacio preparado para fotografías reales de eventos, montaje, platillos y servicio de catering.
+        El servicio se desarrolla a partir del tipo de evento, el número de invitados, el espacio y la experiencia que quieres ofrecer.
       </p>
+      <a class="btn btn-light" href="#cotizar">Solicitar información</a>
     </div>
 
     <div class="editorial-gallery editorial-gallery--double">
@@ -1861,8 +1891,9 @@ footer{
         Menús personalizados, estaciones gastronómicas, servicio de alimentos y propuestas hechas específicamente para cada ocasión.
       </p>
       <p class="editorial-description" style="color:#d7cfc2;">
-        El espacio está preparado para integrar fotografías reales de eventos, montajes y platillos de la marca.
+        La propuesta se adapta al ritmo del evento y al lenguaje de cada ocasión, desde una reunión íntima hasta una celebración completa.
       </p>
+      <a class="btn btn-light" href="#cotizar">Hablar sobre una experiencia</a>
     </div>
 
     <div class="editorial-gallery editorial-gallery--double">
@@ -1908,8 +1939,10 @@ footer{
         Las mesas de postres se integran con combinaciones de piezas y formatos de acuerdo con el evento, la cantidad de invitados y la estética deseada.
       </p>
       <p class="editorial-description">
-        Este bloque está preparado para incorporar fotografías reales de mesas de postres y montaje.
+        Selecciona y combina diferentes piezas para crear una mesa de postres acorde al evento, su estética y el momento que quieres compartir.
       </p>
+
+      <a class="btn btn-light" href="#cotizar">Diseñar una mesa de postres</a>
 
       <div class="flavor-list">
         <div class="flavor-item"><span>Cheesecakes</span><span class="flavor-price">Variedad</span></div>
@@ -2135,6 +2168,8 @@ footer{
       <a href="#catering-eventos">Catering</a>
 
       <a href="#mesas-postres">Mesas de postres</a>
+
+      <a href="#experiencias-lorso">Experiencias</a>
 
       <a href="#contacto">Contacto</a>
 
