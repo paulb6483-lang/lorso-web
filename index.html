@@ -963,6 +963,15 @@ footer{
     grid-template-columns:1fr 1fr;
   }
 
+  .editorial-catalog{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .editorial-gallery{
+    order:2;
+  }
+
   .featured,
   .services{
     grid-template-columns:1fr;
@@ -1047,6 +1056,15 @@ footer{
   .products,
   .bakery-grid{
     grid-template-columns:1fr;
+  }
+
+  .editorial-copy .section-title h2{
+    font-size:44px;
+  }
+
+  .editorial-photo,
+  .editorial-gallery--double .editorial-photo{
+    height:290px;
   }
 
   .product-image{
@@ -1323,121 +1341,30 @@ footer{
 
   <div class="catalog-block">
 
-    <div class="section-title" style="margin-bottom:30px;">
-      <small>Presentación individual</small>
-      <h2 style="font-size:48px;">
-        Cheesecakes
-      </h2>
-    </div>
+    <div class="editorial-catalog">
 
-
-    <div class="products">
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=90');">
+      <div class="editorial-copy">
+        <div class="section-title">
+          <small>Presentación individual</small>
+          <h2>Cheesecakes individuales</h2>
         </div>
 
-        <div class="product-info">
-          <h3>Cheesecake individual de frutos rojos</h3>
-          <p>Cheesecake cremoso con frutos rojos.</p>
-          <span class="price">$$$</span>
+        <p class="editorial-description">Cheesecakes individuales elaborados artesanalmente, disponibles en diferentes sabores. Ideales para cafeterías, restaurantes, eventos y venta individual.</p>
+
+        <div class="flavor-list">
+          <div class="flavor-item"><span>Frutos rojos</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Zarzamora</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Blueberry</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Fresa</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Chocolate</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Oreo</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Guayaba</span><span class="flavor-price">$$$</span></div>
         </div>
+      </div>
 
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Cheesecake individual de zarzamora</h3>
-          <p>Cheesecake clásico acompañado de zarzamora.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Cheesecake individual de blueberry</h3>
-          <p>Cheesecake con blueberry y acabado fresco.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Cheesecake individual de fresa</h3>
-          <p>Cheesecake con fresa y notas frescas.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Cheesecake individual de chocolate</h3>
-          <p>Cheesecake de chocolate, intenso y cremoso.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1599785209707-a456fc1337bb?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Cheesecake individual de Oreo</h3>
-          <p>Cheesecake con base y trozos de galleta Oreo.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Cheesecake individual de guayaba</h3>
-          <p>Cheesecake con perfil frutal de guayaba.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
+      <div class="editorial-gallery">
+        <img class="editorial-photo" src="imagenes/imagenlorso3.jpeg" alt="Postre artesanal de chocolate de L'Orso">
+      </div>
 
     </div>
 
@@ -1448,124 +1375,31 @@ footer{
 
   <div class="catalog-block" style="margin-top:90px;">
 
-    <div class="section-title" style="margin-bottom:30px;">
+    <div class="editorial-catalog">
 
-      <small>Masa artesanal · Presentación individual</small>
-
-      <h2 style="font-size:48px;">
-        Tartaletas
-      </h2>
-
-    </div>
-
-
-    <div class="products">
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=900&q=90');">
+      <div class="editorial-copy">
+        <div class="section-title">
+          <small>Masa artesanal · Presentación individual</small>
+          <h2>Tartaletas individuales</h2>
         </div>
 
-        <div class="product-info">
-          <h3>Tartaleta individual de frutas y crema pastelera</h3>
-          <p>Masa artesanal, crema pastelera y frutas frescas.</p>
-          <span class="price">$$$</span>
+        <p class="editorial-description">Tartaletas individuales elaboradas artesanalmente con diferentes combinaciones de frutas, cremas y chocolate.</p>
+
+        <div class="flavor-list">
+          <div class="flavor-item"><span>Frutas y crema pastelera</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Frutos rojos</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Fresas</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Chocolate</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Chocolate con blueberry</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Guayaba</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Limón</span><span class="flavor-price">$$$</span></div>
         </div>
+      </div>
 
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1464195244916-405fa0a82545?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Tartaleta individual de frutos rojos</h3>
-          <p>Tartaleta con frutos rojos seleccionados.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Tartaleta individual de fresas</h3>
-          <p>Crema y fresas sobre masa artesanal.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Tartaleta individual de chocolate</h3>
-          <p>Chocolate intenso sobre base de tartaleta.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1562007908-17c67e878c88?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Tartaleta individual de chocolate con blueberry</h3>
-          <p>Chocolate y blueberry en una combinación equilibrada.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Tartaleta individual de guayaba</h3>
-          <p>Preparación frutal con guayaba.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
-
-      <article class="product">
-
-        <div class="product-image"
-        style="background-image:url('https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=90');">
-        </div>
-
-        <div class="product-info">
-          <h3>Tartaleta individual de limón</h3>
-          <p>Perfil cítrico, fresco y equilibrado.</p>
-          <span class="price">$$$</span>
-        </div>
-
-      </article>
-
+      <div class="editorial-gallery editorial-gallery--double">
+        <img class="editorial-photo" src="imagenes/imagenlorso1.jpeg" alt="Tartaleta artesanal de L'Orso">
+        <img class="editorial-photo" src="imagenes/imagenlorso4.jpg" alt="Tartaleta artesanal de chocolate de L'Orso">
+      </div>
 
     </div>
 
