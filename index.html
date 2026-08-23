@@ -351,20 +351,26 @@ header{
   gap:12px;
 }
 .tartas-gallery img{
+  display:block;
   width:100%;
   height:100%;
   object-fit:cover;
   transition:transform .45s ease;
 }
-.tartas-gallery .tartas-main{
+.tartas-main{
   grid-row:1 / span 2;
   overflow:hidden;
 }
-.tartas-gallery .tartas-detail{
+.tartas-detail{
   overflow:hidden;
 }
-.tartas-gallery .tartas-main:hover img,
-.tartas-gallery .tartas-detail:hover img{
+.tartas-main img,
+.tartas-detail:first-of-type img,
+.tartas-detail:last-of-type img{
+  object-position:center center;
+}
+.tartas-main:hover img,
+.tartas-detail:hover img{
   transform:scale(1.05);
 }
 .tartas-copy .eyebrow{margin-bottom:18px}
@@ -735,11 +741,11 @@ footer{
     grid-template-rows:250px 180px;
     gap:8px;
   }
-  .tartas-gallery .tartas-main{
+  .tartas-main{
     grid-column:1 / span 2;
     grid-row:1;
   }
-  .tartas-gallery .tartas-detail{
+  .tartas-detail{
     grid-row:2;
   }
   .tartas-gallery img{
@@ -789,8 +795,8 @@ footer{
     grid-template-columns:1fr;
     grid-template-rows:auto;
   }
-  .tartas-gallery .tartas-main,
-  .tartas-gallery .tartas-detail{
+  .tartas-main,
+  .tartas-detail{
     grid-column:auto;
     grid-row:auto;
     aspect-ratio:4 / 3;
@@ -962,7 +968,7 @@ footer{
       <div class="tartas-gallery" aria-label="Colección de tartas de L'Orso">
         <div class="tartas-main">
           <img
-            src="imagenes/tarta3.jpeg"
+            src="imagenes/tarta5.jpeg"
             alt="Tarta artesanal de L'Orso"
           >
         </div>
