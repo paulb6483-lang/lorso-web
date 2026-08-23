@@ -453,6 +453,49 @@ header{
   line-height:1.8;
   color:#cfc4b7;
 }
+.special-product{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:45px;
+  padding:35px 0;
+  border-bottom:1px solid var(--line-light);
+}
+.special-product h4{
+  margin-top:13px;
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:42px;
+}
+.special-product p{
+  max-width:500px;
+  margin-top:10px;
+  font-size:13px;
+  line-height:1.8;
+  color:#cfc4b7;
+}
+.special-options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.special-option{
+  min-width:0;
+}
+.special-photo{
+  aspect-ratio:4 / 3;
+  overflow:hidden;
+  border:1px solid var(--line-light);
+  background:rgba(244,238,229,.04);
+}
+.special-option-label{
+  display:block;
+  margin-top:10px;
+  font-size:11px;
+  letter-spacing:2px;
+  color:var(--sand);
+  text-transform:uppercase;
+}
 
 /* BAKERY */
 .bakery-layout{
@@ -982,6 +1025,11 @@ footer{
   }
   .tartas-copy{order:1}
   .order-menu-list{grid-template-columns:1fr}
+  .special-product{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+  .special-options{grid-template-columns:1fr}
   .order-menu-item:nth-child(odd){
     padding-right:0;
     border-right:0;
@@ -1297,6 +1345,44 @@ footer{
           <div class="num">05</div>
           <h4>Postres personalizados</h4>
           <p>Piezas y propuestas especiales desarrolladas para eventos.</p>
+        </article>
+
+        <article class="special-product">
+          <div>
+            <div class="num">06</div>
+            <h4>Carlota de limón</h4>
+            <p>Postre fresco de limón, preparado sobre pedido en dos formatos.</p>
+          </div>
+
+          <div class="special-options">
+            <div class="special-option">
+              <div class="special-photo" aria-label="Espacio para fotografía de Carlota individual" data-image-path="imagenes/carlota-individual.jpeg"></div>
+              <span class="special-option-label">Individual</span>
+            </div>
+            <div class="special-option">
+              <div class="special-photo" aria-label="Espacio para fotografía de Carlota grande" data-image-path="imagenes/carlota-grande.jpeg"></div>
+              <span class="special-option-label">Grande</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="special-product">
+          <div>
+            <div class="num">07</div>
+            <h4>Red Velvet</h4>
+            <p>Pastel de textura suave y acabado rojo, preparado sobre pedido en dos formatos.</p>
+          </div>
+
+          <div class="special-options">
+            <div class="special-option">
+              <div class="special-photo" aria-label="Espacio para fotografía individual" data-image-path="imagenes/redvelvet-individual.jpeg"></div>
+              <span class="special-option-label">Individual</span>
+            </div>
+            <div class="special-option">
+              <div class="special-photo" aria-label="Espacio para fotografía grande" data-image-path="imagenes/redvelvet-grande.jpeg"></div>
+              <span class="special-option-label">Grande</span>
+            </div>
+          </div>
         </article>
       </div>
 
