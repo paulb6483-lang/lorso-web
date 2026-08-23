@@ -187,7 +187,7 @@ header{
       rgba(17,18,16,.1),
       rgba(17,18,16,.15)
     ),
-    url("imagenes/hero-lorso.jpg")
+    url("imagenes/imagenlorso2.jpeg")
     center/cover;
 }
 
@@ -307,7 +307,7 @@ header{
       rgba(17,18,16,.15),
       rgba(17,18,16,.15)
     ),
-    url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=90")
+    url("imagenes/imagenlorso1.jpeg")
     center/cover;
 }
 
@@ -488,13 +488,13 @@ header{
 .featured-card:nth-child(1){
   background-image:
     linear-gradient(0deg,rgba(17,18,16,.9),transparent 70%),
-    url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1100&q=90");
+    url("imagenes/imagenlorso3.jpeg");
 }
 
 .featured-card:nth-child(2){
   background-image:
     linear-gradient(0deg,rgba(17,18,16,.9),transparent 70%),
-    url("https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1100&q=90");
+    url("imagenes/imagenlorso4.jpg");
 }
 
 .featured-card h3{
@@ -599,7 +599,7 @@ header{
 .service-card:nth-child(1){
   background-image:
     linear-gradient(0deg,rgba(17,18,16,.9),rgba(17,18,16,.1)),
-    url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=90");
+    url("imagenes/imagenlorso5.jpeg");
 }
 
 .service-card:nth-child(2){
@@ -644,6 +644,79 @@ header{
   font-family:"Cormorant Garamond",serif;
   font-size:30px;
   font-weight:500;
+}
+
+
+/* =========================================================
+   CONTACTO
+========================================================= */
+
+.contact{
+  background:var(--crema-clara);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:80px;
+  align-items:end;
+}
+
+.contact-title h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:70px;
+  font-weight:400;
+  line-height:.85;
+}
+
+.contact-title p{
+  max-width:370px;
+  margin-top:25px;
+  font-size:12px;
+  line-height:2;
+}
+
+.contact-links{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.contact-link{
+  min-height:150px;
+  padding:25px;
+  border-top:1px solid var(--beige);
+  border-bottom:1px solid var(--beige);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.contact-link strong{
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--dorado);
+}
+
+.contact-link span{
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+}
+
+.contact-link:hover span{
+  color:var(--dorado);
+}
+
+.whatsapp-link{
+  display:inline-block;
+  margin-top:28px;
+  padding:15px 20px;
+  background:var(--negro);
+  color:var(--crema);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
 
@@ -843,6 +916,11 @@ footer{
     grid-template-columns:1fr;
     gap:45px;
   }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
 }
 
 
@@ -941,6 +1019,14 @@ footer{
 
   .form button{
     grid-column:auto;
+  }
+
+  .contact-links{
+    grid-template-columns:1fr;
+  }
+
+  .contact-link{
+    min-height:120px;
   }
 
   .footer-bottom{
@@ -1186,7 +1272,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Frutos rojos</h3>
+          <h3>Cheesecake individual de frutos rojos</h3>
           <p>Cheesecake cremoso con frutos rojos.</p>
           <span class="price">$$$</span>
         </div>
@@ -1201,7 +1287,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Zarzamora</h3>
+          <h3>Cheesecake individual de zarzamora</h3>
           <p>Cheesecake clásico acompañado de zarzamora.</p>
           <span class="price">$$$</span>
         </div>
@@ -1216,7 +1302,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Blueberry</h3>
+          <h3>Cheesecake individual de blueberry</h3>
           <p>Cheesecake con blueberry y acabado fresco.</p>
           <span class="price">$$$</span>
         </div>
@@ -1231,7 +1317,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Fresa</h3>
+          <h3>Cheesecake individual de fresa</h3>
           <p>Cheesecake con fresa y notas frescas.</p>
           <span class="price">$$$</span>
         </div>
@@ -1246,7 +1332,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Chocolate</h3>
+          <h3>Cheesecake individual de chocolate</h3>
           <p>Cheesecake de chocolate, intenso y cremoso.</p>
           <span class="price">$$$</span>
         </div>
@@ -1261,7 +1347,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Oreo</h3>
+          <h3>Cheesecake individual de Oreo</h3>
           <p>Cheesecake con base y trozos de galleta Oreo.</p>
           <span class="price">$$$</span>
         </div>
@@ -1276,7 +1362,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Guayaba</h3>
+          <h3>Cheesecake individual de guayaba</h3>
           <p>Cheesecake con perfil frutal de guayaba.</p>
           <span class="price">$$$</span>
         </div>
@@ -1314,7 +1400,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Tarta de frutas y crema pastelera</h3>
+          <h3>Tartaleta individual de frutas y crema pastelera</h3>
           <p>Masa artesanal, crema pastelera y frutas frescas.</p>
           <span class="price">$$$</span>
         </div>
@@ -1329,7 +1415,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Frutos rojos</h3>
+          <h3>Tartaleta individual de frutos rojos</h3>
           <p>Tartaleta con frutos rojos seleccionados.</p>
           <span class="price">$$$</span>
         </div>
@@ -1344,7 +1430,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Fresas</h3>
+          <h3>Tartaleta individual de fresas</h3>
           <p>Crema y fresas sobre masa artesanal.</p>
           <span class="price">$$$</span>
         </div>
@@ -1359,7 +1445,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Chocolate</h3>
+          <h3>Tartaleta individual de chocolate</h3>
           <p>Chocolate intenso sobre base de tartaleta.</p>
           <span class="price">$$$</span>
         </div>
@@ -1374,7 +1460,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Chocolate con blueberry</h3>
+          <h3>Tartaleta individual de chocolate con blueberry</h3>
           <p>Chocolate y blueberry en una combinación equilibrada.</p>
           <span class="price">$$$</span>
         </div>
@@ -1389,7 +1475,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Guayaba</h3>
+          <h3>Tartaleta individual de guayaba</h3>
           <p>Preparación frutal con guayaba.</p>
           <span class="price">$$$</span>
         </div>
@@ -1404,7 +1490,7 @@ footer{
         </div>
 
         <div class="product-info">
-          <h3>Limón</h3>
+          <h3>Tartaleta individual de limón</h3>
           <p>Perfil cítrico, fresco y equilibrado.</p>
           <span class="price">$$$</span>
         </div>
@@ -1444,8 +1530,8 @@ footer{
           y tamaño grande para celebraciones.
         </p>
 
-        <span class="price">Individual · $$$</span>
-        <span class="price">Grande · $$$</span>
+        <span class="price">INDIVIDUAL · $$$</span>
+        <span class="price">GRANDE · $$$</span>
 
       </article>
 
@@ -1459,7 +1545,7 @@ footer{
           en nuestra interpretación del clásico francés.
         </p>
 
-        <span class="price">Individual · $$$</span>
+        <span class="price">Grande · $$$</span>
 
       </article>
 
@@ -1489,7 +1575,9 @@ footer{
             Postre fresco de limón, cremoso y ligero.
           </p>
 
-          <span class="price">$$$</span>
+          <span class="price">INDIVIDUAL · $$$</span>
+
+          <span class="price">GRANDE · $$$</span>
 
         </div>
 
@@ -1596,37 +1684,16 @@ footer{
     <article class="bakery-card">
 
       <div class="product-image"
-      style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=90');">
+      style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=90');">
       </div>
 
       <div class="product-info">
 
-        <h3>Pan brioche · Bollo de hamburguesa</h3>
+        <h3>Bollo de hamburguesa</h3>
 
         <p>
-          Pan brioche suave y ligeramente dulce,
-          desarrollado para hamburguesas y servicio gastronómico.
-        </p>
-
-        <span class="price">$$$</span>
-
-      </div>
-
-    </article>
-
-
-    <article class="bakery-card">
-
-      <div class="product-image"
-      style="background-image:url('https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=1000&q=90');">
-      </div>
-
-      <div class="product-info">
-
-        <h3>Roles de canela</h3>
-
-        <p>
-          Rol suave y aromático con acabado dulce.
+          Pan brioche de mantequilla, suave y ligeramente dulce,
+          desarrollado para acompañar hamburguesas y propuestas gastronómicas.
         </p>
 
         <span class="price">$$$</span>
@@ -1882,6 +1949,59 @@ footer{
 </section>
 
 
+<!-- =====================================================
+     CONTACTO
+===================================================== -->
+
+<section id="contacto" class="section contact">
+
+<div class="container">
+
+  <div class="contact-grid">
+
+    <div class="contact-title">
+
+      <div class="eyebrow">Hablemos</div>
+
+      <h2>Contacto</h2>
+
+      <p>
+        Estamos listos para escuchar tu idea y acompañarte
+        con una propuesta hecha con carácter.
+      </p>
+
+      <a class="whatsapp-link" href="https://wa.me/525573465302" target="_blank" rel="noopener">
+        Escríbenos por WhatsApp
+      </a>
+
+    </div>
+
+    <div class="contact-links">
+
+      <a class="contact-link" href="https://wa.me/525573465302" target="_blank" rel="noopener">
+        <strong>WhatsApp</strong>
+        <span>5573465302</span>
+      </a>
+
+      <a class="contact-link" href="https://www.instagram.com/lorso_ct/" target="_blank" rel="noopener">
+        <strong>Instagram</strong>
+        <span>@lorso_ct</span>
+      </a>
+
+      <div class="contact-link">
+        <strong>Facebook</strong>
+        <span>L'Orso Catering</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
 </main>
 
 
@@ -1915,7 +2035,7 @@ footer{
 
       <a href="#mesas">Mesas de postres</a>
 
-      <a href="#cotizar">Contacto</a>
+      <a href="#contacto">Contacto</a>
 
     </div>
 
@@ -1976,7 +2096,7 @@ document
       "Detalles: " + mensaje;
 
 
-    const numero = "5215644751647";
+    const numero = "525573465302";
 
 
     window.open(
@@ -1991,7 +2111,7 @@ document
   .forEach(function(button){
     button.addEventListener("click", function(){
       const producto = button.dataset.product;
-      const numero = "5215644751647";
+      const numero = "525573465302";
       const texto = encodeURIComponent(
         "Hola, L'Orso. Me interesa consultar sobre: " + producto
       );
