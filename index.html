@@ -600,6 +600,80 @@ header{
   height:250px;
 }
 
+.cheesecake-catalog{
+  grid-template-columns:minmax(0,.82fr) minmax(0,1fr);
+  gap:70px;
+  padding:55px 55px 55px 0;
+  background:var(--negro);
+  color:var(--crema);
+}
+
+.cheesecake-copy{
+  padding-left:55px;
+}
+
+.cheesecake-copy .section-title h2{
+  color:var(--crema);
+}
+
+.cheesecake-copy .section-title small{
+  color:var(--beige);
+}
+
+.cheesecake-copy .editorial-description{
+  color:#d7cfc2;
+}
+
+.cheesecake-copy .flavor-list,
+.cheesecake-copy .flavor-item{
+  border-color:rgba(200,164,124,.4);
+}
+
+.cheesecake-copy .flavor-price{
+  color:var(--beige);
+}
+
+.cheesecake-order-note{
+  margin-top:25px;
+  color:var(--beige);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.cheesecake-cta{
+  margin-top:25px;
+  border-color:var(--crema);
+  color:var(--crema);
+}
+
+.cheesecake-gallery{
+  grid-template-columns:minmax(0,1.12fr) minmax(125px,.7fr);
+  grid-template-rows:1fr 1fr;
+  gap:16px;
+  align-content:stretch;
+}
+
+.cheesecake-gallery .editorial-photo{
+  height:100%;
+  min-height:0;
+  border-radius:2px;
+}
+
+.cheesecake-gallery .cheesecake-main-photo{
+  grid-row:1 / 3;
+  height:520px;
+}
+
+.cheesecake-gallery .cheesecake-detail-photo,
+.cheesecake-gallery .cheesecake-volume-photo{
+  height:252px;
+}
+
+.cheesecake-gallery .cheesecake-volume-photo{
+  transform:translate(-14px,14px);
+}
+
 
 /* =========================================================
    PRODUCTOS DESTACADOS
@@ -1052,6 +1126,21 @@ footer{
     order:2;
   }
 
+  .cheesecake-catalog{
+    grid-template-columns:1fr;
+    gap:35px;
+    padding:45px 35px;
+  }
+
+  .cheesecake-copy{
+    order:2;
+    padding-left:0;
+  }
+
+  .cheesecake-gallery{
+    order:1;
+  }
+
   .featured,
   .services{
     grid-template-columns:1fr;
@@ -1165,6 +1254,25 @@ footer{
 
   .editorial-gallery--cheesecakes{
     grid-template-columns:1fr;
+  }
+
+  .cheesecake-gallery{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+  }
+
+  .cheesecake-gallery .cheesecake-main-photo{
+    grid-row:auto;
+    height:360px;
+  }
+
+  .cheesecake-gallery .cheesecake-detail-photo,
+  .cheesecake-gallery .cheesecake-volume-photo{
+    height:220px;
+  }
+
+  .cheesecake-gallery .cheesecake-volume-photo{
+    transform:none;
   }
 
   .product-image{
@@ -1443,32 +1551,33 @@ footer{
 
   <div class="catalog-block">
 
-    <div class="editorial-catalog">
+    <div class="editorial-catalog cheesecake-catalog">
 
-      <div class="editorial-copy">
+      <div class="editorial-copy cheesecake-copy">
         <div class="section-title">
-          <small>Presentación individual</small>
+          <small>Sabores disponibles</small>
           <h2>Cheesecakes individuales</h2>
         </div>
 
-        <p class="editorial-description">Cheesecakes individuales elaborados artesanalmente, disponibles en diferentes sabores. Ideales para cafeterías, restaurantes, eventos y venta individual.</p>
+        <p class="editorial-description">Cheesecakes elaborados artesanalmente, disponibles en diferentes sabores.</p>
 
         <div class="flavor-list">
-          <div class="flavor-item"><span>Frutos rojos</span><span class="flavor-price">$$$</span></div>
-          <div class="flavor-item"><span>Zarzamora</span><span class="flavor-price">$$$</span></div>
-          <div class="flavor-item"><span>Blueberry</span><span class="flavor-price">$$$</span></div>
-          <div class="flavor-item"><span>Fresa</span><span class="flavor-price">$$$</span></div>
-          <div class="flavor-item"><span>Chocolate</span><span class="flavor-price">$$$</span></div>
-          <div class="flavor-item"><span>Oreo</span><span class="flavor-price">$$$</span></div>
-          <div class="flavor-item"><span>Guayaba</span><span class="flavor-price">$$$</span></div>
+          <div class="flavor-item"><span>Frutos rojos</span><span class="flavor-price">$25</span></div>
+          <div class="flavor-item"><span>Zarzamora</span><span class="flavor-price">$25</span></div>
+          <div class="flavor-item"><span>Fresa</span><span class="flavor-price">$25</span></div>
+          <div class="flavor-item"><span>Chocolate</span><span class="flavor-price">$25</span></div>
+          <div class="flavor-item"><span>Maracuyá</span><span class="flavor-price">$25</span></div>
+          <div class="flavor-item"><span>Lotus</span><span class="flavor-price">$25</span></div>
         </div>
+
+        <p class="cheesecake-order-note">Pedido mínimo: 10 piezas</p>
+        <a class="btn btn-light cheesecake-cta" href="#cotizar">Cotizar pedido</a>
       </div>
 
-      <div class="editorial-gallery editorial-gallery--cheesecakes">
-        <img class="editorial-photo" src="imagenes/cheescake1.jpeg" alt="Cheesecake artesanal representativo de L'Orso">
-        <img class="editorial-photo" src="imagenes/cheescake5.jpeg" alt="Cheesecake artesanal de L'Orso">
-        <img class="editorial-photo" src="imagenes/cheescake4.jpeg" alt="Cheesecake artesanal de L'Orso">
-        <img class="editorial-photo" src="imagenes/cheescake8.jpeg" alt="Cheesecakes artesanales de L'Orso">
+      <div class="editorial-gallery cheesecake-gallery">
+        <img class="editorial-photo cheesecake-main-photo" src="imagenes/cheescake5.jpeg" alt="Cheesecake individual de frutos rojos de L'Orso">
+        <img class="editorial-photo cheesecake-detail-photo" src="imagenes/cheescake1.jpeg" alt="Selección de cheesecakes individuales de L'Orso">
+        <img class="editorial-photo cheesecake-volume-photo" src="imagenes/cheescake8.jpeg" alt="Charola de cheesecakes artesanales de L'Orso">
       </div>
 
     </div>
