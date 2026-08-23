@@ -340,49 +340,32 @@ header{
 /* TARTAS + POSTRES SOBRE PEDIDO */
 .tartas-wrap{
   display:grid;
-  grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
-  gap:70px;
-  align-items:start;
+  grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);
+  gap:76px;
+  align-items:center;
 }
 .tartas-gallery{
   display:grid;
-  grid-template-columns:1.35fr .65fr;
-  grid-template-rows:330px 250px 220px;
-  gap:14px;
+  grid-template-columns:minmax(0,1.45fr) minmax(150px,.55fr);
+  grid-template-rows:250px 250px;
+  gap:12px;
 }
-.tartas-photo{
-  position:relative;
-  overflow:hidden;
-  background:#1d1915;
-}
-.tartas-photo img{
-  display:block;
+.tartas-gallery img{
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center;
   transition:transform .45s ease;
 }
-.tartas-photo:hover img{
-  transform:scale(1.05);
-}
-.tartas-photo.main{
+.tartas-gallery .tartas-main{
   grid-row:1 / span 2;
+  overflow:hidden;
 }
-.tartas-photo.secondary{
-  grid-column:2;
+.tartas-gallery .tartas-detail{
+  overflow:hidden;
 }
-.tartas-photo.bottom-left{
-  grid-column:1;
-  grid-row:2;
-}
-.tartas-photo.bottom-right{
-  grid-column:2;
-  grid-row:2;
-}
-.tartas-photo.closing{
-  grid-column:1 / -1;
-  grid-row:3;
+.tartas-gallery .tartas-main:hover img,
+.tartas-gallery .tartas-detail:hover img{
+  transform:scale(1.05);
 }
 .tartas-copy .eyebrow{margin-bottom:18px}
 .tartas-copy h3{
@@ -748,21 +731,18 @@ footer{
   .product-copy{order:1}
   .tartas-gallery{
     order:2;
-    grid-template-columns:1fr;
-    grid-template-rows:auto;
-    gap:12px;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:250px 180px;
+    gap:8px;
   }
-  .tartas-photo,
-  .tartas-photo.main,
-  .tartas-photo.secondary,
-  .tartas-photo.bottom-left,
-  .tartas-photo.bottom-right,
-  .tartas-photo.closing{
-    grid-column:auto;
-    grid-row:auto;
-    aspect-ratio:4 / 3;
+  .tartas-gallery .tartas-main{
+    grid-column:1 / span 2;
+    grid-row:1;
   }
-  .tartas-photo img{
+  .tartas-gallery .tartas-detail{
+    grid-row:2;
+  }
+  .tartas-gallery img{
     width:100%;
     height:100%;
     object-fit:cover;
@@ -804,6 +784,16 @@ footer{
     grid-template-columns:1fr 1fr;
     grid-template-rows:250px 180px;
     gap:8px;
+  }
+  .tartas-gallery{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+  }
+  .tartas-gallery .tartas-main,
+  .tartas-gallery .tartas-detail{
+    grid-column:auto;
+    grid-row:auto;
+    aspect-ratio:4 / 3;
   }
   .order-menu-head h3{font-size:52px}
   .cheesecake-main{grid-column:1/-1;grid-row:auto}
@@ -970,38 +960,24 @@ footer{
 
     <div class="tartas-wrap">
       <div class="tartas-gallery" aria-label="Colección de tartas de L'Orso">
-        <div class="tartas-photo main">
+        <div class="tartas-main">
           <img
             src="imagenes/tarta3.jpeg"
             alt="Tarta artesanal de L'Orso"
           >
         </div>
 
-        <div class="tartas-photo secondary">
-          <img
-            src="imagenes/tarta1.jpeg"
-            alt="Tartas artesanales de chocolate L'Orso"
-          >
-        </div>
-
-        <div class="tartas-photo bottom-left">
+        <div class="tartas-detail">
           <img
             src="imagenes/tarta6.jpeg"
-            alt="Tarta artesanal de frutas L'Orso"
+            alt="Tarta artesanal de frutas de L'Orso"
           >
         </div>
 
-        <div class="tartas-photo bottom-right">
+        <div class="tartas-detail">
           <img
             src="imagenes/tarta7.jpeg"
-            alt="Tarta artesanal de frutas amarillas L'Orso"
-          >
-        </div>
-
-        <div class="tartas-photo closing">
-          <img
-            src="imagenes/tarta8.jpeg"
-            alt="Tarta artesanal de L'Orso"
+            alt="Tarta artesanal de frutos rojos de L'Orso"
           >
         </div>
       </div>
