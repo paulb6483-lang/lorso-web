@@ -254,6 +254,18 @@ header{
   opacity:.86;
 }
 
+.hero-seal-cover{
+  position:absolute;
+  right:34px;
+  bottom:87px;
+  z-index:3;
+  width:72px;
+  height:56px;
+  border-radius:50%;
+  background:rgba(17,18,16,.96);
+  pointer-events:none;
+}
+
 .eyebrow{
   font-size:10px;
   letter-spacing:5px;
@@ -571,6 +583,10 @@ header{
   grid-template-columns:1fr;
   gap:18px;
   align-content:center;
+}
+
+.editorial-gallery--cheesecakes{
+  grid-template-columns:repeat(2,1fr);
 }
 
 .editorial-photo{
@@ -1004,6 +1020,13 @@ footer{
     height:115px;
   }
 
+  .hero-seal-cover{
+    right:62px;
+    bottom:65px;
+    width:60px;
+    height:46px;
+  }
+
   .about{
     grid-template-columns:1fr;
   }
@@ -1099,6 +1122,13 @@ footer{
     height:92px;
   }
 
+  .hero-seal-cover{
+    right:22px;
+    bottom:55px;
+    width:48px;
+    height:38px;
+  }
+
   .manifesto{
     padding:75px 20px;
   }
@@ -1131,6 +1161,10 @@ footer{
   .editorial-photo,
   .editorial-gallery--double .editorial-photo{
     height:290px;
+  }
+
+  .editorial-gallery--cheesecakes{
+    grid-template-columns:1fr;
   }
 
   .product-image{
@@ -1236,6 +1270,8 @@ footer{
   <div class="hero-image"></div>
 
   <div class="hero-content">
+
+    <span class="hero-seal-cover" aria-hidden="true"></span>
 
     <div class="eyebrow">
       Cocina artesanal · Hecho con carácter
@@ -1428,8 +1464,11 @@ footer{
         </div>
       </div>
 
-      <div class="editorial-gallery">
-        <img class="editorial-photo" src="imagenes/imagenlorso3.jpeg" alt="Postre artesanal representativo de L'Orso">
+      <div class="editorial-gallery editorial-gallery--cheesecakes">
+        <img class="editorial-photo" src="imagenes/cheescake1.jpeg" alt="Cheesecakes artesanales de L'Orso">
+        <img class="editorial-photo" src="imagenes/cheescake5.jpeg" alt="Cheesecake artesanal de L'Orso">
+        <img class="editorial-photo" src="imagenes/cheescake4.jpeg" alt="Cheesecake artesanal de L'Orso">
+        <img class="editorial-photo" src="imagenes/cheescake8.jpeg" alt="Cheesecakes artesanales de L'Orso">
       </div>
 
     </div>
