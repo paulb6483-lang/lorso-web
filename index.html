@@ -499,6 +499,231 @@ header{
   color:var(--sand);
 }
 
+/* COMO PEDIR */
+
+.how-section{
+  background:var(--paper);
+  color:var(--ink);
+  padding:105px 0 115px;
+}
+
+.how-head{
+  display:grid;
+  grid-template-columns:1fr 1.6fr;
+  gap:50px;
+  align-items:end;
+  margin-bottom:65px;
+}
+
+.how-number{
+  font-family:var(--serif);
+  font-size:20px;
+  color:var(--gold);
+}
+
+.how-title h2{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(58px,7vw,98px);
+  line-height:.78;
+  letter-spacing:-2px;
+}
+
+.how-title h2 em{
+  color:var(--gold);
+  font-style:italic;
+}
+
+.how-lead{
+  max-width:560px;
+  margin-top:22px;
+  font-size:11px;
+  line-height:1.95;
+  color:var(--muted);
+}
+
+.how-steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.how-step{
+  min-height:250px;
+  padding:35px 38px 35px 0;
+  border-right:1px solid var(--line);
+}
+
+.how-step:not(:first-child){
+  padding-left:38px;
+}
+
+.how-step:last-child{
+  border-right:0;
+}
+
+.how-step-number{
+  font-family:var(--serif);
+  font-size:20px;
+  color:var(--gold);
+}
+
+.how-step h3{
+  margin-top:22px;
+  font-family:var(--serif);
+  font-size:34px;
+  font-weight:400;
+}
+
+.how-step p{
+  max-width:310px;
+  margin-top:12px;
+  font-size:10px;
+  line-height:1.9;
+  color:var(--muted);
+}
+
+.delivery-block{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:75px;
+  align-items:start;
+}
+
+.delivery-copy h3{
+  font-family:var(--serif);
+  font-size:54px;
+  line-height:.85;
+  font-weight:400;
+}
+
+.delivery-copy p{
+  max-width:430px;
+  margin-top:20px;
+  font-size:10px;
+  line-height:1.95;
+  color:var(--muted);
+}
+
+.delivery-list{
+  border-top:1px solid var(--line);
+}
+
+.delivery-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:30px;
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.delivery-zone{
+  font-family:var(--serif);
+  font-size:27px;
+}
+
+.delivery-price{
+  font-size:9px;
+  letter-spacing:2px;
+  color:var(--gold);
+  text-transform:uppercase;
+}
+
+.delivery-note{
+  margin-top:18px;
+  font-size:8px;
+  line-height:1.8;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.event-delivery{
+  margin-top:70px;
+  padding:45px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:75px;
+}
+
+.event-delivery h3{
+  font-family:var(--serif);
+  font-size:45px;
+  line-height:.9;
+  font-weight:400;
+}
+
+.event-delivery p{
+  max-width:600px;
+  font-size:10px;
+  line-height:2;
+  color:var(--muted);
+}
+
+.how-cta{
+  margin-top:60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.how-cta-copy{
+  max-width:600px;
+}
+
+.how-cta-copy h3{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:400;
+}
+
+.how-cta-copy p{
+  margin-top:8px;
+  font-size:9px;
+  line-height:1.8;
+  color:var(--muted);
+}
+
+@media(max-width:900px){
+
+  .how-head{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .how-steps{
+    grid-template-columns:1fr;
+  }
+
+  .how-step,
+  .how-step:not(:first-child){
+    padding:28px 0;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .how-step:last-child{
+    border-bottom:0;
+  }
+
+  .delivery-block,
+  .event-delivery{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .how-cta{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+
 /* EVENTS */
 .events-intro{
   display:grid;
@@ -839,6 +1064,7 @@ footer{
     <nav class="nav-links">
       <a href="#reposteria">Repostería</a>
       <a href="#panaderia">Panadería</a>
+      <a href="#como-pedir">Cómo pedir</a>
       <a href="#eventos">Catering</a>
       <a href="#experiencias">Experiencias</a>
       <a href="#mesas-postres">Mesas</a>
@@ -1107,6 +1333,211 @@ footer{
     </div>
 
   </div>
+</section>
+
+<section class="how-section" id="como-pedir">
+
+  <div class="container">
+
+    <div class="how-head">
+
+      <div>
+        <div class="how-number">03</div>
+      </div>
+
+      <div class="how-title">
+        <div class="eyebrow">Cómo trabajamos</div>
+
+        <h2>
+          ¿Cómo <em>pedir?</em>
+        </h2>
+
+        <p class="how-lead">
+          Cada pedido se prepara de acuerdo con tus necesidades.
+          Conoce nuestro proceso, nuestras entregas y la forma de solicitar
+          tus productos a L'Orso.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="how-steps">
+
+      <div class="how-step">
+
+        <div class="how-step-number">01</div>
+
+        <h3>Elige tus productos</h3>
+
+        <p>
+          Selecciona los productos y sabores que deseas.
+          Puedes solicitar piezas individuales o combinar diferentes
+          productos para crear una selección personalizada.
+        </p>
+
+      </div>
+
+
+      <div class="how-step">
+
+        <div class="how-step-number">02</div>
+
+        <h3>Confirmamos tu pedido</h3>
+
+        <p>
+          Una vez que nos contactes, confirmamos disponibilidad,
+          cantidades, presentación y fecha de entrega.
+          El pedido queda confirmado una vez acordados todos los detalles.
+        </p>
+
+      </div>
+
+
+      <div class="how-step">
+
+        <div class="how-step-number">03</div>
+
+        <h3>Recibe tu pedido</h3>
+
+        <p>
+          Entregamos tus productos a domicilio o en un punto de encuentro
+          previamente acordado.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="delivery-block">
+
+      <div class="delivery-copy">
+
+        <div class="eyebrow">Repostería y pastelería</div>
+
+        <h3>Entrega<br>directa.</h3>
+
+        <p>
+          Actualmente trabajamos bajo pedido. L'Orso no cuenta con tienda
+          física. Nuestros productos se elaboran de acuerdo con cada pedido
+          y se entregan a domicilio o en un punto de encuentro previamente
+          acordado.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <div class="delivery-list">
+
+          <div class="delivery-row">
+
+            <div class="delivery-zone">
+              Valle de Chalco
+            </div>
+
+            <div class="delivery-price">
+              $50
+            </div>
+
+          </div>
+
+
+          <div class="delivery-row">
+
+            <div class="delivery-zone">
+              Chalco
+            </div>
+
+            <div class="delivery-price">
+              $70
+            </div>
+
+          </div>
+
+
+          <div class="delivery-row">
+
+            <div class="delivery-zone">
+              San Buenaventura
+            </div>
+
+            <div class="delivery-price">
+              $75
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="delivery-note">
+          San Buenaventura · entregas únicamente jueves y sábado.
+          El costo de envío se agrega al total del pedido.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-delivery">
+
+      <div>
+
+        <div class="eyebrow">
+          Catering · Mesas de postres · Eventos
+        </div>
+
+        <h3>
+          Una propuesta<br>
+          a la medida.
+        </h3>
+
+      </div>
+
+
+      <p>
+        Para servicios de catering y mesas de postres, la logística y
+        entrega forman parte de la propuesta personalizada. El costo se
+        determina de acuerdo con el lugar, fecha, montaje y características
+        de cada evento.
+      </p>
+
+    </div>
+
+
+    <div class="how-cta">
+
+      <div class="how-cta-copy">
+
+        <h3>
+          ¿Ya sabes qué necesitas?
+        </h3>
+
+        <p>
+          Solicita tu pedido directamente con L'Orso y confirma
+          disponibilidad, fecha y opciones de entrega.
+        </p>
+
+      </div>
+
+
+      <a
+        class="btn btn-dark"
+        href="https://wa.me/525573465302?text=Hola%20L%27Orso%2C%20me%20gustar%C3%ADa%20realizar%20un%20pedido."
+        target="_blank"
+        rel="noopener"
+      >
+        Solicitar pedido →
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
 
 <section id="eventos" class="section section-dark">
