@@ -75,8 +75,8 @@ header{
   inset:0 0 auto;
   z-index:1000;
   height:76px;
-  background:rgba(23,20,17,.88);
-  border-bottom:1px solid rgba(255,255,255,.12);
+  background:rgba(244,238,229,.96);
+  border-bottom:1px solid rgba(23,20,17,.12);
   backdrop-filter:blur(12px);
 }
 .nav{
@@ -90,6 +90,8 @@ header{
   width:112px;
   height:auto;
   object-fit:contain;
+  filter:brightness(0) saturate(100%);
+  -webkit-filter:brightness(0) saturate(100%);
 }
 .nav-links{
   display:flex;
@@ -97,21 +99,21 @@ header{
   gap:27px;
 }
 .nav-links a{
-  color:rgba(255,255,255,.82);
+  color:rgba(23,20,17,.78);
   font-size:8px;
   letter-spacing:2px;
   text-transform:uppercase;
 }
 .nav-links a:hover{color:var(--sand)}
 .nav-cta{
-  border:1px solid rgba(255,255,255,.32);
+  border:1px solid rgba(23,20,17,.32);
   padding:11px 15px;
-  color:var(--paper);
+  color:var(--ink);
   font-size:8px;
   letter-spacing:2px;
   text-transform:uppercase;
 }
-.nav-cta:hover{background:var(--paper);color:var(--ink)}
+.nav-cta:hover{background:var(--ink);color:var(--paper)}
 
 .hero{
   min-height:100svh;
@@ -178,9 +180,20 @@ header{
 }
 .intro-grid{
   display:grid;
-  grid-template-columns:1fr 1.55fr;
+  grid-template-columns:.9fr 1.1fr;
   gap:80px;
-  align-items:start;
+  align-items:stretch;
+}
+.intro-visual{
+  min-height:520px;
+  background:
+    linear-gradient(0deg,rgba(23,20,17,.12),rgba(23,20,17,.02)),
+    url("imagenes/imagenlorso1.jpeg") center/cover no-repeat;
+}
+.intro-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 .intro-mark{
   font-family:var(--serif);
@@ -320,60 +333,132 @@ header{
 }
 .product-copy .btn{margin-top:24px}
 
-/* PRODUCT FAMILY */
-.family-intro{
+/* TARTALETAS + POSTRES SOBRE PEDIDO */
+.tartlet-wrap{
   display:grid;
-  grid-template-columns:.7fr 1.3fr;
-  gap:70px;
-  padding-bottom:55px;
-  border-bottom:1px solid var(--line);
+  grid-template-columns:minmax(0,1.15fr) minmax(360px,.85fr);
+  gap:76px;
+  align-items:center;
 }
-.family-intro h3{
+.tartlet-visual{
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(150px,.55fr);
+  grid-template-rows:250px 250px;
+  gap:12px;
+}
+.tartlet-photo{
+  position:relative;
+  overflow:hidden;
+  background:var(--paper-2);
+  border:1px solid rgba(197,164,124,.22);
+}
+.tartlet-photo.main{grid-row:1 / span 2}
+.tartlet-photo::after{
+  content:"Fotografía de producto";
+  position:absolute;
+  inset:auto 18px 16px;
+  font-size:8px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.tartlet-photo.main::before{
+  content:"TARTALETAS";
+  position:absolute;
+  inset:50% auto auto 50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--serif);
+  font-size:clamp(48px,6vw,82px);
+  color:rgba(23,20,17,.18);
+  letter-spacing:-2px;
+}
+.tartlet-photo.detail::before{
+  content:"DETALLE";
+  position:absolute;
+  inset:50% auto auto 50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--serif);
+  font-size:30px;
+  color:rgba(23,20,17,.16);
+}
+.tartlet-copy .eyebrow{margin-bottom:18px}
+.tartlet-copy h3{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:56px;
+  line-height:.82;
+  max-width:440px;
+}
+.tartlet-copy > p{
+  max-width:470px;
+  margin:24px 0 30px;
+  font-size:11px;
+  line-height:1.95;
+  color:#cfc4b7;
+}
+.tartlet-meta{
+  margin-top:25px;
+  font-size:8px;
+  line-height:1.9;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:#bfb3a5;
+}
+.tartlet-copy .btn{margin-top:24px}
+
+.order-menu{
+  margin-top:95px;
+  border-top:1px solid var(--line-light);
+}
+.order-menu-head{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+  padding:42px 0 35px;
+  border-bottom:1px solid var(--line-light);
+}
+.order-menu-head h3{
   font-family:var(--serif);
   font-size:58px;
   font-weight:400;
   line-height:.82;
 }
-.family-intro p{
-  max-width:580px;
+.order-menu-head p{
+  max-width:570px;
   font-size:11px;
   line-height:2;
-  color:var(--muted);
+  color:#cfc4b7;
 }
-.family-list{
+.order-menu-list{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  border-bottom:1px solid var(--line);
+  grid-template-columns:1fr 1fr;
 }
-.family-item{
-  min-height:180px;
-  padding:30px 35px 30px 0;
-  border-bottom:1px solid var(--line);
+.order-menu-item{
+  min-height:145px;
+  padding:28px 35px 28px 0;
+  border-bottom:1px solid var(--line-light);
 }
-.family-item:nth-child(odd){
+.order-menu-item:nth-child(odd){
   padding-right:45px;
-  border-right:1px solid var(--line);
+  border-right:1px solid var(--line-light);
 }
-.family-item:nth-child(even){padding-left:45px}
-.family-item:nth-child(3),
-.family-item:nth-child(4){border-bottom:0}
-.family-item .num{
+.order-menu-item:nth-child(even){padding-left:45px}
+.order-menu-item .num{
   font-size:8px;
   letter-spacing:2px;
   color:var(--gold);
 }
-.family-item h4{
-  margin-top:15px;
+.order-menu-item h4{
+  margin-top:13px;
   font-family:var(--serif);
   font-weight:400;
-  font-size:35px;
+  font-size:32px;
 }
-.family-item p{
-  margin-top:8px;
-  max-width:400px;
+.order-menu-item p{
+  margin-top:7px;
   font-size:9px;
   line-height:1.8;
-  color:var(--muted);
+  color:#cfc4b7;
 }
 
 /* BAKERY */
@@ -611,10 +696,12 @@ footer{
   padding-bottom:28px;
   border-bottom:1px solid var(--line-light);
 }
-.footer-brand{
-  font-family:var(--serif);
-  font-size:28px;
-  letter-spacing:1px;
+.footer-brand img{
+  width:90px;
+  height:auto;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  -webkit-filter:brightness(0) invert(1);
 }
 .footer-links{
   display:flex;
@@ -648,12 +735,21 @@ footer{
   .intro-grid,
   .section-head,
   .cheesecake-wrap,
-  .family-intro,
+  .tartlet-wrap,
+  .order-menu-head,
   .bakery-layout,
   .events-intro,
   .contact-grid{grid-template-columns:1fr;gap:35px}
   .cheesecake-visual{order:2}
   .product-copy{order:1}
+  .tartlet-visual{order:2}
+  .tartlet-copy{order:1}
+  .order-menu-list{grid-template-columns:1fr}
+  .order-menu-item:nth-child(odd){
+    padding-right:0;
+    border-right:0;
+  }
+  .order-menu-item:nth-child(even){padding-left:0}
   .events-grid{grid-template-columns:1fr 1fr;grid-template-rows:330px 330px}
   .event-photo.large{grid-row:1 / span 2}
   .event-caption{grid-column:2}
@@ -685,19 +781,17 @@ footer{
     grid-template-rows:250px 180px;
     gap:8px;
   }
+  .tartlet-visual{
+    grid-template-columns:1fr;
+    grid-template-rows:280px 180px 180px;
+    gap:8px;
+  }
+  .tartlet-photo.main{grid-row:auto}
+  .order-menu-head h3{font-size:52px}
   .cheesecake-main{grid-column:1/-1;grid-row:auto}
   .cheesecake-detail:last-child{display:block}
   .product-copy h3{font-size:50px}
   .flavor{font-size:21px}
-  .family-list{grid-template-columns:1fr}
-  .family-item,
-  .family-item:nth-child(odd),
-  .family-item:nth-child(even){
-    padding:25px 0;
-    border-right:0;
-    border-bottom:1px solid var(--line);
-  }
-  .family-item:last-child{border-bottom:0}
   .bakery-photo{min-height:390px}
   .bakery-product h3{font-size:39px}
   .events-grid{
@@ -773,12 +867,12 @@ footer{
 <section class="intro">
   <div class="container">
     <div class="intro-grid">
-      <div>
+      <div class="intro-visual" aria-label="L'Orso · imagen de identidad"></div>
+
+      <div class="intro-copy">
         <div class="intro-mark">L'ORSO</div>
         <div class="rule"></div>
-      </div>
 
-      <div>
         <h2>
           Productos honestos.<br>
           Técnica, <em>detalle</em><br>
@@ -856,44 +950,82 @@ footer{
 
     <div style="height:95px"></div>
 
-    <div class="family-intro">
-      <div>
-        <div class="eyebrow">Otras piezas</div>
-        <h3>Una colección<br>para compartir.</h3>
+    <div class="tartlet-wrap">
+      <div class="tartlet-visual" aria-label="Espacio reservado para fotografías de tartaletas">
+        <div class="tartlet-photo main"></div>
+        <div class="tartlet-photo detail"></div>
+        <div class="tartlet-photo detail"></div>
       </div>
-      <p>
-        Además de cheesecakes, desarrollamos tartaletas, pastelería,
-        postres especiales y piezas bajo pedido. Cuando un producto
-        no tiene fotografía propia disponible, preferimos presentarlo
-        mediante información editorial antes que utilizar una imagen
-        que no corresponda al producto real.
-      </p>
+
+      <div class="product-copy tartlet-copy">
+        <div class="eyebrow">02 · Colección · Tartaletas</div>
+        <h3>Tartaletas individuales</h3>
+
+        <p>
+          Elaboradas con masa artesanal y diferentes combinaciones de frutas,
+          cremas y chocolate. Disponibles por pieza y en selecciones para compartir.
+        </p>
+
+        <div class="flavors">
+          <div class="flavor"><span>Frutas y crema pastelera</span><span>$$$</span></div>
+          <div class="flavor"><span>Frutos rojos</span><span>$$$</span></div>
+          <div class="flavor"><span>Fresas</span><span>$$$</span></div>
+          <div class="flavor"><span>Chocolate</span><span>$$$</span></div>
+          <div class="flavor"><span>Chocolate con blueberry</span><span>$$$</span></div>
+          <div class="flavor"><span>Guayaba</span><span>$$$</span></div>
+          <div class="flavor"><span>Limón</span><span>$$$</span></div>
+        </div>
+
+        <div class="tartlet-meta">
+          Venta por pieza · Selecciones combinadas disponibles · Envío no incluido
+        </div>
+
+        <a class="btn btn-light" href="#cotizar">Consultar pedido</a>
+      </div>
     </div>
 
-    <div class="family-list">
-      <article class="family-item">
-        <div class="num">02 · TARTALETAS</div>
-        <h4>Tartaletas individuales</h4>
-        <p>Frutas, cremas, chocolate y otras combinaciones según disponibilidad.</p>
-      </article>
+    <div class="order-menu">
+      <div class="order-menu-head">
+        <div>
+          <div class="eyebrow">04 · Sobre pedido</div>
+          <h3>Postres<br>especiales</h3>
+        </div>
+        <p>
+          Además de las piezas individuales, desarrollamos postres de mayor formato
+          y propuestas especiales para celebraciones. Cada pieza puede solicitarse
+          según tamaño, ocasión y necesidades del evento.
+        </p>
+      </div>
 
-      <article class="family-item">
-        <div class="num">03 · PASTELERÍA</div>
-        <h4>Pasteles especiales</h4>
-        <p>Propuestas individuales o piezas grandes para celebraciones. Cotización según tamaño y diseño.</p>
-      </article>
+      <div class="order-menu-list">
+        <article class="order-menu-item">
+          <div class="num">01</div>
+          <h4>Cheesecake grande</h4>
+          <p>Disponible en diferentes sabores y formatos para celebraciones.</p>
+        </article>
+        <article class="order-menu-item">
+          <div class="num">02</div>
+          <h4>Tiramisú grande</h4>
+          <p>Formato para compartir y ocasiones especiales.</p>
+        </article>
+        <article class="order-menu-item">
+          <div class="num">03</div>
+          <h4>Carlota grande</h4>
+          <p>Una versión de mayor formato para compartir.</p>
+        </article>
+        <article class="order-menu-item">
+          <div class="num">04</div>
+          <h4>Pasteles especiales</h4>
+          <p>Pasteles sobre pedido de acuerdo con tamaño y propuesta.</p>
+        </article>
+        <article class="order-menu-item">
+          <div class="num">05</div>
+          <h4>Postres personalizados</h4>
+          <p>Piezas y propuestas especiales desarrolladas para eventos.</p>
+        </article>
+      </div>
 
-      <article class="family-item">
-        <div class="num">04 · ESPECIALES</div>
-        <h4>Postres sobre pedido</h4>
-        <p>Cheesecake grande, tiramisú, carlota y piezas personalizadas para eventos.</p>
-      </article>
-
-      <article class="family-item">
-        <div class="num">05 · SELECCIONES</div>
-        <h4>Presentaciones para compartir</h4>
-        <p>Combina diferentes piezas y sabores para crear una selección de acuerdo con tu ocasión.</p>
-      </article>
+      <a href="#cotizar" class="btn btn-light" style="width:max-content;margin-top:28px">Consultar postre especial</a>
     </div>
 
   </div>
@@ -904,7 +1036,7 @@ footer{
 
     <div class="section-head">
       <div class="section-title">
-        <div class="section-number">02</div>
+        <div class="section-number">03</div>
         <h2>Panadería</h2>
       </div>
       <p class="section-lead">
@@ -949,7 +1081,7 @@ footer{
 
     <div class="section-head">
       <div class="section-title">
-        <div class="section-number">03</div>
+        <div class="section-number">04</div>
         <h2>Catering</h2>
       </div>
       <p class="section-lead">
@@ -1004,7 +1136,7 @@ footer{
 
     <div class="section-head">
       <div class="section-title">
-        <div class="section-number">04</div>
+        <div class="section-number">05</div>
         <h2>Experiencias<br><em>L'Orso</em></h2>
       </div>
       <p class="section-lead">
@@ -1118,7 +1250,9 @@ footer{
 <footer>
   <div class="container">
     <div class="footer-top">
-      <div class="footer-brand">L'Orso</div>
+      <div class="footer-brand">
+        <img src="imagenes/lorso_catering.png" alt="L'Orso Catering">
+      </div>
 
       <div class="footer-links">
         <a href="#reposteria">Repostería</a>
