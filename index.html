@@ -333,33 +333,56 @@ header{
 }
 .product-copy .btn{margin-top:24px}
 
+.product-photo{overflow:hidden}
+.product-photo img{transition:transform .45s ease}
+.product-photo:hover img{transform:scale(1.05)}
+
 /* TARTAS + POSTRES SOBRE PEDIDO */
 .tartas-wrap{
   display:grid;
-  grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
-  gap:76px;
+  grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
+  gap:70px;
   align-items:start;
 }
 .tartas-gallery{
   display:grid;
-  grid-template-columns:1.25fr .75fr .75fr .75fr;
-  grid-auto-rows:190px;
-  gap:12px;
+  grid-template-columns:1.35fr .65fr;
+  grid-template-rows:330px 250px 220px;
+  gap:14px;
 }
 .tartas-photo{
   position:relative;
   overflow:hidden;
-  background:rgba(255,255,255,.035);
+  background:#1d1915;
 }
-.tartas-photo.main{
-  grid-column:span 2;
-  grid-row:span 2;
-}
-.tartas-photo.context{grid-row:span 2}
 .tartas-photo img{
+  display:block;
   width:100%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .45s ease;
+}
+.tartas-photo:hover img{
+  transform:scale(1.05);
+}
+.tartas-photo.main{
+  grid-row:1 / span 2;
+}
+.tartas-photo.secondary{
+  grid-column:2;
+}
+.tartas-photo.bottom-left{
+  grid-column:1;
+  grid-row:2;
+}
+.tartas-photo.bottom-right{
+  grid-column:2;
+  grid-row:2;
+}
+.tartas-photo.closing{
+  grid-column:1 / -1;
+  grid-row:3;
 }
 .tartas-copy .eyebrow{margin-bottom:18px}
 .tartas-copy h3{
@@ -450,7 +473,12 @@ header{
 }
 .bakery-photo{
   min-height:610px;
-  background:center/cover no-repeat url("imagenes/imagenlorso2.jpeg");
+  overflow:hidden;
+}
+.bakery-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 .bakery-copy{
   display:flex;
@@ -515,9 +543,7 @@ header{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform .7s ease;
 }
-.event-photo:hover img{transform:scale(1.035)}
 .event-photo.large{grid-row:1 / span 2}
 .event-caption{
   padding:25px;
@@ -573,9 +599,7 @@ header{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform .8s ease;
 }
-.table-card:hover img{transform:scale(1.035)}
 .table-card-content{position:relative;z-index:2}
 .table-card h3{
   font-family:var(--serif);
@@ -722,9 +746,27 @@ footer{
   .contact-grid{grid-template-columns:1fr;gap:35px}
   .cheesecake-visual{order:2}
   .product-copy{order:1}
-  .tartas-gallery{order:2;grid-template-columns:1fr;grid-auto-rows:auto}
-  .tartas-photo.main{grid-column:auto;grid-row:auto}
-  .tartas-photo img{height:auto}
+  .tartas-gallery{
+    order:2;
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+    gap:12px;
+  }
+  .tartas-photo,
+  .tartas-photo.main,
+  .tartas-photo.secondary,
+  .tartas-photo.bottom-left,
+  .tartas-photo.bottom-right,
+  .tartas-photo.closing{
+    grid-column:auto;
+    grid-row:auto;
+    aspect-ratio:4 / 3;
+  }
+  .tartas-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
   .tartas-copy{order:1}
   .order-menu-list{grid-template-columns:1fr}
   .order-menu-item:nth-child(odd){
@@ -885,13 +927,13 @@ footer{
 
     <div class="cheesecake-wrap">
       <div class="cheesecake-visual">
-        <div class="cheesecake-main">
+        <div class="cheesecake-main product-photo">
           <img src="imagenes/cheescake3.jpeg" alt="Cheesecake individual de frutos rojos de L'Orso">
         </div>
-        <div class="cheesecake-detail">
+        <div class="cheesecake-detail product-photo">
           <img src="imagenes/cheescake5.jpeg" alt="Selección de cheesecakes L'Orso">
         </div>
-        <div class="cheesecake-detail">
+        <div class="cheesecake-detail product-photo">
           <img src="imagenes/cheescake1.jpeg" alt="Cheesecake artesanal de L'Orso">
         </div>
       </div>
@@ -928,12 +970,40 @@ footer{
 
     <div class="tartas-wrap">
       <div class="tartas-gallery" aria-label="Colección de tartas de L'Orso">
-        <div class="tartas-photo main"><img src="imagenes/tarta3.jpeg" alt="Tarta artesanal protagonista de L'Orso"></div>
-        <div class="tartas-photo context"><img src="imagenes/tarta1.jpeg" alt="Detalle de tarta artesanal de L'Orso"></div>
-        <div class="tartas-photo"><img src="imagenes/tarta6.jpeg" alt="Tarta artesanal de L'Orso"></div>
-        <div class="tartas-photo"><img src="imagenes/tarta7.jpeg" alt="Tarta artesanal de L'Orso"></div>
-        <div class="tartas-photo"><img src="imagenes/tarta8.jpeg" alt="Tarta artesanal de L'Orso"></div>
-        <div class="tartas-photo"><img src="imagenes/tarta11.jpeg" alt="Tarta artesanal de L'Orso"></div>
+        <div class="tartas-photo main">
+          <img
+            src="imagenes/tarta3.jpeg"
+            alt="Tarta artesanal de L'Orso"
+          >
+        </div>
+
+        <div class="tartas-photo secondary">
+          <img
+            src="imagenes/tarta1.jpeg"
+            alt="Tartas artesanales de chocolate L'Orso"
+          >
+        </div>
+
+        <div class="tartas-photo bottom-left">
+          <img
+            src="imagenes/tarta6.jpeg"
+            alt="Tarta artesanal de frutas L'Orso"
+          >
+        </div>
+
+        <div class="tartas-photo bottom-right">
+          <img
+            src="imagenes/tarta7.jpeg"
+            alt="Tarta artesanal de frutas amarillas L'Orso"
+          >
+        </div>
+
+        <div class="tartas-photo closing">
+          <img
+            src="imagenes/tarta8.jpeg"
+            alt="Tarta artesanal de L'Orso"
+          >
+        </div>
       </div>
 
       <div class="product-copy tartas-copy">
@@ -1025,7 +1095,9 @@ footer{
     </div>
 
     <div class="bakery-layout">
-      <div class="bakery-photo" aria-label="Panadería L'Orso"></div>
+      <div class="bakery-photo product-photo" aria-label="Panadería L'Orso">
+        <img src="imagenes/imagenlorso2.jpeg" alt="Panadería artesanal de L'Orso">
+      </div>
 
       <div class="bakery-copy">
         <article class="bakery-product">
@@ -1091,13 +1163,13 @@ footer{
     </div>
 
     <div class="events-grid">
-      <div class="event-photo large">
+      <div class="event-photo large product-photo">
         <img src="imagenes/imagenlorso5.jpeg" alt="Propuesta gastronómica L'Orso">
       </div>
-      <div class="event-photo">
+      <div class="event-photo product-photo">
         <img src="imagenes/imagenlorso3.jpeg" alt="Montaje gastronómico L'Orso">
       </div>
-      <div class="event-photo">
+      <div class="event-photo product-photo">
         <img src="imagenes/imagenlorso4.jpg" alt="Presentación gastronómica L'Orso">
       </div>
       <div class="event-caption">
@@ -1138,7 +1210,7 @@ footer{
     <div style="height:45px"></div>
 
     <div class="tables" id="mesas-postres">
-      <article class="table-card">
+      <article class="table-card product-photo">
         <img src="imagenes/imagenlorso3.jpeg" alt="Mesa de postres L'Orso">
         <div class="table-card-content">
           <div class="eyebrow" style="color:var(--sand)">Mesas de postres</div>
@@ -1151,7 +1223,7 @@ footer{
         </div>
       </article>
 
-      <article class="table-card">
+      <article class="table-card product-photo">
         <img src="imagenes/imagenlorso4.jpg" alt="Montaje de postres L'Orso">
         <div class="table-card-content">
           <div class="eyebrow" style="color:var(--sand)">Celebraciones</div>
