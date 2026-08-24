@@ -1205,6 +1205,30 @@ footer{
   .product-copy h3{font-size:50px}
   .special-options.single{grid-template-columns:1fr}
   .special-options.two{grid-template-columns:1fr 1fr}
+  .special-product,
+  .special-product.no-photo{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+    grid-template-columns:1fr;
+  }
+  .special-product > *{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    box-sizing:border-box;
+  }
+  .special-options,
+  .special-photo,
+  .special-photo img{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    box-sizing:border-box;
+  }
+  .special-photo img{
+    height:auto;
+  }
   .special-product h4{font-size:39px}
   .special-price{font-size:42px}
   .flavor{font-size:21px}
