@@ -2377,6 +2377,14 @@ footer{
   }
 }
 
+
+/* PRICE DISPLAY — requested product pricing only */
+.special-price span{display:block;}
+.bakery-size-prices{margin-top:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.bakery-size-prices div{display:flex;justify-content:space-between;gap:20px;padding:11px 0;font-size:13px;}
+.bakery-size-prices strong{font-family:var(--serif);font-weight:400;color:var(--gold);white-space:nowrap;}
+@media(max-width:680px){.bakery-size-prices div{align-items:baseline;font-size:12px;}.bakery-size-prices strong{font-size:15px;}}
+
 </style>
 </head>
 
@@ -2498,13 +2506,13 @@ footer{
         </p>
 
         <div class="flavors">
-          <div class="flavor"><span>Frutos rojos</span><span>$25</span></div>
-          <div class="flavor"><span>Zarzamora</span><span>$25</span></div>
-          <div class="flavor"><span>Fresa</span><span>$25</span></div>
-          <div class="flavor"><span>Blueberry</span><span>$25</span></div>
-          <div class="flavor"><span>Chocolate</span><span>$25</span></div>
-          <div class="flavor"><span>Guayaba</span><span>$25</span></div>
-          <div class="flavor"><span>Oreo</span><span>$25</span></div>
+          <div class="flavor"><span>Frutos rojos</span><span>$55</span></div>
+          <div class="flavor"><span>Zarzamora</span><span>$55</span></div>
+          <div class="flavor"><span>Fresa</span><span>$55</span></div>
+          <div class="flavor"><span>Blueberry</span><span>$55</span></div>
+          <div class="flavor"><span>Chocolate</span><span>$55</span></div>
+          <div class="flavor"><span>Guayaba</span><span>$55</span></div>
+          <div class="flavor"><span>Oreo</span><span>$55</span></div>
         </div>
 
         <div class="product-meta">
@@ -2551,13 +2559,13 @@ footer{
         </p>
 
         <div class="flavors">
-          <div class="flavor"><span>Frutas y crema pastelera</span><span>$$$</span></div>
-          <div class="flavor"><span>Frutos rojos</span><span>$$$</span></div>
-          <div class="flavor"><span>Fresas</span><span>$$$</span></div>
-          <div class="flavor"><span>Chocolate</span><span>$$$</span></div>
-          <div class="flavor"><span>Chocolate con blueberry</span><span>$$$</span></div>
-          <div class="flavor"><span>Guayaba</span><span>$$$</span></div>
-          <div class="flavor"><span>Limón</span><span>$$$</span></div>
+          <div class="flavor"><span>Frutas y crema pastelera</span><span>$70</span></div>
+          <div class="flavor"><span>Frutos rojos</span><span>$70</span></div>
+          <div class="flavor"><span>Fresas</span><span>$70</span></div>
+          <div class="flavor"><span>Chocolate</span><span>$70</span></div>
+          <div class="flavor"><span>Chocolate con blueberry</span><span>$70</span></div>
+          <div class="flavor"><span>Guayaba</span><span>$70</span></div>
+          <div class="flavor"><span>Limón</span><span>$70</span></div>
         </div>
 
         <div class="tartas-meta">
@@ -2587,7 +2595,7 @@ footer{
             <div class="num">01</div>
             <h4>Cheesecake grande</h4>
             <p>Un cheesecake artesanal de textura cremosa y acabado delicado, preparado sobre pedido para celebraciones y ocasiones especiales.</p>
-            <div class="special-price">$$$</div>
+            <div class="special-price">$550</div>
             <div class="special-note">Presentación para compartir · Envío extra</div>
           </div>
 
@@ -2611,7 +2619,7 @@ footer{
           </div>
 
           <div class="special-text-detail">
-            <div class="special-price">$$$</div>
+            <div class="special-price">$700</div>
             <div class="special-note">Presentación para compartir · No disponible individual · Envío extra</div>
           </div>
         </article>
@@ -2624,7 +2632,7 @@ footer{
           </div>
 
           <div class="special-text-detail">
-            <div class="special-price">$$$</div>
+            <div class="special-price">$380</div>
             <div class="special-note">Presentación para compartir · No disponible individual · Envío extra</div>
           </div>
         </article>
@@ -2634,7 +2642,10 @@ footer{
             <div class="num">04</div>
             <h4>Carlota de limón</h4>
             <p>Un postre fresco y ligero de limón, de textura cremosa y sabor cítrico, preparado artesanalmente sobre pedido.</p>
-            <div class="special-price">$$$</div>
+            <div class="special-price">
+              <span>Individual · $45</span>
+              <span>Grande · $350</span>
+            </div>
             <div class="special-note">Disponible individual y grande · Envío extra</div>
           </div>
 
@@ -2665,7 +2676,10 @@ footer{
             <div class="num">05</div>
             <h4>Red Velvet</h4>
             <p>Bizcocho Red Velvet de textura suave, acompañado de una crema de queso de acabado delicado. Un postre de carácter elegante y sabor equilibrado.</p>
-            <div class="special-price">$$$</div>
+            <div class="special-price">
+              <span>Individual · $50</span>
+              <span>Grande · $550</span>
+            </div>
             <div class="special-note">Disponible individual y grande · Envío extra</div>
           </div>
 
@@ -2728,14 +2742,14 @@ footer{
         <h3>Roles de canela</h3>
         <p>Suaves, esponjosos y elaborados con una masa enriquecida, rellenos con una mezcla aromática de canela y azúcar. Una preparación de panadería artesanal pensada para disfrutarse recién horneada.</p>
         <div class="bakery-variants">
-          <div class="bakery-variant">Glaseado clásico</div>
-          <div class="bakery-variant">Oreo</div>
-          <div class="bakery-variant">Frutos rojos</div>
-          <div class="bakery-variant">Chocolate</div>
-          <div class="bakery-variant">Fresa</div>
-          <div class="bakery-variant">Guayaba</div>
+          <div class="bakery-variant">Glaseado clásico · $55</div>
+          <div class="bakery-variant">Oreo · $65</div>
+          <div class="bakery-variant">Frutos rojos · $65</div>
+          <div class="bakery-variant">Chocolate · $65</div>
+          <div class="bakery-variant">Fresa · $65</div>
+          <div class="bakery-variant">Guayaba · $65</div>
         </div>
-        <div class="bakery-price">$$$</div>
+        <div class="bakery-price">$55–$65</div>
         <span class="small">Consulta disponibilidad y pedido.</span>
       </article>
 
@@ -2746,13 +2760,18 @@ footer{
         <div class="eyebrow">02 · Para restaurante</div>
         <h3>Bollo de hamburguesa</h3>
         <p>Pan suave y ligeramente briocheado, de miga tierna y estructura firme para acompañar hamburguesas sin perder textura ni forma. Elaborado para servicio gastronómico y consumo individual.</p>
+        <div class="bakery-size-prices">
+          <div><span>Mini slider</span><strong>50 g · $4.50</strong></div>
+          <div><span>Bollo chico</span><strong>110 g · $9</strong></div>
+          <div><span>Bollo grande</span><strong>135 g · $12</strong></div>
+        </div>
         <div class="bakery-variants">
           <div class="bakery-variant">Ajonjolí mixto</div>
           <div class="bakery-variant">Cebolla</div>
           <div class="bakery-variant">Ajo</div>
           <div class="bakery-variant">Hierbas finas</div>
         </div>
-        <div class="bakery-price">$$$</div>
+        <div class="bakery-price">$4.50–$12</div>
         <span class="small">Consulta disponibilidad y pedido.</span>
       </article>
 
