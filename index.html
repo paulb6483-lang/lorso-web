@@ -1226,6 +1226,325 @@ header{
   }
 }
 
+/* =====================================================
+   MESA DE POSTRES L'ORSO — DISEÑO ESPECIAL
+===================================================== */
+
+.dessert-tables-section{
+  overflow:hidden;
+}
+
+.dessert-tables-header{
+  align-items:end;
+}
+
+.dessert-tables-header .section-description{
+  max-width:560px;
+}
+
+.dessert-capacity{
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  gap:10px;
+  margin:10px auto 55px;
+  font-size:11px;
+  letter-spacing:3px;
+  opacity:.7;
+}
+
+.dessert-capacity strong{
+  font-size:34px;
+  font-weight:400;
+  letter-spacing:0;
+  opacity:1;
+}
+
+.dessert-gallery-new{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  grid-template-rows:300px 230px;
+  gap:14px;
+  margin:0 auto 85px;
+  max-width:1180px;
+}
+
+.dessert-gallery-new figure{
+  margin:0;
+  overflow:hidden;
+  min-width:0;
+}
+
+.dessert-gallery-new .dessert-gallery-main{
+  grid-row:1 / 3;
+}
+
+.dessert-gallery-new img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+
+.dessert-gallery-new figure:hover img{
+  transform:scale(1.025);
+}
+
+.dessert-gallery-new .dessert-gallery-main img{
+  object-position:center center;
+}
+
+.dessert-gallery-new figure:nth-child(2) img{
+  object-position:center center;
+}
+
+.dessert-gallery-new figure:nth-child(3) img{
+  object-position:center center;
+}
+
+.dessert-design-statement{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+  max-width:1050px;
+  margin:0 auto 75px;
+  padding:55px 0;
+  border-top:1px solid rgba(255,255,255,.12);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.dessert-design-statement h3{
+  margin:12px 0 0;
+  font-size:42px;
+  line-height:1.08;
+  font-weight:400;
+}
+
+.dessert-design-statement p{
+  margin:0;
+  font-size:15px;
+  line-height:1.85;
+  opacity:.76;
+}
+
+.dessert-packages{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  max-width:1050px;
+  margin:0 auto;
+}
+
+.dessert-package{
+  padding:42px;
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.015);
+}
+
+.dessert-package-featured{
+  border-color:rgba(255,255,255,.27);
+  background:rgba(255,255,255,.035);
+}
+
+.dessert-package-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:28px;
+}
+
+.dessert-package-number{
+  font-size:11px;
+  letter-spacing:2px;
+  opacity:.5;
+}
+
+.dessert-package-label{
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  opacity:.6;
+}
+
+.dessert-package h3{
+  margin:0 0 22px;
+  font-size:30px;
+  font-weight:400;
+}
+
+.dessert-price{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+}
+
+.dessert-price strong{
+  font-size:40px;
+  line-height:1;
+  font-weight:400;
+}
+
+.dessert-price span{
+  font-size:12px;
+  opacity:.6;
+}
+
+.dessert-minimum{
+  margin:8px 0 28px;
+  font-size:10px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  opacity:.55;
+}
+
+.dessert-package-description{
+  margin:0;
+  font-size:14px;
+  line-height:1.75;
+  opacity:.78;
+}
+
+.dessert-includes,
+.dessert-selection{
+  margin-top:30px;
+}
+
+.dessert-includes h4,
+.dessert-selection h4{
+  margin:0 0 15px;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  opacity:.58;
+}
+
+.dessert-includes ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.dessert-includes li{
+  position:relative;
+  padding-left:15px;
+  margin-bottom:9px;
+  font-size:13px;
+  line-height:1.55;
+  opacity:.78;
+}
+
+.dessert-includes li::before{
+  content:'·';
+  position:absolute;
+  left:0;
+}
+
+.dessert-selection p{
+  margin:0 0 14px;
+  font-size:13px;
+  line-height:1.6;
+  opacity:.78;
+}
+
+.dessert-selection strong{
+  font-weight:500;
+  opacity:1;
+}
+
+.dessert-closing{
+  max-width:680px;
+  margin:85px auto 0;
+  text-align:center;
+}
+
+.dessert-closing h3{
+  margin:12px 0 18px;
+  font-size:34px;
+  line-height:1.1;
+  font-weight:400;
+}
+
+.dessert-closing p{
+  margin:0;
+  font-size:14px;
+  line-height:1.8;
+  opacity:.72;
+}
+
+@media(max-width:760px){
+  .dessert-capacity{
+    margin-bottom:35px;
+    gap:7px;
+    letter-spacing:2px;
+  }
+
+  .dessert-capacity strong{
+    font-size:27px;
+  }
+
+  .dessert-gallery-new{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+    gap:10px;
+    margin-bottom:55px;
+  }
+
+  .dessert-gallery-new .dessert-gallery-main{
+    grid-row:auto;
+  }
+
+  .dessert-gallery-new figure,
+  .dessert-gallery-new .dessert-gallery-main{
+    height:auto;
+    aspect-ratio:16 / 10;
+  }
+
+  .dessert-gallery-new img{
+    height:100%;
+    object-fit:cover;
+  }
+
+  .dessert-design-statement{
+    grid-template-columns:1fr;
+    gap:25px;
+    padding:40px 0;
+    margin-bottom:50px;
+  }
+
+  .dessert-design-statement h3{
+    font-size:31px;
+  }
+
+  .dessert-packages{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+
+  .dessert-package{
+    padding:30px 24px;
+  }
+
+  .dessert-package h3{
+    font-size:27px;
+  }
+
+  .dessert-price strong{
+    font-size:35px;
+  }
+
+  .dessert-closing{
+    margin-top:60px;
+  }
+
+  .dessert-closing h3{
+    font-size:29px;
+  }
+}
+
+
 /* DESSERT TABLES */
 .tables{
   display:grid;
@@ -1895,7 +2214,7 @@ footer{
     <div class="bakery-layout">
       <article class="bakery-product">
         <div class="bakery-photo product-photo">
-          <img src="imagenes/rol1.jpeg" alt="Roles de canela de L'Orso">
+          <img src="imagenes/rol1.jpeg" alt="Roles de canela de L'Orso" onerror="this.onerror=null;this.src='imagenes/rol3.jpeg'">
         </div>
         <div class="eyebrow">01 · Para cafetería</div>
         <h3>Roles de canela</h3>
@@ -2279,26 +2598,155 @@ footer{
 
     <div style="height:45px"></div>
 
-    <div class="dessert-table-service" id="mesas-postres">
-      <div class="dessert-table-gallery">
-        <div class="dessert-table-media product-photo">
-          <img src="imagenes/imagenlorso3.jpeg" alt="Mesa de postres L'Orso">
-        </div>
-        <div class="dessert-table-media product-photo">
-          <img src="imagenes/imagenlorso4.jpg" alt="Montaje de postres L'Orso">
-        </div>
-        <div class="dessert-table-media dessert-table-placeholder"></div>
+</div>
+</section>
+
+<!-- =====================================================
+     MESAS DE POSTRES
+===================================================== -->
+
+<section id="mesas-postres" class="section dessert-tables-section">
+
+  <div class="container">
+
+    <div class="section-header dessert-tables-header">
+
+      <div class="section-title">
+        <small>Diseño · Montaje · Repostería</small>
+        <h2>Mesa de postres</h2>
       </div>
-      <div class="dessert-table-copy">
-        <div class="eyebrow">Mesas de postres</div>
-        <h3>Una composición<br>para la ocasión.</h3>
-        <p>Una mesa de postres es parte de la experiencia visual del evento. L'Orso desarrolla la selección de piezas y su presentación para integrarlas con la estética y el concepto de cada celebración.</p>
-        <p>El servicio contempla la mesa, bases para presentación, montaje y una composición visual cuidada, pensada para crear armonía entre los postres y el evento.</p>
-        <a class="btn btn-dark" href="#cotizar">Diseñar una mesa</a>
+
+      <p class="section-description">
+        Una propuesta distinta al catering: diseñamos la mesa de postres como parte de la identidad visual de tu celebración, desde la selección de piezas hasta su presentación y montaje.
+      </p>
+
+    </div>
+
+    <div class="dessert-capacity">
+      <span>DESDE</span>
+      <strong>60</strong>
+      <span>HASTA</span>
+      <strong>200</strong>
+      <span>PERSONAS</span>
+    </div>
+
+    <div class="dessert-gallery-new">
+
+      <figure class="dessert-gallery-main">
+        <img src="imagenes/mesa de postres (5).jpeg" alt="Mesa de postres L'Orso">
+      </figure>
+
+      <figure>
+        <img src="imagenes/mesa de postres (2).jpeg" alt="Montaje de mesa de postres L'Orso">
+      </figure>
+
+      <figure>
+        <img src="imagenes/mesa de postres (1).jpeg" alt="Mesa de postres para evento L'Orso">
+      </figure>
+
+    </div>
+
+    <div class="dessert-design-statement">
+      <div>
+        <div class="eyebrow">Una experiencia visual</div>
+        <h3>La mesa también forma parte del evento.</h3>
       </div>
+      <p>
+        Diseñamos cada montaje de acuerdo con el estilo de la celebración. La propuesta puede integrar mesa, mobiliario, bases, follaje y elementos de exhibición para crear una composición coherente con el espacio y la ocasión.
+      </p>
+    </div>
+
+    <div class="dessert-packages">
+
+      <article class="dessert-package">
+        <div class="dessert-package-top">
+          <span class="dessert-package-number">01</span>
+          <span class="dessert-package-label">Esencial</span>
+        </div>
+
+        <h3>Mesa de postres</h3>
+
+        <div class="dessert-price">
+          <strong>$36</strong>
+          <span>por pieza</span>
+        </div>
+
+        <p class="dessert-minimum">Pedido mínimo · 60 piezas</p>
+
+        <p class="dessert-package-description">
+          Una propuesta enfocada en el producto, con piezas terminadas y listas para integrarse a tu mesa de postres.
+        </p>
+
+        <div class="dessert-includes">
+          <h4>Incluye</h4>
+          <ul>
+            <li>Postres terminados y listos para montaje</li>
+            <li>Envío</li>
+            <li>1 persona de nuestro equipo para asistir durante el evento</li>
+          </ul>
+        </div>
+
+        <div class="dessert-selection">
+          <h4>Selección</h4>
+          <p><strong>Cheesecake</strong><br>Guayaba · Zarzamora · Oreo</p>
+          <p><strong>Red velvet</strong></p>
+          <p><strong>Carlota de limón</strong></p>
+        </div>
+      </article>
+
+      <article class="dessert-package dessert-package-featured">
+        <div class="dessert-package-top">
+          <span class="dessert-package-number">02</span>
+          <span class="dessert-package-label">Experiencia L'Orso</span>
+        </div>
+
+        <h3>Mesa de postres L'Orso</h3>
+
+        <div class="dessert-price">
+          <strong>$45.50</strong>
+          <span>por pieza</span>
+        </div>
+
+        <p class="dessert-minimum">Pedido mínimo · 60 piezas</p>
+
+        <p class="dessert-package-description">
+          Una experiencia integral en la que producto, presentación y montaje se desarrollan como una sola propuesta para tu evento.
+        </p>
+
+        <div class="dessert-includes">
+          <h4>Incluye</h4>
+          <ul>
+            <li>4 opciones de postre a elegir</li>
+            <li>Montaje de los postres</li>
+            <li>Mesa y mobiliario para presentación</li>
+            <li>Bases y elementos de exhibición</li>
+            <li>Follaje y elementos decorativos</li>
+            <li>2 personas de nuestro equipo para montaje y servicio</li>
+          </ul>
+        </div>
+
+        <div class="dessert-selection">
+          <h4>Opciones</h4>
+          <p><strong>Cheesecake</strong><br>Frutos rojos · Chocolate · Guayaba · Zarzamora · Oreo · Fresa</p>
+          <p><strong>Red velvet</strong></p>
+          <p><strong>Carlota de limón</strong></p>
+          <p><strong>Pastel de chocolate</strong></p>
+          <p><strong>Tartaleta</strong><br>Frutos rojos · Fresa · Chocolate</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="dessert-closing">
+      <div class="eyebrow">Diseño para cada celebración</div>
+      <h3>Cada mesa se diseña para su evento.</h3>
+      <p>
+        La composición, presentación y elementos decorativos se adaptan al estilo de la celebración para que la mesa de postres no sea un complemento, sino parte de la experiencia.
+      </p>
     </div>
 
   </div>
+
 </section>
 
 <section id="cotizar" class="contact">
