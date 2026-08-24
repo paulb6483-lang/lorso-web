@@ -555,72 +555,50 @@ header{
 /* BAKERY */
 .bakery-layout{
   display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:70px;
-  align-items:stretch;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:45px;
 }
 .bakery-photo{
-  min-height:610px;
   overflow:hidden;
+  border:1px solid var(--line);
 }
-.bakery-gallery{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  min-height:610px;
-}
-.bakery-photo img,
-.bakery-gallery img{
+.bakery-photo img{
   width:100%;
-  height:100%;
+  max-width:100%;
+  height:auto;
+  display:block;
+  box-sizing:border-box;
   object-fit:cover;
-}
-.bakery-gallery .bakery-photo{
-  min-height:0;
-  aspect-ratio:3 / 4;
 }
 .bakery-variants{
   margin-top:20px;
-  border-top:1px solid var(--line-light);
+  display:flex;
+  flex-wrap:wrap;
+  gap:0 12px;
+  border-top:1px solid var(--line);
 }
 .bakery-variant{
-  padding:10px 0;
-  border-bottom:1px solid var(--line-light);
-}
-.bakery-variant-head{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:20px;
+  padding:9px 0;
   font-family:var(--serif);
-  font-size:22px;
+  font-size:20px;
 }
-.bakery-variant-price{
-  flex:0 0 auto;
-  font-family:var(--sans);
-  font-size:12px;
-  letter-spacing:2px;
-  color:var(--sand);
-}
-.bakery-variant p{
-  margin-top:3px;
-  font-size:11px;
-  line-height:1.7;
-  color:#cfc4b7;
+.bakery-variant:not(:last-child)::after{
+  content:" ·";
+  margin-left:12px;
+  color:var(--gold);
 }
 .bakery-copy{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  display:contents;
 }
 .bakery-product{
-  padding:26px 0;
-  border-top:1px solid var(--line-light);
+  min-width:0;
+  padding:0 0 22px;
+  border-bottom:1px solid var(--line);
 }
-.bakery-product:last-child{border-bottom:1px solid var(--line-light)}
 .bakery-product h3{
+  margin-top:22px;
   font-family:var(--serif);
-  font-size:44px;
+  font-size:46px;
   font-weight:400;
 }
 .bakery-product p{
@@ -628,14 +606,26 @@ header{
   margin-top:8px;
   font-size:13px;
   line-height:1.8;
-  color:#cfc4b7;
+  color:rgba(23,20,17,.84);
+}
+.bakery-price{
+  margin-top:18px;
+  font-family:var(--serif);
+  font-size:42px;
+  line-height:1;
+  color:var(--gold);
 }
 .bakery-product .small{
   display:block;
-  margin-top:12px;
+  margin-top:14px;
   font-size:10px;
   letter-spacing:2px;
   color:var(--sand);
+}
+.bakery-catalog-cta{
+  grid-column:1 / -1;
+  width:max-content;
+  margin-top:-18px;
 }
 
 /* COMO PEDIR */
@@ -1145,7 +1135,6 @@ footer{
   .event-photo.large{grid-row:1 / span 2}
   .event-caption{grid-column:2}
   .tables{grid-template-columns:1fr}
-  .bakery-gallery{min-height:0}
 }
 
 @media(max-width:680px){
@@ -1232,8 +1221,6 @@ footer{
   .special-product h4{font-size:39px}
   .special-price{font-size:42px}
   .flavor{font-size:21px}
-  .bakery-gallery{grid-template-columns:1fr}
-  .bakery-gallery .bakery-photo{aspect-ratio:4 / 3}
   .bakery-product h3{font-size:39px}
   .events-grid{
     grid-template-columns:1fr;
@@ -1595,48 +1582,43 @@ footer{
     </div>
 
     <div class="bakery-layout">
-      <div class="bakery-gallery">
+      <article class="bakery-product">
+        <div class="bakery-photo product-photo">
+          <img src="imagenes/rol1.jpeg" alt="Roles de canela de L'Orso">
+        </div>
+        <div class="eyebrow">01 · Para cafetería</div>
+        <h3>Roles de canela</h3>
+        <p>Suaves, esponjosos y elaborados con una masa enriquecida, rellenos con una mezcla aromática de canela y azúcar. Una preparación de panadería artesanal pensada para disfrutarse recién horneada.</p>
+        <div class="bakery-variants">
+          <div class="bakery-variant">Glaseado clásico</div>
+          <div class="bakery-variant">Oreo</div>
+          <div class="bakery-variant">Frutos rojos</div>
+          <div class="bakery-variant">Chocolate</div>
+          <div class="bakery-variant">Fresa</div>
+          <div class="bakery-variant">Guayaba</div>
+        </div>
+        <div class="bakery-price">$$$</div>
+        <span class="small">Consulta disponibilidad y pedido.</span>
+      </article>
+
+      <article class="bakery-product">
         <div class="bakery-photo product-photo">
           <img src="imagenes/bollo hamburguesa.png" alt="Bollo de hamburguesa de L'Orso">
         </div>
-        <div class="bakery-photo product-photo">
-          <img src="imagenes/rol1.jpeg" alt="Rol de canela de L'Orso">
+        <div class="eyebrow">02 · Para restaurante</div>
+        <h3>Bollo de hamburguesa</h3>
+        <p>Pan suave y ligeramente briocheado, de miga tierna y estructura firme para acompañar hamburguesas sin perder textura ni forma. Elaborado para servicio gastronómico y consumo individual.</p>
+        <div class="bakery-variants">
+          <div class="bakery-variant">Ajonjolí mixto</div>
+          <div class="bakery-variant">Cebolla</div>
+          <div class="bakery-variant">Ajo</div>
+          <div class="bakery-variant">Hierbas finas</div>
         </div>
-      </div>
+        <div class="bakery-price">$$$</div>
+        <span class="small">Consulta disponibilidad y pedido.</span>
+      </article>
 
-      <div class="bakery-copy">
-        <article class="bakery-product">
-          <div class="eyebrow">01 · Para restaurante</div>
-          <h3>Bollo de hamburguesa</h3>
-          <p>
-            Pan brioche suave, ligeramente dulce, de miga tierna y desarrollado específicamente para hamburguesas y propuestas gastronómicas.
-          </p>
-          <div class="bakery-variants">
-            <div class="bakery-variant"><div class="bakery-variant-head"><span>Ajonjolí mixto</span><span class="bakery-variant-price">$$$</span></div><p>Acabado clásico con mezcla de semillas para aportar textura y aroma.</p></div>
-            <div class="bakery-variant"><div class="bakery-variant-head"><span>Cebolla</span><span class="bakery-variant-price">$$$</span></div><p>Acabado aromático de cebolla para una propuesta de sabor más marcada.</p></div>
-            <div class="bakery-variant"><div class="bakery-variant-head"><span>Ajo</span><span class="bakery-variant-price">$$$</span></div><p>Acabado de ajo pensado para acompañar propuestas gastronómicas de mayor intensidad.</p></div>
-            <div class="bakery-variant"><div class="bakery-variant-head"><span>Hierbas finas</span><span class="bakery-variant-price">$$$</span></div><p>Mezcla aromática de hierbas que aporta un perfil más gastronómico al brioche.</p></div>
-          </div>
-        </article>
-
-        <article class="bakery-product">
-          <div class="eyebrow">02 · Para cafetería</div>
-          <h3>Rol de canela</h3>
-          <p>
-            Masa suave y esponjosa, enrollada con canela y azúcar, horneada hasta conseguir un exterior ligeramente dorado.
-          </p>
-          <div class="bakery-variants">
-            <div class="bakery-variant"><div class="bakery-variant-head"><span>Glaseado clásico</span><span class="bakery-variant-price">$$$</span></div><p>Rol de canela tradicional terminado con un glaseado suave y delicado.</p></div>
-            <div class="bakery-variant"><div class="bakery-variant-head"><span>Oreo</span><span class="bakery-variant-price">$$$</span></div><p>Combinación de canela, glaseado y notas de galleta de chocolate.</p></div>
-            <div class="bakery-variant"><div class="bakery-variant-head"><span>Frutos rojos</span><span class="bakery-variant-price">$$$</span></div><p>Perfil dulce y ligeramente ácido que combina la canela con frutos rojos.</p></div>
-            <div class="bakery-variant"><div class="bakery-variant-head"><span>Chocolate</span><span class="bakery-variant-price">$$$</span></div><p>Versión de sabor más intenso con notas profundas de chocolate.</p></div>
-            <div class="bakery-variant"><div class="bakery-variant-head"><span>Fresa</span><span class="bakery-variant-price">$$$</span></div><p>Combinación dulce y frutal que aporta un contraste fresco al rol.</p></div>
-            <div class="bakery-variant"><div class="bakery-variant-head"><span>Guayaba</span><span class="bakery-variant-price">$$$</span></div><p>Una combinación de canela y guayaba con un perfil dulce y aromático.</p></div>
-          </div>
-        </article>
-
-        <a href="#cotizar" class="btn btn-dark" style="width:max-content;margin-top:28px">Solicitar catálogo</a>
-      </div>
+      <a href="#cotizar" class="btn btn-dark bakery-catalog-cta">Solicitar catálogo</a>
     </div>
 
   </div>
