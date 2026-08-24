@@ -456,9 +456,10 @@ header{
 .special-product{
   grid-column:1/-1;
   display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:45px;
-  padding:35px 0;
+  grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);
+  gap:55px;
+  align-items:center;
+  padding:42px 0;
   border-bottom:1px solid var(--line-light);
 }
 .special-product h4{
@@ -466,35 +467,89 @@ header{
   font-family:var(--serif);
   font-weight:400;
   font-size:42px;
+  line-height:.9;
 }
 .special-product p{
   max-width:500px;
-  margin-top:10px;
+  margin-top:12px;
   font-size:13px;
   line-height:1.8;
   color:#cfc4b7;
 }
 .special-options{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  width:100%;
+}
+.special-options.single{
+  grid-template-columns:minmax(280px,520px);
+}
+.special-options.two{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  max-width:620px;
+  margin-left:auto;
 }
 .special-option{
   min-width:0;
+  text-align:center;
 }
 .special-photo{
-  aspect-ratio:4 / 3;
+  width:100%;
   overflow:hidden;
   border:1px solid var(--line-light);
   background:rgba(244,238,229,.04);
 }
+.special-options.single .special-photo{
+  aspect-ratio:3 / 2;
+}
+.special-options.two .special-photo{
+  aspect-ratio:3 / 4;
+}
+.special-photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  transition:transform .45s ease;
+}
+.special-photo:hover img{
+  transform:scale(1.05);
+}
 .special-option-label{
   display:block;
-  margin-top:10px;
-  font-size:11px;
+  margin-top:11px;
+  font-size:10px;
   letter-spacing:2px;
   color:var(--sand);
   text-transform:uppercase;
+}
+.special-price{
+  font-family:var(--serif);
+  font-size:48px;
+  color:var(--sand);
+  line-height:1;
+}
+.special-note{
+  margin-top:18px;
+  font-size:10px;
+  line-height:1.8;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:#bfb3a5;
+}
+.special-text-detail{
+  min-height:150px;
+  padding-left:55px;
+  border-left:1px solid var(--line-light);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.special-product.no-photo{
+  grid-template-columns:minmax(280px,.8fr) minmax(280px,1.2fr);
 }
 
 /* BAKERY */
@@ -1029,7 +1084,18 @@ footer{
     grid-template-columns:1fr;
     gap:25px;
   }
-  .special-options{grid-template-columns:1fr}
+  .special-options{width:100%}
+  .special-options.two{
+    max-width:none;
+    margin-left:0;
+  }
+  .special-text-detail{
+    min-height:auto;
+    padding-left:0;
+    padding-top:25px;
+    border-left:0;
+    border-top:1px solid var(--line-light);
+  }
   .order-menu-item:nth-child(odd){
     padding-right:0;
     border-right:0;
@@ -1096,6 +1162,10 @@ footer{
   .cheesecake-main{grid-column:1/-1;grid-row:auto}
   .cheesecake-detail:last-child{display:block}
   .product-copy h3{font-size:50px}
+  .special-options.single{grid-template-columns:1fr}
+  .special-options.two{grid-template-columns:1fr 1fr}
+  .special-product h4{font-size:39px}
+  .special-price{font-size:42px}
   .flavor{font-size:21px}
   .bakery-photo{min-height:390px}
   .bakery-product h3{font-size:39px}
@@ -1321,68 +1391,125 @@ footer{
       </div>
 
       <div class="order-menu-list">
-        <article class="order-menu-item">
-          <div class="num">01</div>
-          <h4>Cheesecake grande</h4>
-          <p>Disponible en diferentes sabores y formatos para celebraciones.</p>
+        <article class="special-product">
+          <div>
+            <div class="num">01</div>
+            <h4>Cheesecake grande</h4>
+            <p>Un cheesecake artesanal de textura cremosa y acabado delicado, preparado sobre pedido para celebraciones y ocasiones especiales.</p>
+            <div class="special-price">$$$</div>
+            <div class="special-note">Presentación para compartir · Envío extra</div>
+          </div>
+
+          <div class="special-options single">
+            <div class="special-option">
+              <div class="special-photo">
+                <img
+                  src="imagenes/cheesecake-grande.png"
+                  alt="Cheesecake grande de L'Orso"
+                >
+              </div>
+            </div>
+          </div>
         </article>
-        <article class="order-menu-item">
-          <div class="num">02</div>
-          <h4>Tiramisú grande</h4>
-          <p>Formato para compartir y ocasiones especiales.</p>
+
+        <article class="special-product no-photo">
+          <div>
+            <div class="num">02</div>
+            <h4>Tiramisú</h4>
+            <p>Capas suaves de bizcocho humedecido con café, crema de mascarpone y un delicado acabado de cacao. Un clásico italiano equilibrado, preparado para compartir.</p>
+          </div>
+
+          <div class="special-text-detail">
+            <div class="special-price">$$$</div>
+            <div class="special-note">Presentación para compartir · No disponible individual · Envío extra</div>
+          </div>
         </article>
-        <article class="order-menu-item">
-          <div class="num">03</div>
-          <h4>Carlota grande</h4>
-          <p>Una versión de mayor formato para compartir.</p>
+
+        <article class="special-product no-photo">
+          <div>
+            <div class="num">03</div>
+            <h4>Ópera</h4>
+            <p>Un clásico de la pastelería francesa construido en capas de biscuit de almendra, crema de café, ganache de chocolate y un acabado intenso de chocolate.</p>
+          </div>
+
+          <div class="special-text-detail">
+            <div class="special-price">$$$</div>
+            <div class="special-note">Presentación para compartir · No disponible individual · Envío extra</div>
+          </div>
         </article>
+
+        <article class="special-product">
+          <div>
+            <div class="num">04</div>
+            <h4>Carlota de limón</h4>
+            <p>Un postre fresco y ligero de limón, de textura cremosa y sabor cítrico, preparado artesanalmente sobre pedido.</p>
+            <div class="special-price">$$$</div>
+            <div class="special-note">Disponible individual y grande · Envío extra</div>
+          </div>
+
+          <div class="special-options two">
+            <div class="special-option">
+              <div class="special-photo">
+                <img
+                  src="imagenes/carlota-individual.jpeg"
+                  alt="Carlota de limón individual de L'Orso"
+                >
+              </div>
+              <span class="special-option-label">Individual</span>
+            </div>
+            <div class="special-option">
+              <div class="special-photo">
+                <img
+                  src="imagenes/carlota-grande.png"
+                  alt="Carlota de limón grande de L'Orso"
+                >
+              </div>
+              <span class="special-option-label">Grande</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="special-product">
+          <div>
+            <div class="num">05</div>
+            <h4>Red Velvet</h4>
+            <p>Bizcocho Red Velvet de textura suave, acompañado de una crema de queso de acabado delicado. Un postre de carácter elegante y sabor equilibrado.</p>
+            <div class="special-price">$$$</div>
+            <div class="special-note">Disponible individual y grande · Envío extra</div>
+          </div>
+
+          <div class="special-options two">
+            <div class="special-option">
+              <div class="special-photo">
+                <img
+                  src="imagenes/redvelvet-individual.jpeg"
+                  alt="Red Velvet individual de L'Orso"
+                >
+              </div>
+              <span class="special-option-label">Individual</span>
+            </div>
+            <div class="special-option">
+              <div class="special-photo">
+                <img
+                  src="imagenes/redvelvet-grande.png"
+                  alt="Red Velvet grande de L'Orso"
+                >
+              </div>
+              <span class="special-option-label">Grande</span>
+            </div>
+          </div>
+        </article>
+
         <article class="order-menu-item">
-          <div class="num">04</div>
+          <div class="num">06</div>
           <h4>Pasteles especiales</h4>
           <p>Pasteles sobre pedido de acuerdo con tamaño y propuesta.</p>
         </article>
+
         <article class="order-menu-item">
-          <div class="num">05</div>
+          <div class="num">07</div>
           <h4>Postres personalizados</h4>
           <p>Piezas y propuestas especiales desarrolladas para eventos.</p>
-        </article>
-
-        <article class="special-product">
-          <div>
-            <div class="num">06</div>
-            <h4>Carlota de limón</h4>
-            <p>Postre fresco de limón, preparado sobre pedido en dos formatos.</p>
-          </div>
-
-          <div class="special-options">
-            <div class="special-option">
-              <div class="special-photo" aria-label="Espacio para fotografía de Carlota individual" data-image-path="imagenes/carlota-individual.jpeg"></div>
-              <span class="special-option-label">Individual</span>
-            </div>
-            <div class="special-option">
-              <div class="special-photo" aria-label="Espacio para fotografía de Carlota grande" data-image-path="imagenes/carlota-grande.jpeg"></div>
-              <span class="special-option-label">Grande</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="special-product">
-          <div>
-            <div class="num">07</div>
-            <h4>Red Velvet</h4>
-            <p>Pastel de textura suave y acabado rojo, preparado sobre pedido en dos formatos.</p>
-          </div>
-
-          <div class="special-options">
-            <div class="special-option">
-              <div class="special-photo" aria-label="Espacio para fotografía individual" data-image-path="imagenes/redvelvet-individual.jpeg"></div>
-              <span class="special-option-label">Individual</span>
-            </div>
-            <div class="special-option">
-              <div class="special-photo" aria-label="Espacio para fotografía grande" data-image-path="imagenes/redvelvet-grande.jpeg"></div>
-              <span class="special-option-label">Grande</span>
-            </div>
-          </div>
         </article>
       </div>
 
