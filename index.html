@@ -914,6 +914,155 @@ header{
   gap:10px;
   flex-wrap:wrap;
 }
+.catering-details{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:42px;
+  border-top:1px solid var(--line-light);
+  border-bottom:1px solid var(--line-light);
+}
+.catering-detail{
+  padding:24px 0;
+}
+.catering-detail + .catering-detail{
+  padding-left:35px;
+  border-left:1px solid var(--line-light);
+}
+.catering-detail h4{
+  font-family:var(--serif);
+  font-size:32px;
+  font-weight:400;
+}
+.catering-detail p{
+  max-width:500px;
+  margin-top:10px;
+  font-size:12px;
+  line-height:1.9;
+  color:#cfc4b7;
+}
+.catering-cuisines{
+  margin-top:12px;
+  font-family:var(--serif);
+  font-size:21px;
+  line-height:1.35;
+  color:var(--sand);
+}
+.experience-details{
+  margin-top:28px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+.experience-details p{
+  max-width:700px;
+  font-size:13px;
+  line-height:1.9;
+  color:var(--muted);
+}
+.experience-capacity{
+  margin-top:15px;
+  font-family:var(--serif);
+  font-size:28px;
+  color:var(--gold);
+}
+.dessert-table-gallery{
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  grid-template-rows:1fr 1fr;
+  gap:12px;
+  margin-bottom:28px;
+}
+.dessert-table-media{
+  min-height:420px;
+  overflow:hidden;
+  border:1px solid var(--line-light);
+  background:rgba(244,238,229,.04);
+}
+.dessert-table-media:first-child{grid-row:1 / span 2}
+.dessert-table-media img{
+  width:100%;
+  max-width:100%;
+  height:auto;
+  display:block;
+  box-sizing:border-box;
+  object-fit:cover;
+  transition:transform .45s ease;
+}
+.dessert-table-media:hover img{transform:scale(1.05)}
+.dessert-table-placeholder::after{
+  content:"Fotografía de montaje";
+  display:grid;
+  place-items:center;
+  height:100%;
+  min-height:190px;
+  font-family:var(--serif);
+  font-size:24px;
+  color:rgba(244,238,229,.55);
+}
+.dessert-table-copy{
+  padding:28px 0 0;
+  border-top:1px solid var(--line-light);
+}
+.dessert-table-copy h3{
+  font-family:var(--serif);
+  font-size:48px;
+  font-weight:400;
+}
+.dessert-table-copy p{
+  max-width:700px;
+  margin-top:12px;
+  font-size:13px;
+  line-height:1.9;
+  color:var(--muted);
+}
+.dessert-table-copy .eyebrow{margin-top:18px}
+
+@media(max-width:980px){
+  .catering-details{
+    grid-template-columns:1fr;
+  }
+  .catering-detail + .catering-detail{
+    padding-left:0;
+    border-left:0;
+    border-top:1px solid var(--line-light);
+  }
+  .dessert-table-gallery{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto auto;
+  }
+  .dessert-table-media:first-child{
+    grid-column:1 / -1;
+    grid-row:auto;
+  }
+}
+
+@media(max-width:680px){
+  .catering-details,
+  .catering-detail,
+  .experience-details,
+  .dessert-table-service,
+  .dessert-table-gallery,
+  .dessert-table-copy{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+  .dessert-table-gallery{
+    grid-template-columns:1fr;
+  }
+  .dessert-table-media:first-child{
+    grid-column:auto;
+  }
+  .dessert-table-media{
+    min-height:0;
+  }
+  .dessert-table-placeholder{
+    min-height:180px;
+  }
+  .dessert-table-copy h3{
+    font-size:46px;
+  }
+}
 
 /* DESSERT TABLES */
 .tables{
@@ -1851,16 +2000,29 @@ footer{
 
       <div>
         <p>
-          Diseñamos menús y servicios para reuniones íntimas,
-          celebraciones familiares, eventos corporativos y reuniones
-          especiales. Cada propuesta se desarrolla de acuerdo con las
-          necesidades reales del evento.
+          Diseñamos un servicio gastronómico integral para eventos seleccionados,
+          de acuerdo con el tipo de celebración, el número de invitados y el
+          concepto que se desea construir. Cada propuesta se desarrolla con
+          atención personalizada y una ejecución cuidadosamente coordinada.
         </p>
 
         <div class="event-actions">
           <a class="btn btn-light" href="#cotizar">Solicitar información</a>
           <a class="btn btn-light" href="#experiencias">Ver experiencias</a>
         </div>
+      </div>
+    </div>
+
+    <div class="catering-details">
+      <div class="catering-detail">
+        <h4>Cocina contemporánea</h4>
+        <p>Construimos el menú desde una mirada actual, eligiendo la dirección gastronómica que mejor representa cada ocasión.</p>
+        <div class="catering-cuisines">Mexicana contemporánea · Italiana · Mediterránea · Cocina de autor L'Orso</div>
+      </div>
+      <div class="catering-detail">
+        <h4>Planeación y degustación</h4>
+        <p>Trabajamos con un número limitado de invitados por evento para cuidar la atención, la ejecución y la calidad gastronómica. Nuestro servicio está diseñado para eventos de hasta 150 personas.</p>
+        <p>Como parte de la planeación, ofrecemos una experiencia de degustación para conocer la propuesta y definir los sabores que mejor representan la ocasión.</p>
       </div>
     </div>
 
@@ -1904,39 +2066,36 @@ footer{
         <h3>Del primer<br>detalle al último bocado.</h3>
       </div>
       <p>
-        Trabajamos a partir del concepto del evento y construimos la propuesta
-        con el cliente. El menú, montaje y servicio se definen según la ocasión.
+        Hay momentos que merecen una propuesta pensada especialmente para ellos.
+        Diseñamos experiencias gastronómicas alrededor de pedidas de mano, cenas
+        especiales, celebraciones íntimas y ocasiones importantes para grupos pequeños.
       </p>
+    </div>
+
+    <div class="experience-details">
+      <p>Desde una cena íntima para dos hasta una celebración de mayor escala, cada experiencia se construye alrededor de la ocasión, su ritmo y su carácter. Cuando corresponde, podemos acompañar el proceso con una degustación para definir la propuesta.</p>
+      <div class="experience-capacity">Experiencias de 2 a 150 personas.</div>
     </div>
 
     <div style="height:45px"></div>
 
-    <div class="tables" id="mesas-postres">
-      <article class="table-card product-photo">
-        <img src="imagenes/imagenlorso3.jpeg" alt="Mesa de postres L'Orso">
-        <div class="table-card-content">
-          <div class="eyebrow" style="color:var(--sand)">Mesas de postres</div>
-          <h3>Una mesa<br>hecha para ti.</h3>
-          <p>
-            Combinaciones de cheesecakes, tartaletas, pasteles y postres especiales
-            de acuerdo con el evento y la cantidad de invitados.
-          </p>
-          <a class="btn btn-light" href="#cotizar">Diseñar una mesa</a>
+    <div class="dessert-table-service" id="mesas-postres">
+      <div class="dessert-table-gallery">
+        <div class="dessert-table-media product-photo">
+          <img src="imagenes/imagenlorso3.jpeg" alt="Mesa de postres L'Orso">
         </div>
-      </article>
-
-      <article class="table-card product-photo">
-        <img src="imagenes/imagenlorso4.jpg" alt="Montaje de postres L'Orso">
-        <div class="table-card-content">
-          <div class="eyebrow" style="color:var(--sand)">Celebraciones</div>
-          <h3>Selecciones<br>para compartir.</h3>
-          <p>
-            Las piezas pueden combinarse en diferentes formatos para crear
-            una presentación acorde con la ocasión.
-          </p>
-          <a class="btn btn-light" href="#cotizar">Consultar propuesta</a>
+        <div class="dessert-table-media product-photo">
+          <img src="imagenes/imagenlorso4.jpg" alt="Montaje de postres L'Orso">
         </div>
-      </article>
+        <div class="dessert-table-media dessert-table-placeholder"></div>
+      </div>
+      <div class="dessert-table-copy">
+        <div class="eyebrow">Mesas de postres</div>
+        <h3>Una composición<br>para la ocasión.</h3>
+        <p>Una mesa de postres es parte de la experiencia visual del evento. L'Orso desarrolla la selección de piezas y su presentación para integrarlas con la estética y el concepto de cada celebración.</p>
+        <p>El servicio contempla la mesa, bases para presentación, montaje y una composición visual cuidada, pensada para crear armonía entre los postres y el evento.</p>
+        <a class="btn btn-dark" href="#cotizar">Diseñar una mesa</a>
+      </div>
     </div>
 
   </div>
