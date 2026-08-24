@@ -563,10 +563,50 @@ header{
   min-height:610px;
   overflow:hidden;
 }
-.bakery-photo img{
+.bakery-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  min-height:610px;
+}
+.bakery-photo img,
+.bakery-gallery img{
   width:100%;
   height:100%;
   object-fit:cover;
+}
+.bakery-gallery .bakery-photo{
+  min-height:0;
+  aspect-ratio:3 / 4;
+}
+.bakery-variants{
+  margin-top:20px;
+  border-top:1px solid var(--line-light);
+}
+.bakery-variant{
+  padding:10px 0;
+  border-bottom:1px solid var(--line-light);
+}
+.bakery-variant-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:20px;
+  font-family:var(--serif);
+  font-size:22px;
+}
+.bakery-variant-price{
+  flex:0 0 auto;
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:2px;
+  color:var(--sand);
+}
+.bakery-variant p{
+  margin-top:3px;
+  font-size:11px;
+  line-height:1.7;
+  color:#cfc4b7;
 }
 .bakery-copy{
   display:flex;
@@ -1105,6 +1145,7 @@ footer{
   .event-photo.large{grid-row:1 / span 2}
   .event-caption{grid-column:2}
   .tables{grid-template-columns:1fr}
+  .bakery-gallery{min-height:0}
 }
 
 @media(max-width:680px){
@@ -1167,7 +1208,8 @@ footer{
   .special-product h4{font-size:39px}
   .special-price{font-size:42px}
   .flavor{font-size:21px}
-  .bakery-photo{min-height:390px}
+  .bakery-gallery{grid-template-columns:1fr}
+  .bakery-gallery .bakery-photo{aspect-ratio:4 / 3}
   .bakery-product h3{font-size:39px}
   .events-grid{
     grid-template-columns:1fr;
@@ -1502,14 +1544,9 @@ footer{
 
         <article class="order-menu-item">
           <div class="num">06</div>
-          <h4>Pasteles especiales</h4>
-          <p>Pasteles sobre pedido de acuerdo con tamaño y propuesta.</p>
-        </article>
-
-        <article class="order-menu-item">
-          <div class="num">07</div>
-          <h4>Postres personalizados</h4>
-          <p>Piezas y propuestas especiales desarrolladas para eventos.</p>
+          <h4>Creaciones para celebrar</h4>
+          <p>Además de nuestra línea de postres, desarrollamos propuestas personalizadas para celebraciones y eventos. Creamos pasteles y postres especiales para bodas, bautizos, cumpleaños, aniversarios y otras ocasiones, adaptando cada propuesta al concepto y estilo de la celebración.</p>
+          <p>Cada pedido se trabaja sobre solicitud, buscando el sabor, la presentación y el carácter que necesita cada ocasión.</p>
         </article>
       </div>
 
@@ -1534,8 +1571,13 @@ footer{
     </div>
 
     <div class="bakery-layout">
-      <div class="bakery-photo product-photo" aria-label="Panadería L'Orso">
-        <img src="imagenes/imagenlorso2.jpeg" alt="Panadería artesanal de L'Orso">
+      <div class="bakery-gallery">
+        <div class="bakery-photo product-photo">
+          <img src="imagenes/bollo hamburguesa.png" alt="Bollo de hamburguesa de L'Orso">
+        </div>
+        <div class="bakery-photo product-photo">
+          <img src="imagenes/rol1.jpeg" alt="Rol de canela de L'Orso">
+        </div>
       </div>
 
       <div class="bakery-copy">
@@ -1543,20 +1585,30 @@ footer{
           <div class="eyebrow">01 · Para restaurante</div>
           <h3>Bollo de hamburguesa</h3>
           <p>
-            Pan brioche suave, ligeramente dulce y desarrollado
-            para acompañar hamburguesas y propuestas gastronómicas.
+            Pan brioche suave, ligeramente dulce, de miga tierna y desarrollado específicamente para hamburguesas y propuestas gastronómicas.
           </p>
-          <span class="small">Consultar precio y volumen</span>
+          <div class="bakery-variants">
+            <div class="bakery-variant"><div class="bakery-variant-head"><span>Ajonjolí mixto</span><span class="bakery-variant-price">$$$</span></div><p>Acabado clásico con mezcla de semillas para aportar textura y aroma.</p></div>
+            <div class="bakery-variant"><div class="bakery-variant-head"><span>Cebolla</span><span class="bakery-variant-price">$$$</span></div><p>Acabado aromático de cebolla para una propuesta de sabor más marcada.</p></div>
+            <div class="bakery-variant"><div class="bakery-variant-head"><span>Ajo</span><span class="bakery-variant-price">$$$</span></div><p>Acabado de ajo pensado para acompañar propuestas gastronómicas de mayor intensidad.</p></div>
+            <div class="bakery-variant"><div class="bakery-variant-head"><span>Hierbas finas</span><span class="bakery-variant-price">$$$</span></div><p>Mezcla aromática de hierbas que aporta un perfil más gastronómico al brioche.</p></div>
+          </div>
         </article>
 
         <article class="bakery-product">
           <div class="eyebrow">02 · Para cafetería</div>
           <h3>Rol de canela</h3>
           <p>
-            Masa suave, aroma a canela y acabado dorado.
-            Disponible en diferentes versiones y para pedidos de volumen.
+            Masa suave y esponjosa, enrollada con canela y azúcar, horneada hasta conseguir un exterior ligeramente dorado.
           </p>
-          <span class="small">Consultar sabores y volumen</span>
+          <div class="bakery-variants">
+            <div class="bakery-variant"><div class="bakery-variant-head"><span>Glaseado clásico</span><span class="bakery-variant-price">$$$</span></div><p>Rol de canela tradicional terminado con un glaseado suave y delicado.</p></div>
+            <div class="bakery-variant"><div class="bakery-variant-head"><span>Oreo</span><span class="bakery-variant-price">$$$</span></div><p>Combinación de canela, glaseado y notas de galleta de chocolate.</p></div>
+            <div class="bakery-variant"><div class="bakery-variant-head"><span>Frutos rojos</span><span class="bakery-variant-price">$$$</span></div><p>Perfil dulce y ligeramente ácido que combina la canela con frutos rojos.</p></div>
+            <div class="bakery-variant"><div class="bakery-variant-head"><span>Chocolate</span><span class="bakery-variant-price">$$$</span></div><p>Versión de sabor más intenso con notas profundas de chocolate.</p></div>
+            <div class="bakery-variant"><div class="bakery-variant-head"><span>Fresa</span><span class="bakery-variant-price">$$$</span></div><p>Combinación dulce y frutal que aporta un contraste fresco al rol.</p></div>
+            <div class="bakery-variant"><div class="bakery-variant-head"><span>Guayaba</span><span class="bakery-variant-price">$$$</span></div><p>Una combinación de canela y guayaba con un perfil dulce y aromático.</p></div>
+          </div>
         </article>
 
         <a href="#cotizar" class="btn btn-dark" style="width:max-content;margin-top:28px">Solicitar catálogo</a>
