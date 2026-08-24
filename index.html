@@ -914,6 +914,116 @@ header{
   gap:10px;
   flex-wrap:wrap;
 }
+.catering-story,
+.catering-process,
+.catering-portfolio{
+  min-width:0;
+  margin-top:62px;
+}
+.catering-story{
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);
+  gap:12px;
+  align-items:start;
+}
+.catering-media,
+.catering-process-media,
+.catering-portfolio-media{
+  min-width:0;
+  overflow:hidden;
+  background:var(--ink-2);
+}
+.catering-media img,
+.catering-process-media img,
+.catering-portfolio-media img{
+  width:100%;
+  max-width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .45s ease;
+}
+.catering-media:hover img,
+.catering-process-media:hover img,
+.catering-portfolio-media:hover img{
+  transform:scale(1.04);
+}
+.catering-media-main{
+  grid-row:span 2;
+  aspect-ratio:3 / 4;
+}
+.catering-media-detail{aspect-ratio:3 / 4}
+.catering-media-main img{object-position:center 52%}
+.catering-story-note{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:40px;
+  padding:25px 0 0;
+  border-top:1px solid var(--line-light);
+}
+.catering-story-note h4,
+.catering-process-copy h4{
+  font-family:var(--serif);
+  font-size:36px;
+  font-weight:400;
+  line-height:.9;
+}
+.catering-story-note p,
+.catering-process-copy p{
+  max-width:600px;
+  font-size:12px;
+  line-height:1.9;
+  color:#cfc4b7;
+}
+.catering-process{
+  display:grid;
+  grid-template-columns:minmax(0,.75fr) minmax(0,1fr) minmax(0,1fr);
+  gap:12px;
+  align-items:stretch;
+}
+.catering-process-copy{
+  padding:25px 25px 25px 0;
+  border-top:1px solid var(--line-light);
+  border-bottom:1px solid var(--line-light);
+}
+.catering-process-copy .eyebrow{margin-bottom:18px}
+.catering-process-copy p{margin-top:18px}
+.catering-process-media{aspect-ratio:3 / 4}
+.catering-process-media:first-of-type img{object-position:center 42%}
+.catering-portfolio{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+.catering-portfolio-heading{
+  grid-column:1 / -1;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:25px;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--line-light);
+}
+.catering-portfolio-heading h4{
+  font-family:var(--serif);
+  font-size:42px;
+  font-weight:400;
+}
+.catering-portfolio-heading p{
+  max-width:430px;
+  font-size:11px;
+  line-height:1.8;
+  color:#cfc4b7;
+}
+.catering-portfolio-media{aspect-ratio:3 / 4}
+.catering-portfolio-media:nth-of-type(2){grid-column:span 2}
+.catering-portfolio-media:nth-of-type(2),
+.catering-portfolio-media:nth-of-type(3){aspect-ratio:6 / 5}
+.catering-portfolio-media:nth-of-type(4),
+.catering-portfolio-media:nth-of-type(5),
+.catering-portfolio-media:nth-of-type(6),
+.catering-portfolio-media:nth-of-type(7){grid-column:span 1}
 .catering-details{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -1018,6 +1128,15 @@ header{
 .dessert-table-copy .eyebrow{margin-top:18px}
 
 @media(max-width:980px){
+  .catering-story{
+    grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
+  }
+  .catering-process{
+    grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr);
+  }
+  .catering-portfolio{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
   .catering-details{
     grid-template-columns:1fr;
   }
@@ -1037,6 +1156,36 @@ header{
 }
 
 @media(max-width:680px){
+  .catering-story,
+  .catering-process,
+  .catering-portfolio{
+    grid-template-columns:minmax(0,1fr);
+  }
+  .catering-media-main{
+    grid-row:auto;
+  }
+  .catering-story-note{
+    grid-template-columns:minmax(0,1fr);
+    gap:18px;
+  }
+  .catering-process-copy{
+    padding-right:0;
+  }
+  .catering-portfolio-heading{
+    display:block;
+  }
+  .catering-portfolio-heading p{
+    margin-top:12px;
+  }
+  .catering-portfolio-media:nth-of-type(2),
+  .catering-portfolio-media:nth-of-type(3),
+  .catering-portfolio-media:nth-of-type(4),
+  .catering-portfolio-media:nth-of-type(5),
+  .catering-portfolio-media:nth-of-type(6),
+  .catering-portfolio-media:nth-of-type(7){
+    grid-column:span 1;
+    aspect-ratio:3 / 4;
+  }
   .catering-details,
   .catering-detail,
   .experience-details,
@@ -2026,21 +2175,59 @@ footer{
       </div>
     </div>
 
-    <div class="events-grid">
-      <div class="event-photo large product-photo">
-        <img src="imagenes/imagenlorso5.jpeg" alt="Propuesta gastronómica L'Orso">
+    <div class="catering-story">
+      <figure class="catering-media catering-media-main">
+        <img src="imagenes/cateringlorso (3).jpeg" alt="Plato emplatado con carne, puré y salsa de L'Orso">
+      </figure>
+      <figure class="catering-media catering-media-detail">
+        <img src="imagenes/cateringlorso (4).jpeg" alt="Bocados individuales presentados para un servicio de catering">
+      </figure>
+      <figure class="catering-media catering-media-detail">
+        <img src="imagenes/cateringlorso (8).jpeg" alt="Tabla de quesos, embutidos, frutas y pan para compartir">
+      </figure>
+      <div class="catering-story-note">
+        <h4>Del producto<br>al plato.</h4>
+        <p>Una propuesta de catering se construye en capas: producto, técnica, presentación y ritmo de servicio. Cada elemento llega a la mesa con una intención precisa, desde un plato terminado hasta una selección pensada para compartir.</p>
       </div>
-      <div class="event-photo product-photo">
-        <img src="imagenes/imagenlorso3.jpeg" alt="Montaje gastronómico L'Orso">
+    </div>
+
+    <div class="catering-process">
+      <div class="catering-process-copy">
+        <div class="eyebrow">El proceso · La cocina</div>
+        <h4>El detalle<br>también se cocina.</h4>
+        <p>Detrás de cada experiencia hay mise en place, oficio y atención constante. El trabajo del chef sostiene la propuesta antes de que llegue el primer invitado.</p>
       </div>
-      <div class="event-photo product-photo">
-        <img src="imagenes/imagenlorso4.jpg" alt="Presentación gastronómica L'Orso">
+      <figure class="catering-process-media">
+        <img src="imagenes/cateringlorso (5).jpeg" alt="Chef trabajando con vegetales asados en una cocina profesional">
+      </figure>
+      <figure class="catering-process-media">
+        <img src="imagenes/cateringlorso (7).jpeg" alt="Chef emplatando preparaciones individuales en la cocina">
+      </figure>
+    </div>
+
+    <div class="catering-portfolio">
+      <div class="catering-portfolio-heading">
+        <h4>Propuestas gastronómicas</h4>
+        <p>Platos, composiciones y diferentes posibilidades para construir una experiencia a la medida.</p>
       </div>
-      <div class="event-caption">
-        <div class="eyebrow">Servicio a medida</div>
-        <h4>Experiencias L'Orso</h4>
-        <p>Menús personalizados, estaciones gastronómicas y propuestas diseñadas para cada ocasión.</p>
-      </div>
+      <figure class="catering-portfolio-media">
+        <img src="imagenes/cateringlorso (1).jpeg" alt="Postre de chocolate emplatado con crema y crumble">
+      </figure>
+      <figure class="catering-portfolio-media">
+        <img src="imagenes/cateringlorso (2).jpeg" alt="Pasta roja emplatada con vegetales y hierbas frescas">
+      </figure>
+      <figure class="catering-portfolio-media">
+        <img src="imagenes/cateringlorso (6).jpeg" alt="Pasta con tomates, queso rallado y brotes verdes">
+      </figure>
+      <figure class="catering-portfolio-media">
+        <img src="imagenes/cateringlorso (9).jpeg" alt="Carpaccio de betabel con hojas verdes, pistache y flores comestibles">
+      </figure>
+      <figure class="catering-portfolio-media">
+        <img src="imagenes/cateringlorso (10).jpeg" alt="Pasta naranja con tomates cherry, albahaca y queso rallado">
+      </figure>
+      <figure class="catering-portfolio-media">
+        <img src="imagenes/cateringlorso (11).jpeg" alt="Composición gastronómica de L'Orso presentada en plato oscuro">
+      </figure>
     </div>
 
   </div>
